@@ -37,7 +37,6 @@ if (window.Notification) {
   // Notifications supported, it is time to use them.
   if (window.Notification.permission === 'granted') {
     // There is permission to use the notifications.
-    notificationReady();
   } else {
     window.Notification.requestPermission().then(function(result) {
       if (result === 'denied') {
@@ -51,7 +50,6 @@ if (window.Notification) {
       if (result === 'granted') {
         // permission granted.
         // There is permission to use the notifications.
-        notificationReady();
         return;
       }
     });
