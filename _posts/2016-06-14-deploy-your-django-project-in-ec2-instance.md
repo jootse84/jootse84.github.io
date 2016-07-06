@@ -1,20 +1,26 @@
-In this post I will try to explain how to quick deploy our (or multiple) Django project/s in a EC2 instance at AWS.
+Deploying one (or multiple) Django project(s) in a EC2 instance at AWS it is a *relative easy task*.
+
+I have never been interested in becoming a Systems Administrator. I was this kind of developers that panic messing up with the server, although I always find the topic interesting.
+
+So here I am, my actual job competences includes the deployment of some of the projects I am working on. Maybe is it time to consider myself a full-stack developer?
 
 ## Introduction
 
-First of all, I am going to introduce some concepts, that I assume you probably know. You can skip this part, if you want to go straight to the point, and start directly with the deployment.
+First of all, I am going to introduce some definitions, that I assume you probably know if you are reading this post. You can skip this part, if you want to go straight to the point, and start directly with the deployment.
 
-Here some brief to Django, Amazon Web Services and EC2 instances:
+Actually, I got some of the information by copy-paste of their official pages, so you can not blame me if it is not well explained or accurate.
+
+Here some brief definitions about Django, Amazon Web Services and EC2 instances:
 
 [Django](https://www.djangoproject.com/) is a Python Web framework, for quick setup and easy development of Web applications.
 
-[AWS](https://aws.amazon.com/what-is-aws/), as the link described, it is the most popular secure cloud services platform that offer a wide of utilities as cloud hosting services, database storage or content delivery, among others.
+[AWS](https://aws.amazon.com/what-is-aws/), as the link describes, is the most popular secure cloud services platform that offer a wide of utilities as cloud hosting services, database storage or content delivery, among others.
 
-An [EC2 instance](https://aws.amazon.com/ec2/) in AWS, is a Web service that makes easy to obtain virtual services (computer instances in the cloud) fast and inexpensively. In the future, if I have get some time, and write a large post about how to create an EC2 instance in AWS.
+In AWS, an [EC2 instance](https://aws.amazon.com/ec2/) is a Web service that makes easy to obtain virtual services (computer instances in the cloud) fast and inexpensively.
 
 ### Before starting
 
-From our local machine, we need to compress and transfer our django project to our EC2 virtual server. I usually use scp command for ssh data transfer. Here an example:
+Well, your Django project it is in your local machine, so first we need to compress and transfer it to our EC2 virtual server. I usually use scp command for ssh data transfer. Here an example:
 
 ```sh
 scp -i your_permission_PEM_file your_django_project_compressed user_name@IP_EC2_INSTANE:"/path/where/to/locate/at/ec2/"
@@ -26,7 +32,7 @@ To be ready, we still need to uncompress our django project, and move the projec
 
 ## Prepare nginx and uWSGI
 
-[nginx](https://www.nginx.com/resources/wiki/) will work as our HTTP server and reverse proxy for our django project. If it is not installed yet in our server:
+[nginx](https://www.nginx.com/resources/wiki/) will work as our HTTP server and reverse proxy for our Django project. If it is not installed yet in our server:
 
 ```sh
 sudo apt-get install nginx
@@ -139,7 +145,9 @@ sudo /etc/init.d/nginx restart
 ```
 
 Console should print a message like:
+```
  * Restarting nginx nginx    [OK]
+```
 
 If the process fails, you can check if the config files are correct by running:
 

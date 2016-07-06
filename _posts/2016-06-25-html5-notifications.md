@@ -2,12 +2,12 @@ Last week I assisted to a great speech by [Jordan Kasper](https://jordankasper.c
 
 It was a concise but a perfect introduction to all new features included in HTML5 that developers ***can use and implement now***.
 
-Some of the features introduced I completely forgot about their existence, so I decided that it is time to review them by testing the ones I find out more interesting, and write my impressions here, with a series of posts.
+Some of the features introduced I completely forgot about their existence, so I decided that it is time to review them by testing the ones I find more interesting, and write my impressions here.
 
 
 ## Notifications
 
-Today it's the turn of the Web Notifications feature of HTML5. For the ones that do not know exactly how it works, I suggest to open your your [Skype session in your browser](https://web.skype.com/), and check how the browser notifies once some of your contacts writes you on the chat.
+Today it's the turn of the Web Notifications feature. For the ones that do not know exactly how it works and why it is useful, I suggest to open your your [Skype session in your browser](https://web.skype.com/), and check how the browser notifies you when one of your contacts messages you back on the chat.
 
 We have to take into account that [some browsers](http://caniuse.com/#search=web%20notifications) have special issues related to this feature. For instance, Firefox does not support notifications sent immediately after one another.
 

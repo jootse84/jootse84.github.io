@@ -1,4 +1,4 @@
-Today I had to deal with some unstructured data coming from a request to an external server API.
+Today I had to deal with some unstructured data coming from a request of an external server API.
 
 The keys of the response JSON object from that API were numbers, timestamps representing months. The containing values of those keys were some data that our system had to use to build and display a beautiful chart.
 
