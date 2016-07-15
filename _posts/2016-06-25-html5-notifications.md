@@ -7,7 +7,7 @@ Some of the features introduced I completely forgot about their existence, so I 
 
 ## Notifications
 
-Today it's the turn of the Web Notifications feature. For the ones that do not know exactly how it works and why it is useful, I suggest to open your your [Skype session in your browser](https://web.skype.com/), and check how the browser notifies you when one of your contacts messages you back on the chat.
+Today it's the turn of the Web Notifications feature. For the ones that do not know exactly how it works and why it is useful, I suggest to open your [Skype session in the browser](https://web.skype.com/), and check how the browser notifies you when one of your contacts messages you back on the chat.
 
 We have to take into account that [some browsers](http://caniuse.com/#search=web%20notifications) have special issues related to this feature. For instance, Firefox does not support notifications sent immediately after one another.
 
