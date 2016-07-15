@@ -48,9 +48,6 @@ topojson --id-property SU_A3 -p name=NAME -p name -o your_new_topojson_file.json
 
 At the time we do this conversion, we can select which attributes are the ones we need for our tool. The above commad selects only the attributes *NAME* and *SU_A3*.
 
-our
-# Let's visualize topography with d3-geo
-
 Once we have ready  data, it is time to create the visualization of our map with d3. You can directly check the code of the [tool I developed on github](https://github.com/jootse84/bubble-map), or rather continue reading this post, as I will introduce some new concepts that can be useful if you are planning to create a similar map visualization.
 
 
