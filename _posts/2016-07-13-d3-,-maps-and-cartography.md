@@ -2,7 +2,7 @@ About half a year ago I developed a simple data visualization [tool](https://git
 
 The tool is in charge of a world map render in an HTML container, where the data corresponding to each country is displayed represented by a bubble atop every country in the map.
 
-I quite enjoyed working in this idea, so to celebrate *its anniversary* I decided to write this post about that work, which will help me review the concepts and theory I learnt on that time.
+I quite enjoyed working in this idea, and writting this post about that work will help me review the concepts and theory I learnt on that time.
 
 
 # GeoJSON, TopoJSON and d3-geo
