@@ -5,7 +5,7 @@ description:        "I wouldn’t call this blog a classical web development blo
 # Author Info
 author_name:        "Jose E. Martinez"
 author_email:       jootse.84@gmail.com
-twitter_username:   joots84
+twitter_username:   jootse84
 
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
