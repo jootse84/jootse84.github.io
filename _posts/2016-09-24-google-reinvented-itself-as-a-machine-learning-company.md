@@ -12,7 +12,7 @@ Google introduced in the conferences their [Machine Learning API](https://cloud.
 I remember back in the 2007, at my first company we built some tools using the Loquendo SDK (now adquired by [Nuance](http://www.nuance.com/for-business/automatic-speech-recognition/index.htm)) for automatic speech recognition system, and how hard and not precisse at that time was the speech recognition. Now you can believe how amazed I feel today after knowing the results of their Speech API that Google promises to the audience at the DevFestDC.
 
 ![alt Introduction to Google Machine Learning API by @bretmcg at #DevFestDC](https://pbs.twimg.com/media/CtH8U_yWcAAjzGV.jpg:small)
-^*Introduction to Google Machine Learning API by @bretmcg at #DevFestDC*^
+*Introduction to Google Machine Learning API by @bretmcg at #DevFestDC*
 
 In addition, I can't imagine how excited (or angry) must be now some PhDs working on pattern recognition and image processing with the results of the Google Cloud Vision API. From an image, the API allows you to extract lots of information like location, facial recognition, descriptive related tags, among other data.
 
