@@ -73,12 +73,13 @@ When calling a new Notification, apart from the String title, there is a second 
 
 Here we are only going to use the URL of my blog image, that will be included in the notification (option key *icon*)
 
-Please, <span id='click_here_button'>**click here**</span>, to trigger a Notification example.
+Please, <a id='click_here_button'>**click here**</a>, to trigger a Notification example.
 
 <script>
 window.onload = function () {
   var notificationReady = function () {
-    document.getElementById('click_here_button').addEventListener('click', function () {
+    document.getElementById('click_here_button').addEventListener('click', function (event) {
+      event.preventDefault();
       var notification = new window.Notification('Hi my friend!',
         { icon: '/assets/profile.jpg'}
       );
