@@ -55,8 +55,8 @@ Now, we can simply code with R, a function to calculate the Jaccard index given 
 jaccard <- function(M, user1, user2) {
   sums = rowSums(M[,c(user1, user2)])
 
-  total = length(sums[sums==1]) + length(sums[sums==2])
   similarity = length(sums[sums==2])
+  total = length(sums[sums==1]) + similarity
   
   similarity/total
 }
