@@ -16,7 +16,7 @@ An extremly easy and simple way to record the data is by the use of booleans. If
 
 
 |                     | Manolo | Pepito | Luis   |
-| ------------------- |-------:| ------:|-------:|
+| ------------------- |:------:| :-----:|:------:|
 | There will be blood | 1      | 0      | 0      |
 | Stranger things     | 0      | 1      | 1      |
 | Jurassic Park       | 0      | 0      | 1      |
@@ -37,6 +37,8 @@ We know that Jaccard (computed between any two columns) is $\frac{a}{a+b+c}$, wh
 
 With [R](https://www.r-project.org/), we can calculate the Jaccard index of 2 users using its *rowSums* function, that returns a vector with the summatory of its rows. For instance, for the following matrix:
 
+| A | B | C |
+|:-:|:-:|:-:|
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
 
