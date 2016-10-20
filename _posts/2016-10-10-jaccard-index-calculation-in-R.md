@@ -1,6 +1,4 @@
-The *Jaccard index* is a statistic value often used to compare the similarity between *sets* for binary variables. It is simply the ratio of the size of the intersection of the *sets* and the size of the union of those *sets*.
-
-jaccard(A, B) = \frac{|A \bigcap B|}{|A \bigcup B|}
+The *Jaccard index* is a statistic value often used to compare the similarity between *sets* for binary variables. It is simply the ratio of the size of the intersection of the *sets* and the size of the union of those *sets*: jaccard(A, B) = $\frac{|A \bigcap B|}{|A \bigcup B|}$
 
 eg. if J(A,B) is Jaccard index between sets A and B and A = {1,2,3}, B = {2,3,4}, C = {4,5,6}, then:
 
