@@ -44,7 +44,7 @@ With [R](https://www.r-project.org/), we can calculate the Jaccard index of 2 us
 
 the *rowSums* will be the vector [1, 3].
 
-If we calculate the rowSums of the matrix *M*, and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ that:
+If we calculate the *rowSums* of the matrix *M* for 2 users (columns), and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ for the Jaccard index calculation that:
 
 - a - number of items in *v* with value equals to 2
 - b + c - number of items in *v* with value equals to 1
