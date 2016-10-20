@@ -1,6 +1,6 @@
 The *Jaccard index* is a statistic value often used to compare the similarity between *sets* for binary variables. It is simply the ratio of the size of the intersection of the *sets* and the size of the union of those *sets*.
 
-jaccard(A, B) = \frac{|A \bigcap B|}{ |A\bigcup B|}
+jaccard(A, B) = $\frac{|A \bigcap B|}{ |A\bigcup B|}$
 
 eg. if J(A,B) is Jaccard index between sets A and B and A = {1,2,3}, B = {2,3,4}, C = {4,5,6}, then:
 
@@ -29,7 +29,7 @@ For the following example, now it is possible to calculate the Jaccard index of 
 
 # Calculating Jaccard
 
-We know that Jaccard (computed between any two columns) is \frac{a}{a+b+c}, where:
+We know that Jaccard (computed between any two columns) is $\frac{a}{a+b+c}$, where:
 
 - a - number of rows where both columns are 1
 - b - number of rows where this and not the other column is 1
@@ -42,7 +42,7 @@ With [R](https://www.r-project.org/), we can calculate the Jaccard index of 2 us
 
 the *rowSums* will be the vector [1, 3].
 
-If we calculate the rowSums of the matrix *M*, and we save the result in vector *v*, we will conclude following \frac{a}{a+b+c} that:
+If we calculate the rowSums of the matrix *M*, and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ that:
 
 - a - number of items in *v* with value equals to 2
 - b + c - number of items in *v* with value equals to 1
