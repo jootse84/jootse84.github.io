@@ -1,14 +1,16 @@
-The *Jaccard index* is a statistic value often used to compare the similarity between *sets* for binary variables. It is simply the ratio of the size of the intersection of the *sets* and the size of the union of those *sets*.
+Recently I've been reading about [methods to examine data](http://infolab.stanford.edu/~ullman/mmds/ch3.pdf) for finding similar 'items' on sets. A frequently mesure used in data mining for this purpose is called *Jaccard index*.
 
-jaccard(A, B) = $\frac{\|A \bigcap B\|}{\|A \bigcup B\|}$
+The *Jaccard index* is a statistic value often used to compare the similarity between *sets* for binary variables. It measures the size ratio of the intersection between the *sets* divided by the length of its union.
 
-eg. if J(A,B) is Jaccard index between sets A and B and A = {1,2,3}, B = {2,3,4}, C = {4,5,6}, then:
+Jaccard(A, B) = $\frac{\|A \bigcap B\|}{\|A \bigcup B\|}$
+
+For instance, if J(A,B) is Jaccard index between sets A and B and A = {1,2,3}, B = {2,3,4}, C = {4,5,6}, then:
 
 - J(A,B) = 2/4 = 0.5
 - J(A,C) = 0/6 = 0
 - J(B,C) = 1/5 = 0.2
 
-A good way to introduce this concept and its use is by a simple example. Let's think about Netflix movie recommendation, where users get suggestions of movies or series they may like, depending on their previous selections.
+A good way to introduce better this concept and its use is by a practical example. Let's think about Netflix movie recommendation, where users get suggestions of movies or series they may like, depending on their previous selections.
 
 The way to suggest a new movie to an user, is by comparing his/her *taste* with other users. That is to say, if user *A* likes similar movies and series than user *B* likes, it is pretty intuitive to recommend to user *A* movies that user *B* liked but user *A* still have no seen.
 
@@ -25,31 +27,31 @@ An extremly easy and simple way to record the data is by the use of booleans. If
 | Inception           | 1      | 1      | 1      |
 
 
-For the following example, now it is possible to calculate the Jaccard index of Pepito respect the rest of users (Manolo and Luis). From now onwards, we will talk about matrix *M*, which has recorded the previous data of movies
+With the use of the previous matrix, we are going to try to calculate the Jaccard index of Pepito respect the rest of users (Manolo and Luis). From now onwards, for easier and fast convenience, we will reffer the prevous matrix as *M*.
 
 # Calculating Jaccard
 
-We know that Jaccard (computed between any two columns) is $\frac{a}{a+b+c}$, where:
+The Jaccard index (between any two columns/users of the matrix M) is $\frac{a}{a+b+c}$, where:
 
 - a - number of rows where both columns are 1
 - b - number of rows where this and not the other column is 1
 - c - number of rows where the other and not this column is 1
 
-With [R](https://www.r-project.org/), we can calculate the Jaccard index of 2 users using its *rowSums* function, that returns a vector with the summatory of its rows. For instance, for the following matrix:
+With [R](https://www.r-project.org/), we can calculate the Jaccard index of 2 users using its [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) function, that returns a vector with the summatory of its rows. For instance, for the following matrix:
 
 | A | B | C |
 |:-:|:-:|:-:|
 | 1 | 0 | 0 |
 | 1 | 1 | 1 |
 
-the *rowSums* will be the vector [1, 3].
+the [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) will result in the vector *[1, 3]*.
 
-If we calculate the *rowSums* of the matrix *M* for 2 users (columns), and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ for the Jaccard index calculation that:
+If we perform the [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) of the matrix *M* for 2 users (columns), and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ for the Jaccard index calculation that:
 
 - a - number of items in *v* with value equals to 2
 - b + c - number of items in *v* with value equals to 1
 
-Now, we can simply code with R, a function to calculate the Jaccard index given two users (columms), and the matrix with the relevant data.
+Now, we can easier code the function that calculates the Jaccard index given two users (identified by the column number) for any matrix structured as *M*.
 
 ```R
 jaccard <- function(M, user1, user2) {
@@ -62,6 +64,6 @@ jaccard <- function(M, user1, user2) {
 }
 ```
 
-We will conclude, by using the algorithm, that the Jaccard similarity index of Pepito and Luis is pretty high (3/4) while it is low between Pepito and Manolo (1/5). Our system, then, will be wise if recommends to Pepito movies that Luis already watched and liked.
+By using the algorithm, we conclude that the Jaccard similarity index of Pepito and Luis is pretty high (3/4) while it is low between Pepito and Manolo (1/5). Our system, then, will be wise if recommends to Pepito movies that Luis already watched and liked.
 
 Obviously, Netflix doesn't use the Jaccard similarity coefficient for its recommendation system, instead it uses the complex but efficient **large-scale parallel collaborative filtering**. But I think using movie recommendation as an example it is a good choice for simply introduce this concept.
