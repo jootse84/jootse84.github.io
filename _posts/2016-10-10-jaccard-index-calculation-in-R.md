@@ -16,20 +16,20 @@ Let’s think about Netflix movie recommendation, where users get suggestions of
 
 The way to suggest a new movie to a user is by comparing his/her *taste* with that of other users. That is to say, if user *A* likes movies and series similar to the ones that user *B* likes, it makes sense to recommend to user *A* the movies that user *B* has liked but that user *A* still has not seen.
 
-An extremely easy and simple way to record the data is by the use of booleans. If a user likes a movie/series you mark it as a *one*. If the user does not like a movie/series you mark it as a *zero*. In the following example, Luis likes *Stranger Things*, *X-Men*, *Jurassic Park* and *Inception*:
+An extremely easy and simple way to record the data is by the use of booleans. If a user likes a movie/series you mark it as a *one*. If the user does not like a movie/series you mark it as a *zero*. In the following example, Dave likes *Stranger Things*, *X-Men*, *Jurassic Park* and *Inception*:
 
 
-|                     | Manolo | Pepito | Luis   |
-| ------------------- |:------:| :-----:|:------:|
-| There Will Be Blood | 1      | 0      | 0      |
-| Stranger Things     | 0      | 1      | 1      |
-| Jurassic Park       | 0      | 0      | 1      |
-| X-Men               | 0      | 1      | 1      |
-| The Master          | 1      | 0      | 0      |
-| Inception           | 1      | 1      | 1      |
+|                     | James | Anne | Dave   |
+| ------------------- |:-----:| :---:|:------:|
+| There Will Be Blood | 1     | 0    | 0      |
+| Stranger Things     | 0     | 1    | 1      |
+| Jurassic Park       | 0     | 0    | 1      |
+| X-Men               | 0     | 1    | 1      |
+| The Master          | 1     | 0    | 0      |
+| Inception           | 1     | 1    | 1      |
 
 
-Using this matrix we are going to calculate the *Jaccard Index* of Pepito with respect to the rest of users (Manolo and Luis). From now on, to make things easier, we will refer to this matrix as *M*.
+Using this matrix (similar to the *utility matrix*) we are going to calculate the *Jaccard Index* of Anne with respect to the rest of users (James and Dave). From now on, to make things easier, we will refer to this matrix as *M*.
 
 # Calculating Jaccard
 
@@ -66,6 +66,6 @@ jaccard <- function(M, user1, user2) {
 }
 ```
 
-By using the algorithm, we conclude that the *Jaccard Similarity Index* of Pepito and Luis is pretty high (3/4) while it is low between Pepito and Manolo (1/5). Our system, then, should recommend to Pepito movies that Luis already watched and liked.
+By using the algorithm, we conclude that the *Jaccard Similarity Index* of Anne and Dave is pretty high (3/4) while it is low between Anne and James (1/5). Our system, then, should recommend to Anne movies that Dave already watched and liked.
 
-Obviously, Netflix doesn't use the Jaccard similarity coefficient for its recommendation system; instead it uses the complex, but efficient **large-scale parallel collaborative filtering**. But I think using movie recommendations as an example is a good choice for simply introducing this concept.
+Obviously, Netflix doesn't use the Jaccard similarity coefficient for its recommendation system as it ignores rating values; instead it uses the complex, but efficient **large-scale parallel collaborative filtering**. But I think using movie recommendations as an example is a good choice for simply introducing this concept.
