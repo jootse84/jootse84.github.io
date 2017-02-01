@@ -54,7 +54,7 @@ from keys import keys
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
 auth.set_access_token(keys['access_token'], keys['access_token_secret'])
 
-api = tweepy.API(api)
+api = tweepy.API(auth)
 ```
 
 # Final steps
