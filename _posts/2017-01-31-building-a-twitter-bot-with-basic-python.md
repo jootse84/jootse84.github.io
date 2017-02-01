@@ -1,10 +1,10 @@
 This is just for fun.
 
-I am going to introduce how we can easily build a basic Twitter bot with basic Python and the use of Twitter's API.
+I am going to introduce how we can easily build a Twitter bot with basic Python and the use of Twitter's API.
 
 We are going to be inspired by the account [The Alot Shepherd](https://twitter.com/TheAlotShepherd/), a bot that searches for tweets including the typo 'alot' and reply to them with a [pre-defined image of the Alot Shepherd in the answer](https://twicopy.org/TheAlotShepherd/).
 
-![Alot of Fun](http://i.imgur.com/COEpa.png)
+![Alot of Fun]({{ site.url }}/assets/images/alotoffun.png)
 
 # How to start?
 
@@ -16,7 +16,7 @@ First of all we need to get familiar with [Tweepy](http://tweepy.readthedocs.io/
 
 Then, we have to create a new application by visiting our [Twitter developer page](https://apps.twitter.com/). Notice that you must add your mobile phone to your Twitter profile to be able to create the application.
 
-The steps are pretty simple and straightforward: click the button "Create a new app", fill and confirm the form with the information about your app, click on "manage keys and access tokens" under *Application Settings* section, and finally click the button "Create my access token".
+The steps are pretty simple and straightforward: click on the "Create a new app" button, fill and confirm the form with the information about your app, click on the "manage keys and access tokens" link under *Application Settings* section, and finally click on the "Create my access token" button.
 
 # Time to code
 
@@ -79,7 +79,7 @@ tweet_list = api.search(
 )
 ```
 
-Now we can go through every tweet from the list and reply every single tweet with any message we want. For this example I decided to reply with the text '@username yo tambien soy cani!' ('@username I am also a cani!'). The update_status call is the one responsible to generate the response to the message.
+Now we can go through every tweet from the list and response each one with a text or even a picture. For this example I decided to reply with the message '@username yo tambien soy cani!' ('@username I am also a cani!'). The update_status call is the one responsible to generate the response to the message.
 
 As the program can raise an exception if we constatly publish response tweets to users (because of Twitter restrictions), we need to use the try/except block to avoid program hang or freeze.
 
@@ -104,26 +104,27 @@ for tweet in tweet_list:
 
 ```
 
-Now it is time to run our script and print our messages:
+Now it is time to run our script and print out our messages:
 
 ```python
 > python bot.py
-@em186__ yo tambien soy cani!
-@MusicaBanjo43 yo tambien soy cani!
-@_vannsss yo tambien soy cani!
-@itskeisy yo tambien soy cani!
-@lionlolcod123 yo tambien soy cani!
-@Adriiyoungg yo tambien soy cani!
-@Sasuviq yo tambien soy cani!
-@ivanivanciyo yo tambien soy cani!
-@Cristinaort30 yo tambien soy cani!
-@xavivill99 yo tambien soy cani!
-@DoblasftWilson yo tambien soy cani!
-@mellamanjoey yo tambien soy cani!
-@UnaiGadi yo tambien soy cani!
-@GemGalicia yo tambien soy cani!
-@camilocuellarm yo tambien soy cani!
-@ElAntiyo yo tambien soy cani!
+
+@em18_ yo tambien soy cani!
+@Musanjo43 yo tambien soy cani!
+@_vansss yo tambien soy cani!
+@itsksy yo tambien soy cani!
+@lionlcod123 yo tambien soy cani!
+@Adriiungg yo tambien soy cani!
+@Saviq yo tambien soy cani!
+@ivaninciyo yo tambien soy cani!
+@Crisnaort30 yo tambien soy cani!
+@xavill99 yo tambien soy cani!
+@DobsftWilson yo tambien soy cani!
+@melmanjoey yo tambien soy cani!
+@UnGadi yo tambien soy cani!
+@Gemlicia yo tambien soy cani!
+@camiluellarm yo tambien soy cani!
+@Elntiyo yo tambien soy cani!
 ```
 
 ![alt cani]({{ site.url }}/assets/images/twitter_bot_post.png)
