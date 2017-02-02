@@ -1,13 +1,13 @@
-Before it gets too late I want to write a few quick thoughts about [DevFestDC](http://www.devfestdc.org/), organized by the guys from [Google Dev Group DC](https://twitter.com/gdevdc) and hosted at [Capital One](https://www.capitalone.com/).
+[DevFestDC](http://www.devfestdc.org/), organized by the guys from [Google Dev Group DC](https://twitter.com/gdevdc), happened few days ago at [Virginia's Capital One headquarters](https://www.capitalone.com/).
 
-First of all, I want to congratulate the organizers of the event for a great job: the presentations were super interesting and inspiring, and the whole event was organized really well.
+The whole event was organized really well and I truly enjoyed some speeches. The ones related to the new Google's [machine learning API](https://cloud.google.com/products/machine-learning/) especially piqued my interest.
 
 
 ## Google as a machine learning first company
 
-From how the event went and the selection of the speeches, I have the impression that Google has changed and taken a big step to become a machine learning first company.
+After some reflection, I have the impression that Google has changed and taken a big step to become a machine learning first company.
 
-In their workshops, Google introduced their [machine learning API](https://cloud.google.com/products/machine-learning/) and performed some demos that showed how fast and accurately their API can extract meta information from images or to simply translate speech to text.
+In their workshops, Google introduced their machine learning API and performed some demos that showed how fast and accurately their API can extract meta information from images or to simply translate speech to text.
 
 I remember back in the 2007 when I was building tools using the Loquendo SDK (now adquired by [Nuance](http://www.nuance.com/for-business/automatic-speech-recognition/index.htm)) for an automatic speech recognition system, and how hard and imprecise speech recognition was at that time. So I was amazed when I saw the results Google promises its speech API can deliver.
 
