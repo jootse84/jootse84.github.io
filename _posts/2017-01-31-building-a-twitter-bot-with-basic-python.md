@@ -79,7 +79,7 @@ tweet_list = api.search(
 )
 ```
 
-Now we can go through every tweet from the list and response each one with a text or even a picture. For this example I decided to reply with the message '@username yo tambien soy cani!' ('@username I am also a cani!'). The update_status call is the one responsible to generate the response to the message.
+Now we can go through every tweet from the list and pester people by responding each tweet with a text or even a picture. For this example I decided to reply with the message '@username yo tambien soy cani!' ('@username I am also a cani!'). The update_status call is the one responsible to generate the response to the message.
 
 As the program can raise an exception if we constatly publish response tweets to users (because of Twitter restrictions), we need to use the try/except block to avoid program hang or freeze.
 
