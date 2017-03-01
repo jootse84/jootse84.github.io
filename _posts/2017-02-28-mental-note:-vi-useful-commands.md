@@ -12,7 +12,9 @@ You can run UNIX commands and see their output without leaving vi, useful when y
 
 ### NORMAL_MODE | :map + key_map + :!UNIX_command<cr>
 
-Even better, we can store on a key map those specific commands that we are going to use often during the session. After executing the following in vi, we can run pytest any time from vi by pressing the *<space>* tab and the letter "t" from keyboard. Note - always finish the unix command with the *<cr>*.
+Even better, we can store on a key map those specific commands that we are going to use often during the session.
+
+After executing the following in vi, we can run pytest anytime from vi by pressing the *space* tab and the letter *t* from keyboard. Note - always finish the unix command with the *cr*.
 
 ```
 :map <space>t :!PYTHONPATH=. py.test -s -v<cr>
