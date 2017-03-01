@@ -1,6 +1,6 @@
 It is time to increase the productivity with [Vi](https://en.wikipedia.org/wiki/Vi) text editor, and do not rely too much in the use of installed [vundles](https://github.com/jootse84/dotfiles/blob/master/.vimrc). Some commands I should **asap** start using on a daily basis:
 
-![alt Vi Vim]({{ site.url }}/assets/images/vi_post.png)
+![alt Vi Vim]({{ site.url }}/assets/images/vim_post.png)
 
 ### NORMAL_MODE | :!UNIX_command
 
