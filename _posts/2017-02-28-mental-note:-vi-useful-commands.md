@@ -1,6 +1,6 @@
 It is time to increase the productivity with [Vi](https://en.wikipedia.org/wiki/Vi) text editor, and do not rely too much in the use of installed [vundles](https://github.com/jootse84/dotfiles/blob/master/.vimrc). Some commands I should **asap** start using on a daily basis:
 
-![alt Vi Vim](http://d.gr-assets.com/books/1347685818l/9787030.jpg)
+![alt Vi Vim]({{ site.url }}/assets/images/vi_post.png)
 
 ### NORMAL_MODE | :!UNIX_command
 
@@ -10,7 +10,7 @@ You can run UNIX commands and see their output without leaving vi, useful when y
 :!mkdir jose
 ```
 
-### NORMAL_MODE | :map + key_map + :!UNIX_command<cr>
+### NORMAL_MODE | :map + key_map + :!UNIX_command
 
 Even better, we can store on a key map those specific commands that we are going to use often during the session.
 

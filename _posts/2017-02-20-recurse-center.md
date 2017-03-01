@@ -19,7 +19,7 @@ In my first week at RC I already...
 
 It is quite exciting.
 
-![alt Recurse Center](https://d2l930y2yx77uc.cloudfront.net/production/uploads/images/1561957/picture_pc_338e7e0e2b3dbb7b0128030a730510d8.jpg)
+![alt Recurse Center]({{ site.url }}/assets/images/rc_post.jpg)
 
 # A hippie community for programmers?
 
