@@ -2,7 +2,7 @@ It is time to increase the productivity with [Vi](https://en.wikipedia.org/wiki/
 
 ![alt Vi Vim]({{ site.url }}/assets/images/vim_post.png)
 
-### NORMAL_MODE | :!UNIX_command
+### [NORMAL_MODE] :!UNIX_command
 
 You can run UNIX commands and see their output without leaving vi, useful when you need to run tests or create a folder in the current directory:
 
@@ -10,7 +10,7 @@ You can run UNIX commands and see their output without leaving vi, useful when y
 :!mkdir jose
 ```
 
-### NORMAL_MODE | :map + key_map + :!UNIX_command
+### [NORMAL_MODE] :map + key_map + :!UNIX_command
 
 Even better, we can store on a key map those specific commands that we are going to use often during the session.
 
@@ -20,11 +20,11 @@ After executing the following in vi, we can run pytest anytime from vi by pressi
 :map <space>t :!PYTHONPATH=. py.test -s -v<cr>
 ```
 
-### NORMAL_MODE | crtl + p
+### [NORMAL_MODE] crtl + p
 
 Please don't use more [*:NERDTree* vundle](https://github.com/scrooloose/nerdtree) and find your files by name with *crtl + p*.
 
-### NORMAL_MODE | d + s + BRACKET/SURROUND_TYPE
+### [NORMAL_MODE] d + s + BRACKET/SURROUND_TYPE
 
 You can remove sorroundings really fast. From NORMAL mode, just type d + s + the sorround type. For instance, if we want to remove a surrounding brackets:
 
@@ -32,12 +32,22 @@ You can remove sorroundings really fast. From NORMAL mode, just type d + s + the
 d s (
 ```
 
-### NORMAL_MODE | shift + d
+### [NORMAL_MODE] shift + d
 
 Delete from your current position until the end of the line.
 
-### NORMAL_MODE | shift + i | INSERT_MODE | type/code + esc | NORMAL_MODE | move_to_another_line + . + move_to_another_line + . + ...
+### [NORMAL_MODE] shift + i [INSERT_MODE] type/code + esc [NORMAL_MODE] move_to_another_line + . + move_to_another_line + . + ...
 
 Use this sequence when you need to repeatly **write the same text at the beginning of multiple lines** in your code. Note that a magical thing happens with the dot command - it repeats a command that used a numbered register, it will use the next numbered register (see :help redo-register). 
+
+### [NORMAL_MODE] SELECT MULTIPLE LINES
+
+For example, if I'm on line 5 and I want to select to line 35, I might press *ma* to place mark *a* on line 5, then *:35* to move to line 35. Shift + v to enter linewise visual mode, and finally *`a* to select back to mark a.
+
+### [NORMAL_MODE] COPY UNTIL THE START/END OF THE LINE
+
+The normal-mode command to move to the end of the line is $. You can copy to the start/end of the line with 0$/y$ and paste with p. To copy/paste between different instances, you can use the system clipboard by selecting the * register, so the commands become "\*y$ for copying and "\*p for pasting.
+
+Check :h registers for more information.
 
 
