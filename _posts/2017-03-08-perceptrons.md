@@ -1,6 +1,6 @@
-A perceptron classifier is a simple model of a neuron. This machine learning algorithm is used as a supervised learning binary classifier - a function that given a set of elements can decide if a new element belongs to a predefined category.
+A perceptron classifier is a simple model of a neuron. This machine learning algorithm is used as a supervised learning classifier - a function that given a set of elements can decide if a new element belongs to a predefined category.
 
-We can compare the way it works just as a *simple* biological neuron: the dentrites recieves signals and the cell body process them. After that processing, the axon's neuron will send signals out to other neurons.
+We can compare the way it works as a *simple version* of a biological neuron: the dentrites recieves signals and the cell body process them. After that processing, the axon's neuron will send signals out to other neurons.
 
 Now you will think, how does the classifier makes the processing?
 
@@ -93,13 +93,13 @@ Perceptron training algorithm is considered **online**, which means that instead
 
 ```python
 def predict(weights, bias, row):
-    activation = np.sum([weights[key] * row[key] + bias for key in weights.keys()])
+    activation = np.sum([weights[key] * row[key] for key in weights.keys()]) + bias
     return np.sign(activation)
 ```
 
 # Test our perceptron
 
-A contour plot is a nice way to visually represent the boundary of a perceptron. The following code will create the array Z with the predictions of all possible points around our dataset. Calling the function *contourf* will fill the areas between the values using constant colors corresponding to the current figure's colormap.
+A contour plot is a nice way to visually represent the decision boundary of a perceptron. The following code will create the array Z with the predictions of all possible points around our dataset. Calling the function *contourf* will fill the areas between the values using constant colors corresponding to the current figure's colormap.
 
 ```python
 h = .1
@@ -132,6 +132,8 @@ ax.set_title('Perceptron')
 # Issues and notes about perceptrons
 
 Notes I have been taken during the research and study of perceptrons - recheck when have some time:
+
+- Does the perceptron converge? If so, what does it converge to? And how long does it take? If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates.
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).
 
