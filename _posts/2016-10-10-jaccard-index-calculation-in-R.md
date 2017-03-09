@@ -2,7 +2,7 @@ Recently I've been reading about [methods to examine data](http://infolab.stanfo
 
 The *Jaccard Index* is a statistic value often used to compare the similarity between *sets* for binary variables. It measures the size ratio of the intersection between the *sets* divided by the length of its union.
 
-Jaccard(A, B) = $\frac{\|A \bigcap B\|}{\|A \bigcup B\|}$
+Jaccard(A, B) = $$\frac{\|A \bigcap B\|}{\|A \bigcup B\|}$$
 
 For instance, if J(A,B) is the *Jaccard Index* between sets A and B and A = {1,2,3}, B = {2,3,4}, C = {4,5,6}, then:
 
