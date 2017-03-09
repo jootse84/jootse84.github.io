@@ -2,7 +2,7 @@ A perceptron classifier is a simple model of a neuron. This machine learning alg
 
 We can compare the way it works just as a *simple* biological neuron: the dentrites recieves signals and the cell body process them. After that processing, the axon's neuron will send signals out to other neurons.
 
-Now you will think, how does the classifier makes this processing?
+Now you will think, how does the classifier makes the processing?
 
 Given an input element, each feature/column is multiplied by a *weight* value that is assigned to this particular feature. For instance, if the perceptron has a total of five inputs, then five weights will be adjusted for each of these inputs (or features).
 
@@ -10,7 +10,7 @@ All those signals, after multiplied by its weights, will be summed up to a singl
 
 Finally, the result will turn into the output signal. Depending on the sum of the previous calculations an *activation function* (or *transfer function*) will classify the result to the category predicted. 
 
-We can think about perceptrons as the most basic form of a neural network. This following illustration can help better to understand the process:
+We can think about perceptrons as the most basic form of a neural network. The following illustration helps to better to understand the process:
 
 ![alt Perceptron]({{ site.url }}/assets/images/perceptrons_post.png)
 
@@ -26,14 +26,14 @@ The most tricky part of a perceptron is how to calculate the vector of weights. 
 
 |   | col1 | col2 | target |
 |:-:|:----:|:----:|:------:|
-| 0 | 1    | 15   | -1     |
-| 1 | 2    | 8    | -1     |
-| 2 | 3    | 9    | -1     |
-| 3 | 4    | 16   | -1     |
-| 4 | 4    | 1    | 1      |
-| 5 | 3    | 4    | 1      |
-| 6 | 2    | 9    | 1      |
-| 7 | 1    | 5    | 1      |
+| 0 | .1   | 1.5  | -1     |
+| 1 | .2   | .8   | -1     |
+| 2 | .3   | .9   | -1     |
+| 3 | .4   | 1.6  | -1     |
+| 4 | -.4  | .1   | 1      |
+| 5 | -.3  | .4   | 1      |
+| 6 | -.2  | .9   | 1      |
+| 7 | -.1  | .5   | 1      |
 
 
 The following code creates our *fake* training test data with pandas based on the previous table.
@@ -47,9 +47,9 @@ import matplotlib.cm as cm
 import pandas as pd
 
 d = {
-  'col1': [1,2,3,4,4,3,2,1],
-  'col2': [15,8,9,16,1,4,9,5],
-  'target': np.array([-1]*4+[1]*4)
+  'col1': [.1,.2,.3,.4,-.4,-.3,-.2,-.1],
+  'col2': [1.5,.8,.9,1.6,.1,.4,.9,.5],
+  'target': [-1]*4+[1]*4
 }
 
 df = pd.DataFrame(data=d)
@@ -74,33 +74,64 @@ def perceptron_train(max_iter = 10, step = 0.1):
     col_names = df.columns.values[:-1]
     w = dict((name,0) for name in col_names)
     b = 0
-    step = 0.1
     for i in range(max_iter):
         for index, row in df.iterrows():
-            a = np.sum([row[col] * w[col] + b for col in col_names])
-            if row['target'] * a <= 0: # is the prediction good?
+            a = np.sum([row[col] * w[col] for col in col_names]) + b
+            if row['target'] * a <= 0:
+                # wrong prediciton
                 b += row['target'] * step
-                for key in w.keys():
-                    w[key] += row['target'] * row[key] * step
+                for col in col_names:
+                    w[col] += row['target'] * row[col] * step
     return w, b
 
 weights, bias = perceptron_train()
-
+print(weights, bias)
+# weights: {'col2': -0.2, 'col1': -0.43}, bias: 0.1
 ```
 
-This training algorithm is considered **online**: instead of considering the entire dataset, it looks example by example. After trained our weights and bias, we can test our perceptron and make predictions:
+Perceptron training algorithm is considered **online**, which means that instead of considering and using the entire dataset as a whole, it looks example by example. Once finalized the training of the weights and the bias, the perceptron will be able to make predictions:
 
 ```python
 def predict(weights, bias, row):
-    activation = 0
-    for key in weights.keys():
-        activation += weights[key] * row[key] + bias
+    activation = np.sum([weights[key] * row[key] + bias for key in weights.keys()])
     return np.sign(activation)
-``` 
+```
+
+# Test our perceptron
+
+A contour plot is a nice way to visually represent the boundary of a perceptron. The following code will create the array Z with the predictions of all possible points around our dataset. Calling the function *contourf* will fill the areas between the values using constant colors corresponding to the current figure's colormap.
+
+```python
+h = .1
+
+# create a meshgrid
+x_min, x_max = -0.6, 0.6
+y_min, y_max = 0, 1.8
+xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
+
+# np.c_ returns a new array with the combination of the ish elem from xx with
+# the ish elem of yy
+fake = pd.DataFrame(np.c_[xx.ravel(), yy.ravel()], columns=('col1', 'col2'))
+Z = np.array([predict(weights, bias, row) for key, row in fake.iterrows()])
+# Reshape from array to a matrix of colors
+Z = Z.reshape(xx.shape)
+fig, ax = plt.subplots()
+# contourf(matrix of xs, matrix of ys, and matrix of colors)
+ax.contourf(xx, yy, Z)
+
+# Include the training points
+# pos_mask = df['target'] == 1
+# neg_mask = df['target'] == -1
+ax.scatter(x=df[neg_mask]['col1'], y=df[neg_mask]['col2'], color='r')
+ax.scatter(x=df[pos_mask]['col1'], y=df[pos_mask]['col2'], color='b')
+ax.set_title('Perceptron')
+```
+
+![alt Perceptron Test]({{ site.url }}/assets/images/perceptrons_solution_post.png)
 
 # Issues and notes about perceptrons
 
-The following list are notes I have been taken during the research and study of perceptrons:
+Notes I have been taken during the research and study of perceptrons - recheck when have some time:
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).
 
