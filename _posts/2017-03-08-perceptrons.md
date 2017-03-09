@@ -18,7 +18,7 @@ We can think about perceptrons as the most basic form of a neural network. The f
 
 The basic form of activation function is the simple binary function that has as a possible results 0 or 1. It basically returns one if the output is positive while zero if it is negative.
 
-f(s) = $$\begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{cases}$$
+f(s) = ^\begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{cases}^
 
 # Calculate weights and bias of the perceptron
 
