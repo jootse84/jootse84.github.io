@@ -18,11 +18,25 @@ We can think about perceptrons as the most basic form of a neural network. This 
 
 The basic form of activation function is the simple binary function that has as a possible results 0 or 1. It basically returns one if the output is positive while zero if it is negative.
 
-f(s) = $\begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{cases}$
+$\f(s) = begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{cases}$
 
 # Calculate weights and bias of the perceptron
 
 The most tricky part of a perceptron is how to calculate the vector of weights. I am going to use Python and a simple set of points to try to explain in a simple way how it works -- thanks to [@fedeisas](https://twitter.com/fedeisas) for guiding me in this process.
+
+|   | col1 | col2 | target |
+|:-:|:----:|:----:|:------:|
+| 0 | 1    | 15   | -1     |
+| 1 | 2    | 8    | -1     |
+| 2 | 3    | 9    | -1     |
+| 3 | 4    | 16   | -1     |
+| 4 | 4    | 1    | 1      |
+| 5 | 3    | 4    | 1      |
+| 6 | 2    | 9    | 1      |
+| 7 | 1    | 5    | 1      |
+
+
+The following code creates our *fake* training test data with pandas based on the previous table.
 
 
 ```python
@@ -86,7 +100,7 @@ def predict(weights, bias, row):
 
 # Issues and notes about perceptrons
 
-The following list corresponds a notes I have been taken during the research and study of perceptrons:
+The following list are notes I have been taken during the research and study of perceptrons:
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).
 
