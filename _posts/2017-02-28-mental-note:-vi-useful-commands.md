@@ -46,7 +46,7 @@ For example, if I'm on line 5 and I want to select to line 35, I might press *ma
 
 ### [NORMAL_MODE] COPY UNTIL THE START/END OF THE LINE
 
-The normal-mode command to move to the end of the line is with the &#36; symbol. You can copy to the start/end of the line with 0&#36; or y&#36; and paste with p. To copy/paste between different instances, you can use the system clipboard by selecting the * register, so the commands become "\*y&#36; for copying and "\*p for pasting.
+The normal-mode command to move to the end of the line is with the $ symbol. You can copy to the start/end of the line with 0$ or y$ and paste with p. To copy/paste between different instances, you can use the system clipboard by selecting the * register, so the commands become "\*y$ for copying and "\*p for pasting.
 
 Check :h registers for more information.
 

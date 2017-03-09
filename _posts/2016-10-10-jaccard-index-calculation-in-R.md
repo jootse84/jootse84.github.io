@@ -33,7 +33,7 @@ Using this matrix (similar to the *utility matrix*) we are going to calculate th
 
 # Calculating Jaccard
 
-The *Jaccard Index* (between any two columns/users of the matrix *M*) is $\frac{a}{a+b+c}$, where:
+The *Jaccard Index* (between any two columns/users of the matrix *M*) is $$\frac{a}{a+b+c}$$, where:
 
 - a = number of rows where both columns are 1
 - b = number of rows where this and not the other column is 1
@@ -48,7 +48,7 @@ With [R](https://www.r-project.org/) we can calculate the *Jaccard Index* of two
 
 the [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) will result in the vector *[1, 3]*.
 
-If we perform the [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) of the matrix *M* for two users (columns) and we save the result in vector *v*, we will conclude following $\frac{a}{a+b+c}$ for the *Jaccard Index* calculation that:
+If we perform the [rowSums](http://stat.ethz.ch/R-manual/R-patched/RHOME/library/base/html/colSums.html) of the matrix *M* for two users (columns) and we save the result in vector *v*, we will conclude following $$\frac{a}{a+b+c}$$ for the *Jaccard Index* calculation that:
 
 - a = number of items in *v* with value equals to 2
 - b + c = number of items in *v* with value equals to 1
