@@ -6,7 +6,7 @@ Now you will think, how does the classifier makes the processing?
 
 Given an input element, each feature/column is multiplied by a *weight* value that is assigned to this particular feature. For instance, if the perceptron has a total of five inputs, then five weights will be adjusted for each of these inputs (or features).
 
-All those signals, after multiplied by its weights, will be summed up to a single value. The neural network also adjusts the offset or *bias* of those calculations.
+All those signals, after multiplied by its weights, will be summed up to a single value. The perceptron also adjusts the offset or *bias* of those calculations.
 
 Finally, the result will turn into the output signal. Depending on the sum of the previous calculations an *activation function* (or *transfer function*) will classify the result to the category predicted. 
 
@@ -22,7 +22,7 @@ f(s) = ^\begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{ca
 
 # Calculate weights and bias of the perceptron
 
-The most tricky part of a perceptron is how to calculate the vector of weights. I am going to use Python and a simple set of points to try to explain in a simple way how it works -- thanks to [@fedeisas](https://twitter.com/fedeisas) for guiding me in this process.
+Build the vector of weights is the most tricky and fun part of creating a perceptron. I am going to use Python and a simple set of points to try to illustrate in a simple way how it works -- thanks to [@fedeisas](https://twitter.com/fedeisas) for guiding me in this process.
 
 |   | col1 | col2 | target |
 |:-:|:----:|:----:|:------:|
@@ -67,7 +67,7 @@ plt.show()
 
 The next learning algorithm is the one responsible to train the weights and bias of our perceptron. It initializes all the weights and bias to zero. Then it iterates for all our elements in the training dataset a *maxiter* number of times, computing the result of the perceptron *activation*.
 
-For each loop, the function consider that there is an error when the multiplication of the calculated activation and the real output/result is below zero: which means there is an error in the prediction. In that case, it updates the weights and bias.
+For each loop, the function consider that there is an error when the multiplication of the calculated activation and the real output/result is below zero - in other words, it is a wrong prediction. In that case, it updates the weights and bias.
 
 ```python
 def perceptron_train(max_iter = 10, step = 0.1):
@@ -89,7 +89,7 @@ print(weights, bias)
 # weights: {'col2': -0.2, 'col1': -0.43}, bias: 0.1
 ```
 
-Perceptron training algorithm is considered **online**, which means that instead of considering and using the entire dataset as a whole, it looks example by example. Once finalized the training of the weights and the bias, the perceptron will be able to make predictions:
+The perceptron training algorithm is considered **online**, which means that instead of considering and using the entire dataset as a whole, it looks example by example. Once finalized the training of the weights and the bias, the perceptron will be able to make predictions:
 
 ```python
 def predict(weights, bias, row):
@@ -132,7 +132,6 @@ ax.set_title('Perceptron')
 # Issues and notes about perceptrons
 
 Notes I have been taken during the research and study of perceptrons - recheck when have some time:
-
 - Does the perceptron converge? If so, what does it converge to? And how long does it take? If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates.
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).

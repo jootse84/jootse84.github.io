@@ -42,7 +42,7 @@ Use this sequence when you need to repeatly **write the same text at the beginni
 
 ### [NORMAL_MODE] SELECT MULTIPLE LINES
 
-For example, if I'm on line 5 and I want to select to line 35, I might press *ma* to place mark *a* on line 5, then *:35* to move to line 35. Shift + v to enter linewise visual mode, and finally *`a* to select back to mark a.
+For example, if I'm on line 5 and I want to select to line 35, I might press *ma* to place mark *a* on line 5, then *:35* to move to line 35. Shift + v (or Crtl + v to select just columns) to enter linewise visual mode, and finally *`a* to select back to mark a.
 
 ### [NORMAL_MODE] COPY UNTIL THE START/END OF THE LINE
 
@@ -50,4 +50,22 @@ The normal-mode command to move to the end of the line is with the $ symbol. You
 
 Check :h registers for more information.
 
+### [NORMAL_MODE] JUMP BETWEEN WINDOWS
+
+Ctrl + W. Check out :help window-moving for more information.
+
+### MAP :W to :w
+
+A very annoying thing about vim is that frequently you type :W instead of :w. You can remap those commands in your .vimrc:
+
+```
+cmap W w
+cmap Q q
+```
+
+### [NORMAL_MODE] COMMENT MULTIPLE LINES
+
+We can comment at the same time a number of lines:
+
+Ctrl + v → jj...jj → I → // or # or % ... → ESC
 
