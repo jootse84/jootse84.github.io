@@ -1,6 +1,8 @@
 A perceptron classifier is a simple model of a neuron. This machine learning algorithm is used as a supervised learning classifier - a function that given a set of elements can decide if a new element belongs to a predefined category.
 
-We can compare the way it works as a *simple version* of a biological neuron: the dentrites recieves signals and the cell body process them. After that processing, the axon's neuron will send signals out to other neurons.
+The first concept of the perceptron learning rule comes from 1957 Frank Rosenblatt's paper [*The Perceptron, a Perceiving and Recognizing Automaton*](http://blogs.umass.edu/brain-wars/files/2016/03/rosenblatt-1957.pdf). I can't recommend reading it highly enough if you are interested in the topic, as Rosenblatt's explains very clearly the biological similarites of his algorithm proposal.
+
+We can compare the way a Perceptron works as a *simple version* of a biological neuron: the dentrites recieves signals and the cell body process them. After that processing, the axon's neuron will send signals out to other neurons.
 
 Now you will think, how does the classifier makes the processing?
 
@@ -132,7 +134,7 @@ ax.set_title('Perceptron')
 # Issues and notes about perceptrons
 
 Notes I have been taken during the research and study of perceptrons - recheck when have some time:
-- Does the perceptron converge? If so, what does it converge to? And how long does it take? If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates.
+- Does the perceptron converge? If so, what does it converge to? And how long does it take? If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) and the learning rate is sufficiently small the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates. On the other hand, if the two classes are not linearly separable the perceptron would never stop updating, that is the reason to set a maximum number of passes.
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).
 
