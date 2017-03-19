@@ -4,13 +4,13 @@ Document similarity is a huge field in Natural Language Processing, so our purpo
 
 # Creating a semantical representation
 
-The difference between semantical vs syntactical representation lies in the idea of distance between words based on the likeness of their **meaning** as opposed to their **syntactical composition** (i.e. word order, lexemes or how the String is created).
+The difference between semantical vs lexical representation lies in the idea of distance between words based on the likeness of their **meaning** as opposed to their **lexical composition** (i.e. word order, lexemes or how the String is created).
 
 Let's take a look at these two sentences:
 - The **bear** shit in the woods.
 - I can't **bear** this shit.
 
-Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'handle' or 'upset'.
+Both sentences are lexically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'handle' or 'upset'.
 
 
 ![alt lsh]({{ site.url }}/assets/images/lsh_post/bear.jpg)
