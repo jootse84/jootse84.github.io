@@ -24,11 +24,11 @@ It is possible to compare the resulting vector representation from our documents
 
 The following picture shows how four documents (represented by the colors green, red, orange and blue) are located into buckets after applied a hash function. Because the green and the red document are placed in the same bucket, we can conclude that those documents are *neighbors* or similar.
 
-![alt lsh]({{ site.url }}/assets/images/lsh_post/lsh1.png)
+![alt lsh]({{ site.url }}/assets/images/lsh_post/lsh1.jpg)
 
 Because of the random nature of the hash function, obviously calling it only once opens the door to possible errors. In the following picture all the documents are placed in different buckets, so it is impossible for us to conclude the similarities between them.
 
-![alt lsh]({{ site.url }}/assets/images/lsh_post/lsh2.png)
+![alt lsh]({{ site.url }}/assets/images/lsh_post/lsh2.jpg)
 
 That is why *LSH* hashes multiple times trying to avoid this situation.
 
