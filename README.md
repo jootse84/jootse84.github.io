@@ -1,3 +1,3 @@
 # Jose's blog
 
-Just a simple blog about Web Development.
+A general Computer Science blog. My fun thoughts on coding problems, ideas and projects.
