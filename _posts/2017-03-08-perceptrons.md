@@ -134,7 +134,8 @@ ax.set_title('Perceptron')
 # Issues and notes about perceptrons
 
 Notes I have been taken during the research and study of perceptrons - recheck when have some time:
-- Does the perceptron converge? If so, what does it converge to? And how long does it take? If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) and the learning rate is sufficiently small the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates. On the other hand, if the two classes are not linearly separable the perceptron would never stop updating, that is the reason to set a maximum number of passes.
+- Does the perceptron converge? If so, what does it converge to? And how long does it take? The basic idea of the perceptron is to run a particular algorithm
+until a linear separator is found. If the data is **linearly separable** (exists some hyperplane that puts all the positive examples on one side and all the negative examples on the other side) and the learning rate is sufficiently small the perceptron will converge. At some point it will make an entire pass through the training data without making any more updates. On the other hand, if the two classes are not linearly separable the perceptron would never stop updating, that is the reason to set a maximum number of passes.
 
 - The perceptron is a linear model that cannot solve the [XOR problem](http://toritris.weebly.com/perceptron-5-xor-how--why-neurons-work-together.html).
 

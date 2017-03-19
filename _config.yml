@@ -1,6 +1,6 @@
 # Site Info
 title:              "Jose's blog"
-description:        "I wouldn’t call this blog a classical web development blog."
+description:        "A general Computer Science blog. My fun thoughts on coding problems, ideas and projects."
 
 # Author Info
 author_name:        "Jose E. Martinez"
@@ -26,6 +26,9 @@ sass:
 # Other Params
 include:            [ "robots.txt" ]
 exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile" ]
+
+gems:
+  - jekyll-feed
 
 compress_html:
     clippings:      all
