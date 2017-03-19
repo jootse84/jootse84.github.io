@@ -12,9 +12,9 @@ Let's take a look at these two sentences:
 
 Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'action' or 'upset'.
 
-For our script we choose to extract the semantic space from the document content. The script goes through each document word by word and updates the vector representation of the document by adding its semantic relation weight value. Of course, we discard common and irrelevant words like prepositions or articles.
+For our script we choose to extract the semantic space from the document content. The script goes through each document word by word and updates the vector representation of the document by adding its semantic relation weight value. Of course, it discards irrelevant words like prepositions or articles.
 
-In addition, the semantic value takes into account the [entropy](https://www.quora.com/What-is-high-entropy-data) of each word, grading and updating the word's weight by its ambiguity and uninformativeness. A not very relevant word should have a high entropy, which will reverberate in a small update of the document vector representation.
+In addition of the semantic value, we also take into account the [entropy](https://www.quora.com/What-is-high-entropy-data) of each word, grading and updating the word's weight by its ambiguity and uninformativeness. A not very relevant word should have a high entropy, which will reverberate in a small update of the document vector representation.
 
 # Calculating similarities
 
