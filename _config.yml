@@ -10,6 +10,7 @@ twitter_username:   jootse84
 # Site Settings
 baseurl:            "" # Base URL must end WITHOUT a slash, default: ""
 permalink:          /notes/:title # Post permalink
+url:                https://jootse.github.io
 timezone:           Asia/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 # Site Build
