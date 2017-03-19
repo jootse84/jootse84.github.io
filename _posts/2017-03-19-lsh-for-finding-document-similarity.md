@@ -10,7 +10,7 @@ Let's take a look at these two sentences:
 - The **bear** shit in the woods.
 - I can't **bear** this shit.
 
-Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'action' or 'upset'.
+Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'handle' or 'upset'.
 
 
 ![alt lsh]({{ site.url }}/assets/images/lsh_post/bear.jpg)
