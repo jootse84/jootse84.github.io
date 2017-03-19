@@ -1,13 +1,13 @@
 Last Tuesday [winter storm Stella hit New York](http://www.independent.co.uk/news/world/americas/stella-storm-blizzard-emergency-weather-ice-rain-a7630316.html), and because it was impossible to commute to [RC](https://www.recurse.com/) me and my roommate [@nandajavarma](https://twitter.com/nandajavarma) decided to spend our afternoon coding a [Python script](https://github.com/nandajavarma/document-similarity) to calculate the similarities between different documents.
 
-Document similarity is a huge field in Natural Language Processing, so our purpose was to experiment with some simple concepts and see the results of comparing few documents. We divided the job into two tasks to be able to cover the whole functionality in one day: my roommate was in charge of extracting the semantics of the documents while I was in charge of calculating the similarities of the resulting extractions.
+Document similarity is a huge field in Natural Language Processing, so our purpose was to experiment with some simple concepts and see the results of comparing a few documents. We divided the job into two tasks to be able to cover the whole functionality in one day: my roommate was in charge of extracting the semantics of the documents while I was in charge of calculating the similarities of the resulting extractions.
 
 # Creating a semantical representation
 
 The difference between semantical vs syntactical representation lies in the idea of distance between words based on the likeness of their **meaning** as opposed to their **syntactical composition** (i.e. word order, lexemes or how the String is created).
 
 Let's take a look at these two sentences:
-- The **bear** is shitting in the woods.
+- The **bear** shit in the woods.
 - I can't **bear** this shit.
 
 Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'action' or 'upset'.
@@ -15,9 +15,9 @@ Both sentences are syntactically quite similar but semantically different. The w
 
 ![alt lsh]({{ site.url }}/assets/images/lsh_post/bear.jpg)
 
-For our script we choose to extract the semantic space from the document content. The script goes through each document word by word and updates the vector representation of the document by adding its semantic relation weight value. Of course, it discards irrelevant words like prepositions or articles.
+For our script we chose to extract the semantic space from the document content. The script goes through each document word by word and updates the vector representation of the document by adding its semantic relation weight value. Of course, it discards irrelevant words like prepositions or articles.
 
-In addition of the semantic value, we also take into account the [entropy](https://www.quora.com/What-is-high-entropy-data) of each word, grading and updating the word's weight by its ambiguity and uninformativeness. A not very relevant word should have a high entropy, which will reverberate in a small update of the document vector representation.
+In addition of the semantic value, we also take into account the [entropy](https://www.quora.com/What-is-high-entropy-data) of each word, grading and updating the word's weight by its ambiguity and uninformativeness. A not very relevant word should have a high entropy, which will manifest ifself in a small update of the document vector representation.
 
 # Calculating similarities
 
@@ -41,7 +41,7 @@ Our [script](https://github.com/nandajavarma/document-similarity) returns a valu
 
 # Conclusions and results
 
-At the end, being unable to leave home because of the winter storm wasn't that bad. It was a great experience to pair with [@nandajavarma](https://twitter.com/nandajavarma), and we managed in just one day to finish the script. Surprisingly the results when comparing different documents are quite good. We are kind of proud of what we achieved in just an afternoon.
+At the end, being unable to leave home because of the winter storm wasn't that bad. It was a great experience to pair with [@nandajavarma](https://twitter.com/nandajavarma), and we managed in just one day to finish the script. Surprisingly the results when comparing different documents are quite good. We are kind of proud of what we achieved in just one afternoon.
 
 ```python
 > python similarity.py sample_pdfs/Star\ Wars.pdf sample_pdfs/Star\ Trek.pdf sample_pdfs/Chocolate.pdf 
@@ -50,6 +50,6 @@ At the end, being unable to leave home because of the winter storm wasn't that b
 Star Wars        1.0        0.9        0.2
 ```
 
-In the future, it would be nice to modify the code in order to try different approaches from the *LSH* algorithm. For instance, it is possible to divide the vector representation of a document in *N* parts and instead of hashing against the whole vector, hash against one of the *N* parts.
+In the future, it would be nice to modify the code in order to try different approaches of the *LSH* algorithm and compare results. For instance, it is possible to divide the vector representation of a document into *N* parts - instead of hashing against the whole vector, each hash function is used against one slice of the vector.
 
 
