@@ -12,6 +12,7 @@ Let's take a look at these two sentences:
 
 Both sentences are syntactically quite similar but semantically different. The word *bear* has a different connotation in each sentence; in the first one we can link the interpretation of 'bear' with 'animal' or 'dangerous' while in the second one we can link it with words like 'action' or 'upset'.
 
+
 ![alt lsh]({{ site.url }}/assets/images/lsh_post/bear.jpg)
 
 For our script we choose to extract the semantic space from the document content. The script goes through each document word by word and updates the vector representation of the document by adding its semantic relation weight value. Of course, it discards irrelevant words like prepositions or articles.
@@ -36,7 +37,19 @@ That is why *LSH* hashes multiple times trying to avoid this situation.
 
 For instance, given documents *A* and *B* our [Python script](https://github.com/nandajavarma/document-similarity) get their similarity by calculating the result of *N* different hash functions from both document vector representations. The index similarity between both documents should be calculated by summing the number of times those hashes are placed in the same bucket and dividing that sum by the number of total hash functions - *N*.
 
-Our [script](https://github.com/nandajavarma/document-similarity) returns a value between zero and one representing the similarity of both documents. The more closer to one the value is, the more similar are those documents.
+Our [script](https://github.com/nandajavarma/document-similarity) returns a value between zero and one representing the similarity of both documents. The closer to one the value is the more similar those documents are.
 
-*LSH* has different approaches. For instance, it is possible to divide the vector representation of a document in *N* parts and instead of hashing against the whole vector, hash against one of the *N* parts.
+# Conclusions and results
+
+At the end, being unable to leave home because of the winter storm wasn't that bad. It was a great experience to pair with [@nandajavarma](https://twitter.com/nandajavarma), and we managed in just one day to finish the script. Surprisingly the results when comparing different documents are quite good. We are kind of proud of what we achieved in just an afternoon.
+
+```python
+> python similarity.py sample_pdfs/Star\ Wars.pdf sample_pdfs/Star\ Trek.pdf sample_pdfs/Chocolate.pdf 
+
+    title  Star Wars  Star Trek  Chocolate
+Star Wars        1.0        0.9        0.2
+```
+
+In the future, it would be nice to modify the code in order to try different approaches from the *LSH* algorithm. For instance, it is possible to divide the vector representation of a document in *N* parts and instead of hashing against the whole vector, hash against one of the *N* parts.
+
 
