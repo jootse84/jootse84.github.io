@@ -1,6 +1,6 @@
 Selecting a place to eat in New York on the fly is safe with the city's restaurant inspection letter rating. Each restaurant is inspected at least once per year by the [Health Department](https://www1.nyc.gov/site/doh/services/restaurant-grades.page). The inspectors check the food quality and temperature, in addition of space and personal hygiene. 
 
-After the inspection, restaurants get assigned a grade represented by a letter from A to C being the first one the best rating - *A: super clean*; while the last one the worst rate - *C: let's say dirty*. Restaurants are requiered to post a placard advertising the letter grade, which assures consumers can decide if they want to take the risk and eat in a restaurant with a low rate. Then, of course, tricky owners manage solutions to cover bad inspections:
+After the inspection, restaurants get assigned a grade represented by a letter from A to C being the first one the best rating - *A: super clean*; while the last one the worst rate - *C: let's say dirty*. Restaurants are required to post a placard advertising the letter grade, which assures consumers can decide if they want to take the risk and eat in a restaurant with a low rate. Then, of course, tricky owners manage solutions to cover bad inspections:
 
 ![alt a nice restaurant]({{ site.url }}/assets/images/proper_eats_post.jpg)
 
@@ -8,7 +8,7 @@ After the inspection, restaurants get assigned a grade represented by a letter f
 
 [NYC OpenData](https://opendata.cityofnewyork.us/) contains a long list of interesting datasets from the city of New York and accessible to everyone. The [DOHMH New York City Restaurant Inspection Results](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59) is a good source where curious people like me can play around analyzing restaurant grades. In this case I decided to create a simple map visualization of the city including restaurants labeled by their grades.
 
-Let's dive into code!
+Let's dive into the code!
 
 ```python
 import numpy as np
@@ -25,9 +25,9 @@ mRests["GRADE"] = mRests["GRADE"].astype("category", categories = ["A","B","C","
 
 ```
 
-From the previous code, we are only going to focus on restaurants from Manhattan already graded by the Health Department. Also we need to tell pandas that our feature *GRADE* from the dataset is categorical, which means that exists a logical order in the values - *"A" being the best grade while "Z" being the worst*.
+From the previous code, we are only going to focus on restaurants from Manhattan already graded by the Health Department. Also, we need to tell pandas that the feature *GRADE* from the dataset is categorical, which means that exists a logical order in the values - *"A" being the best grade while "Z" being the worst*.
 
-In order to plot the points on the maps, we will need to convert the addresses to a geolocation. The addresses provided by the dataset are very inconsistent with their labeling so we have to go through each one and normalize them. The next code basically converts numbers to words, and orginal words to numbers.
+In order to plot the points on the maps, we will need to convert the addresses to a geolocation. The addresses provided by the dataset are very inconsistent with their labeling so we have to go through each one and normalize them. The next code basically converts numbers to words, and original words to numbers.
 
 We use the Python package [inflect](https://pypi.python.org/pypi/inflect) to convert numbers of addresses to words and re for matching regular expressions:
 
@@ -78,9 +78,9 @@ Name: Address, dtype: object
 
 In order to start with our map, we need to get the geocode from the previous addresses, to match them with the latitude/longitude points. Let's suppose we already coded these addresses using a Python package like [geopy](https://pypi.python.org/pypi/geopy) and saved the results inside our dataset with the features "long" and "lat".
 
-Now we can use [Folium](http://python-visualization.github.io/folium/) to create the final map from our code. If you have no knowledge of JavaScript nor leaflet, with Folium you can plot in an awesome interactive map your data just by writting few lines of Python.
+Now we can use [Folium](http://python-visualization.github.io/folium/) to create the final map from our code. If you have no knowledge of JavaScript nor leaflet, with Folium you can plot in an awesome interactive map your data just by writing a few lines of Python.
 
-For this example we are going to plot the restaurants with markers (green for *A-restaurants*, blue for *B-restaurants* and red for the rest). In addition the interactive map will popup a window with the name, score and grade of the restaurant when the user place their cursor on the marker.
+For this example we are going to plot the restaurants with markers (green for *A-restaurants*, blue for *B-restaurants* and red for the rest). In addition the interactive map will popup a window with the name, score and grade of the restaurant when the user place the cursor on the marker.
 
 ```python
 import folium
