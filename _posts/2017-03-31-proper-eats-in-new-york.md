@@ -8,13 +8,10 @@ After the inspection, restaurants get assigned a grade represented by a letter f
 
 [NYC OpenData](https://opendata.cityofnewyork.us/) contains a long list of interesting datasets from the city of New York and accessible to everyone. The [DOHMH New York City Restaurant Inspection Results](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/xx67-kt59) is a good source where curious people like me can play around analyzing restaurant grades. In this case I decided to create a simple map visualization of the city including restaurants labeled by their grades.
 
-Let's dive into the code!
+We are going to use Python and pandas to play with the data. Let's dive into the code!
 
 ```python
-import numpy as np
 import pandas as pd
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 rests = pd.read_csv("NYC_Restaurants.csv")
 
 mRests = rests[rests['BORO']=="MANHATTAN"]
@@ -25,7 +22,7 @@ mRests["GRADE"] = mRests["GRADE"].astype("category", categories = ["A","B","C","
 
 ```
 
-From the previous code, we are only going to focus on restaurants from Manhattan already graded by the Health Department. Also, we need to tell pandas that the feature *GRADE* from the dataset is categorical, which means that exists a logical order in the values - *"A" being the best grade while "Z" being the worst*.
+The previous code slices our data and discards any restaurant not located in Manhattan and already graded by the Health Department. Also, we need to tell pandas that the feature *GRADE* from the dataset is categorical, which means that exists a logical order in the values - *"A" being the best grade while "Z" being the worst*.
 
 In order to plot the points on the maps, we will need to convert the addresses to a geolocation. The addresses provided by the dataset are very inconsistent with their labeling so we have to go through each one and normalize them. The next code basically converts numbers to words, and original words to numbers.
 
