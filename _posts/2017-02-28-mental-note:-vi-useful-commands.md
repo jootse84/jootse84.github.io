@@ -69,3 +69,7 @@ We can comment at the same time a number of lines:
 
 Ctrl + v → jj...jj → I → // or # or % ... → ESC
 
+### [INSERT_MODE] GET SUGGESTIONS
+
+Use Ctrl + p if you want to get a list of suggestions while typing.
+

@@ -10,6 +10,8 @@ Given an input element, each feature/column is multiplied by a *weight* value th
 
 All those signals, after multiplied by its weights, will be summed up to a single value. The perceptron also adjusts the offset or *bias* of those calculations.
 
+^\sum_j w_j x_j + b^
+
 Finally, the result will turn into the output signal. Depending on the sum of the previous calculations an *activation function* (or *transfer function*) will classify the result to the category predicted. 
 
 We can think about perceptrons as the most basic form of a neural network. The following illustration helps to better to understand the process:
@@ -20,7 +22,14 @@ We can think about perceptrons as the most basic form of a neural network. The f
 
 The basic form of activation function is the simple binary function that has as a possible results 0 or 1. It basically returns one if the output is positive while zero if it is negative.
 
-f(s) = ^\begin{cases} 1 & \textrm{if } s \ge 0 \\ 0 & \textrm{otherwise} \end{cases}^
+f(s) = ^\begin{eqnarray}
+  \mbox{output} = \left\{ 
+    \begin{array}{ll} 
+      0 & \mbox{if } w\cdot x + b \leq 0 \\
+      1 & \mbox{if } w\cdot x + b > 0
+    \end{array}
+  \right.
+\tag{2}\end{eqnarray}^
 
 # Calculate weights and bias of the perceptron
 
