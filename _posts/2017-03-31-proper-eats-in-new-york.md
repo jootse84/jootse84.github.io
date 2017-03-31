@@ -101,5 +101,5 @@ for i in range(len(samp)):
 mCluster.save('restaurants.html')
 ```
 
-Voilà, we have a map! Click [here]({{ site.url }}/_includes/restaurants_post.html) to check out the result.
+Voilà, we have a map! Click [here]({{ site.url }}/assets/restaurants_post.html) to check out the result.
 
