@@ -103,5 +103,3 @@ mCluster.save('restaurants.html')
 
 Voilà, we have a map! Click [here]({{ site.url }}/_includes/restaurants_post.html) to check out the result.
 
-{% include restaurants_post.html %}
-
