@@ -29,7 +29,7 @@ From the previous code, we are only going to focus on restaurants from Manhattan
 
 In order to plot the points on the maps, we will need to convert the addresses to a geolocation. The addresses provided by the dataset are very inconsistent with their labeling so we have to go through each one and normalize them. The next code basically converts numbers to words, and original words to numbers.
 
-We use the Python package [inflect](https://pypi.python.org/pypi/inflect) to convert numbers of addresses to words and re for matching regular expressions:
+We use the Python package [inflect](https://pypi.python.org/pypi/inflect) to convert numbers of addresses to words and [re](https://docs.python.org/2/library/re.html) for matching regular expressions:
 
 ```python
 import inflect
