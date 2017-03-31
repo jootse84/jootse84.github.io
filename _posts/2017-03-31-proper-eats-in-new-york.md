@@ -73,7 +73,7 @@ Name: Address, dtype: object
 
 # Folium
 
-In order to start with our map, we need to get the geocode from the previous addresses, to match them with the latitude/longitude points. Let's suppose we already coded these addresses using a Python package like [geopy](https://pypi.python.org/pypi/geopy) and saved the results inside our dataset with the features "long" and "lat".
+In order to build the map, we need to get the geocode from the previous addresses to match them with the latitude/longitude points. Let's suppose we already coded these addresses using a Python package like [geopy](https://pypi.python.org/pypi/geopy) and saved the results in our dataset with the features "long" and "lat".
 
 Now we can use [Folium](http://python-visualization.github.io/folium/) to create the final map from our code. If you have no knowledge of JavaScript nor leaflet, with Folium you can plot in an awesome interactive map your data just by writing a few lines of Python.
 
