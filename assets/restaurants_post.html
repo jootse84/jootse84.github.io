@@ -1,0 +1,3773 @@
+
+        <!DOCTYPE html>
+        <head>
+            
+        
+            <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster-src.js"></script>
+        
+        
+        
+            
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js"></script>
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css" />
+        
+        
+        
+            
+        
+            <link rel="stylesheet" href="https://raw.githubusercontent.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css" />
+        
+        
+        
+            
+            <style>
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                }
+
+            #map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+            
+        
+            
+            <style> #map_693e771c97c248bab81ae263acdd56bd {
+                position : relative;
+                width : 100.0%;
+                height: 100.0%;
+                left: 0.0%;
+                top: 0.0%;
+                }
+            </style>
+        
+        
+        
+        </head>
+        <body>
+            
+        
+            
+            <div class="folium-map" id="map_693e771c97c248bab81ae263acdd56bd" ></div>
+        
+        
+        
+        </body>
+        <script>
+            
+        
+            
+
+            var southWest = L.latLng(-90, -180);
+            var northEast = L.latLng(90, 180);
+            var bounds = L.latLngBounds(southWest, northEast);
+
+            var map_693e771c97c248bab81ae263acdd56bd = L.map('map_693e771c97c248bab81ae263acdd56bd', {
+                                           center:[40.7831,-73.9712],
+                                           zoom: 12,
+                                           maxBounds: bounds,
+                                           layers: [],
+                                           crs: L.CRS.EPSG3857
+                                         });
+            
+        
+        
+            
+            var tile_layer_ccc63b3cafec4d229a2ad2ca3758005f = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                    maxZoom: 18,
+                    minZoom: 1,
+                    attribution: 'Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.',
+                    detectRetina: false
+                    }
+                ).addTo(map_693e771c97c248bab81ae263acdd56bd);
+
+        
+        
+            
+            var marker_cluster_58ebf5b973f64c989e9b950718214e44 = L.markerClusterGroup();
+            map_693e771c97c248bab81ae263acdd56bd.addLayer(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+            var marker_116d5082e84c41aab77a06c6f6bfb771 = L.marker(
+                [40.755086,-73.981982],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8a0e450aa85149a0be1a28b7794ae50d = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_116d5082e84c41aab77a06c6f6bfb771.setIcon(icon_8a0e450aa85149a0be1a28b7794ae50d);
+            
+        
+            
+            var popup_29c24bf2d4e74d55b2680f8ec79e252b = L.popup({maxWidth: '300'});
+
+            
+                var html_618bd8834da149de999c258afdb35ab6 = $('         <div id="html_618bd8834da149de999c258afdb35ab6"                 style="width: 100.0%; height: 100.0%;">                 Name: BUMBLE AND BUMBLE Score: 13.0 Grade: A</div>                 ')[0];
+                popup_29c24bf2d4e74d55b2680f8ec79e252b.setContent(html_618bd8834da149de999c258afdb35ab6);
+            
+
+            marker_116d5082e84c41aab77a06c6f6bfb771.bindPopup(popup_29c24bf2d4e74d55b2680f8ec79e252b);
+
+            
+        
+        
+            
+
+            var marker_0c9011ba948e49adba81481cccb5fa97 = L.marker(
+                [40.742555,-74.006084],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_380b73c44dac441da57431f802a56d01 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0c9011ba948e49adba81481cccb5fa97.setIcon(icon_380b73c44dac441da57431f802a56d01);
+            
+        
+            
+            var popup_a3a8230e54c447f9a14cff0a89f214cb = L.popup({maxWidth: '300'});
+
+            
+                var html_559e2914af5847b382c0b6987d00dc7b = $('         <div id="html_559e2914af5847b382c0b6987d00dc7b"                 style="width: 100.0%; height: 100.0%;">                 Name: PITA GRILL Score: 12.0 Grade: A</div>                 ')[0];
+                popup_a3a8230e54c447f9a14cff0a89f214cb.setContent(html_559e2914af5847b382c0b6987d00dc7b);
+            
+
+            marker_0c9011ba948e49adba81481cccb5fa97.bindPopup(popup_a3a8230e54c447f9a14cff0a89f214cb);
+
+            
+        
+        
+            
+
+            var marker_14fbea6e1baf44cdae6a5a012f3ee281 = L.marker(
+                [40.756746,-73.993477],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_7e6a8b8e3ddf4f2aaa1e045c2413b4d4 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_14fbea6e1baf44cdae6a5a012f3ee281.setIcon(icon_7e6a8b8e3ddf4f2aaa1e045c2413b4d4);
+            
+        
+            
+            var popup_8f2df67225384b7d93c8a15e1ca944ef = L.popup({maxWidth: '300'});
+
+            
+                var html_156b9cbc3537429bbe41cebf5aac8bb6 = $('         <div id="html_156b9cbc3537429bbe41cebf5aac8bb6"                 style="width: 100.0%; height: 100.0%;">                 Name: OMONIA CAFE Score: 6.0 Grade: A</div>                 ')[0];
+                popup_8f2df67225384b7d93c8a15e1ca944ef.setContent(html_156b9cbc3537429bbe41cebf5aac8bb6);
+            
+
+            marker_14fbea6e1baf44cdae6a5a012f3ee281.bindPopup(popup_8f2df67225384b7d93c8a15e1ca944ef);
+
+            
+        
+        
+            
+
+            var marker_c50829ea61834178994acd9174fda598 = L.marker(
+                [40.757811,-73.970822],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_f873c5336d944fa2b51655391e69cc7d = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c50829ea61834178994acd9174fda598.setIcon(icon_f873c5336d944fa2b51655391e69cc7d);
+            
+        
+            
+            var popup_ff6505a8b8594527874e6f92c83639e1 = L.popup({maxWidth: '300'});
+
+            
+                var html_b9efbebe9e7540ab99427b97b2bc511a = $('         <div id="html_b9efbebe9e7540ab99427b97b2bc511a"                 style="width: 100.0%; height: 100.0%;">                 Name: ALIDORO Score: 12.0 Grade: A</div>                 ')[0];
+                popup_ff6505a8b8594527874e6f92c83639e1.setContent(html_b9efbebe9e7540ab99427b97b2bc511a);
+            
+
+            marker_c50829ea61834178994acd9174fda598.bindPopup(popup_ff6505a8b8594527874e6f92c83639e1);
+
+            
+        
+        
+            
+
+            var marker_903c158fb1f9469981128e775283a3ce = L.marker(
+                [40.729353,-73.984012],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0bbee59caeb54edea2b051390a6dd2ac = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_903c158fb1f9469981128e775283a3ce.setIcon(icon_0bbee59caeb54edea2b051390a6dd2ac);
+            
+        
+            
+            var popup_b9474fb677044262a47d02cfbb01caac = L.popup({maxWidth: '300'});
+
+            
+                var html_a82236bb8df140f4a3e8c002b9606fbc = $('         <div id="html_a82236bb8df140f4a3e8c002b9606fbc"                 style="width: 100.0%; height: 100.0%;">                 Name: EQUESTRIS Score: 26.0 Grade: B</div>                 ')[0];
+                popup_b9474fb677044262a47d02cfbb01caac.setContent(html_a82236bb8df140f4a3e8c002b9606fbc);
+            
+
+            marker_903c158fb1f9469981128e775283a3ce.bindPopup(popup_b9474fb677044262a47d02cfbb01caac);
+
+            
+        
+        
+            
+
+            var marker_da2fae5b70c8478f847d9dd1749b6863 = L.marker(
+                [40.716382,-73.998228],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_926f2ccf8d004810aab7e6a6b89159d7 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_da2fae5b70c8478f847d9dd1749b6863.setIcon(icon_926f2ccf8d004810aab7e6a6b89159d7);
+            
+        
+            
+            var popup_ffede52a14e8455aa640463b83ea5101 = L.popup({maxWidth: '300'});
+
+            
+                var html_434301af3dab444388847d88847abccb = $('         <div id="html_434301af3dab444388847d88847abccb"                 style="width: 100.0%; height: 100.0%;">                 Name: THAI @ LEX Score: 8.0 Grade: A</div>                 ')[0];
+                popup_ffede52a14e8455aa640463b83ea5101.setContent(html_434301af3dab444388847d88847abccb);
+            
+
+            marker_da2fae5b70c8478f847d9dd1749b6863.bindPopup(popup_ffede52a14e8455aa640463b83ea5101);
+
+            
+        
+        
+            
+
+            var marker_d7e79fdb47a64c0e904be88c6e54beee = L.marker(
+                [40.724783,-73.983822],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_2925f8c6c56143b68bdd440c3a5682c2 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d7e79fdb47a64c0e904be88c6e54beee.setIcon(icon_2925f8c6c56143b68bdd440c3a5682c2);
+            
+        
+            
+            var popup_c21e2a6740164047905f9af0b8b0a819 = L.popup({maxWidth: '300'});
+
+            
+                var html_1f028b346db64ae990f7483984355099 = $('         <div id="html_1f028b346db64ae990f7483984355099"                 style="width: 100.0%; height: 100.0%;">                 Name: DEEP BLUE Score: 2.0 Grade: A</div>                 ')[0];
+                popup_c21e2a6740164047905f9af0b8b0a819.setContent(html_1f028b346db64ae990f7483984355099);
+            
+
+            marker_d7e79fdb47a64c0e904be88c6e54beee.bindPopup(popup_c21e2a6740164047905f9af0b8b0a819);
+
+            
+        
+        
+            
+
+            var marker_c4c05ad8aa8d4f83b5bd95b586fa5d42 = L.marker(
+                [40.739398,-74.00222],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_4fb6af1bccea49c682ac91fc3fab2c07 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c4c05ad8aa8d4f83b5bd95b586fa5d42.setIcon(icon_4fb6af1bccea49c682ac91fc3fab2c07);
+            
+        
+            
+            var popup_8d0ff0f1f1ef4f079929af5db08fdcc4 = L.popup({maxWidth: '300'});
+
+            
+                var html_2b831ac474ac4a68a2bed56d38c709bc = $('         <div id="html_2b831ac474ac4a68a2bed56d38c709bc"                 style="width: 100.0%; height: 100.0%;">                 Name: THE BAO Score: 13.0 Grade: A</div>                 ')[0];
+                popup_8d0ff0f1f1ef4f079929af5db08fdcc4.setContent(html_2b831ac474ac4a68a2bed56d38c709bc);
+            
+
+            marker_c4c05ad8aa8d4f83b5bd95b586fa5d42.bindPopup(popup_8d0ff0f1f1ef4f079929af5db08fdcc4);
+
+            
+        
+        
+            
+
+            var marker_2f1d2fb95a6348c6bc24fcf7b8cdf3d0 = L.marker(
+                [40.825871,-73.948381],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_9835f7cce8ec49a5839608b7833a4b45 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2f1d2fb95a6348c6bc24fcf7b8cdf3d0.setIcon(icon_9835f7cce8ec49a5839608b7833a4b45);
+            
+        
+            
+            var popup_7ae1baafd3814efe825050f677c62b9d = L.popup({maxWidth: '300'});
+
+            
+                var html_0a0f8613b29d4bdcab0912b9ecd05f84 = $('         <div id="html_0a0f8613b29d4bdcab0912b9ecd05f84"                 style="width: 100.0%; height: 100.0%;">                 Name: TOLOACHE TAQUERIA Score: 12.0 Grade: A</div>                 ')[0];
+                popup_7ae1baafd3814efe825050f677c62b9d.setContent(html_0a0f8613b29d4bdcab0912b9ecd05f84);
+            
+
+            marker_2f1d2fb95a6348c6bc24fcf7b8cdf3d0.bindPopup(popup_7ae1baafd3814efe825050f677c62b9d);
+
+            
+        
+        
+            
+
+            var marker_3d84830dd8454187850ceed15c1888f4 = L.marker(
+                [40.739194,-73.995911],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_3e4fbd01598d4b7f8d3615c753dc8ed1 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3d84830dd8454187850ceed15c1888f4.setIcon(icon_3e4fbd01598d4b7f8d3615c753dc8ed1);
+            
+        
+            
+            var popup_93d8b3b4d24f46a6b1433a79397cfae3 = L.popup({maxWidth: '300'});
+
+            
+                var html_48ba55eaac5b47fdb916bfb7318473bd = $('         <div id="html_48ba55eaac5b47fdb916bfb7318473bd"                 style="width: 100.0%; height: 100.0%;">                 Name: SURYA SWEETS &amp; SNACKS Score: 9.0 Grade: A</div>                 ')[0];
+                popup_93d8b3b4d24f46a6b1433a79397cfae3.setContent(html_48ba55eaac5b47fdb916bfb7318473bd);
+            
+
+            marker_3d84830dd8454187850ceed15c1888f4.bindPopup(popup_93d8b3b4d24f46a6b1433a79397cfae3);
+
+            
+        
+        
+            
+
+            var marker_cc8f4785ab7d4f27a96c758ba77aa3ab = L.marker(
+                [40.755057,-73.983687],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_7a802a2958504444ac664f5a72c761b8 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_cc8f4785ab7d4f27a96c758ba77aa3ab.setIcon(icon_7a802a2958504444ac664f5a72c761b8);
+            
+        
+            
+            var popup_b1c9e42c658343bd995c1b63e5c98296 = L.popup({maxWidth: '300'});
+
+            
+                var html_f985ea22f1c1420b84a117cc2b9deb5b = $('         <div id="html_f985ea22f1c1420b84a117cc2b9deb5b"                 style="width: 100.0%; height: 100.0%;">                 Name: SANBRA DOOR RESTAURANT Score: 10.0 Grade: A</div>                 ')[0];
+                popup_b1c9e42c658343bd995c1b63e5c98296.setContent(html_f985ea22f1c1420b84a117cc2b9deb5b);
+            
+
+            marker_cc8f4785ab7d4f27a96c758ba77aa3ab.bindPopup(popup_b1c9e42c658343bd995c1b63e5c98296);
+
+            
+        
+        
+            
+
+            var marker_49851aa66e1f4d618479120e7e14eb2e = L.marker(
+                [40.750411,-73.990716],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_193fd9ca674140d2b176d299a24c664c = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_49851aa66e1f4d618479120e7e14eb2e.setIcon(icon_193fd9ca674140d2b176d299a24c664c);
+            
+        
+            
+            var popup_00971d65346f4ab8ab6466452d9780e4 = L.popup({maxWidth: '300'});
+
+            
+                var html_cb41edc5df0c4dde89849bbda95f7104 = $('         <div id="html_cb41edc5df0c4dde89849bbda95f7104"                 style="width: 100.0%; height: 100.0%;">                 Name: AVENITA DINER Score: 9.0 Grade: A</div>                 ')[0];
+                popup_00971d65346f4ab8ab6466452d9780e4.setContent(html_cb41edc5df0c4dde89849bbda95f7104);
+            
+
+            marker_49851aa66e1f4d618479120e7e14eb2e.bindPopup(popup_00971d65346f4ab8ab6466452d9780e4);
+
+            
+        
+        
+            
+
+            var marker_c35f502c46fa481899b98b3e7db309dd = L.marker(
+                [40.76099,-73.990465],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_81c0bc77f7d9441a947f31554064000c = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c35f502c46fa481899b98b3e7db309dd.setIcon(icon_81c0bc77f7d9441a947f31554064000c);
+            
+        
+            
+            var popup_f94266261f96419f8050e505d1b9bbd5 = L.popup({maxWidth: '300'});
+
+            
+                var html_e27fab4936594f3eae8d18b8700949fd = $('         <div id="html_e27fab4936594f3eae8d18b8700949fd"                 style="width: 100.0%; height: 100.0%;">                 Name: LULO RESTAURANT Score: 9.0 Grade: A</div>                 ')[0];
+                popup_f94266261f96419f8050e505d1b9bbd5.setContent(html_e27fab4936594f3eae8d18b8700949fd);
+            
+
+            marker_c35f502c46fa481899b98b3e7db309dd.bindPopup(popup_f94266261f96419f8050e505d1b9bbd5);
+
+            
+        
+        
+            
+
+            var marker_dce6968725ad4fc2b23f1f630cd880d8 = L.marker(
+                [40.756746,-73.993477],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_07b22fd41cbc43ae88418e67fdb58f7f = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_dce6968725ad4fc2b23f1f630cd880d8.setIcon(icon_07b22fd41cbc43ae88418e67fdb58f7f);
+            
+        
+            
+            var popup_13e07bbb49d6413285bf37d3264c3638 = L.popup({maxWidth: '300'});
+
+            
+                var html_ca3f64cd646647988783de3271fcf0ca = $('         <div id="html_ca3f64cd646647988783de3271fcf0ca"                 style="width: 100.0%; height: 100.0%;">                 Name: DAIRY STOP Score: 10.0 Grade: A</div>                 ')[0];
+                popup_13e07bbb49d6413285bf37d3264c3638.setContent(html_ca3f64cd646647988783de3271fcf0ca);
+            
+
+            marker_dce6968725ad4fc2b23f1f630cd880d8.bindPopup(popup_13e07bbb49d6413285bf37d3264c3638);
+
+            
+        
+        
+            
+
+            var marker_f38c675bd8dc4f08826649c15b8ca676 = L.marker(
+                [40.764963,-73.976197],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_161897ab644c4808be57162ed32c89a0 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f38c675bd8dc4f08826649c15b8ca676.setIcon(icon_161897ab644c4808be57162ed32c89a0);
+            
+        
+            
+            var popup_ed5d586295444fcebc71f6e63bd70983 = L.popup({maxWidth: '300'});
+
+            
+                var html_865a5bb5f0c0447da8972ea12145296d = $('         <div id="html_865a5bb5f0c0447da8972ea12145296d"                 style="width: 100.0%; height: 100.0%;">                 Name: CHOCOLAT Score: 22.0 Grade: B</div>                 ')[0];
+                popup_ed5d586295444fcebc71f6e63bd70983.setContent(html_865a5bb5f0c0447da8972ea12145296d);
+            
+
+            marker_f38c675bd8dc4f08826649c15b8ca676.bindPopup(popup_ed5d586295444fcebc71f6e63bd70983);
+
+            
+        
+        
+            
+
+            var marker_e0e28437042b4e87bea2c386bba3d20c = L.marker(
+                [40.741781,-74.004501],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0e3fb6256e484539a014d9f0b89e2f67 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e0e28437042b4e87bea2c386bba3d20c.setIcon(icon_0e3fb6256e484539a014d9f0b89e2f67);
+            
+        
+            
+            var popup_3ba9d089bf674907bcc2ca4cc32946a8 = L.popup({maxWidth: '300'});
+
+            
+                var html_730aa238f72146ec94a703a305c222f8 = $('         <div id="html_730aa238f72146ec94a703a305c222f8"                 style="width: 100.0%; height: 100.0%;">                 Name: CINNABON Score: 9.0 Grade: A</div>                 ')[0];
+                popup_3ba9d089bf674907bcc2ca4cc32946a8.setContent(html_730aa238f72146ec94a703a305c222f8);
+            
+
+            marker_e0e28437042b4e87bea2c386bba3d20c.bindPopup(popup_3ba9d089bf674907bcc2ca4cc32946a8);
+
+            
+        
+        
+            
+
+            var marker_99ac9bb0534943db9ef9b9ea83a89cbe = L.marker(
+                [40.741618,-74.000685],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_93e81772d4db4dc1b9d7d583d9e14f1a = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_99ac9bb0534943db9ef9b9ea83a89cbe.setIcon(icon_93e81772d4db4dc1b9d7d583d9e14f1a);
+            
+        
+            
+            var popup_cd4e18bd012741118f5cf6a19d7df9f2 = L.popup({maxWidth: '300'});
+
+            
+                var html_62dafccf23f84245a7b642cd3916ea7d = $('         <div id="html_62dafccf23f84245a7b642cd3916ea7d"                 style="width: 100.0%; height: 100.0%;">                 Name: WORLD MARKET Score: 11.0 Grade: A</div>                 ')[0];
+                popup_cd4e18bd012741118f5cf6a19d7df9f2.setContent(html_62dafccf23f84245a7b642cd3916ea7d);
+            
+
+            marker_99ac9bb0534943db9ef9b9ea83a89cbe.bindPopup(popup_cd4e18bd012741118f5cf6a19d7df9f2);
+
+            
+        
+        
+            
+
+            var marker_6a5f5aae67264ebfb70bc3ea833fc114 = L.marker(
+                [40.726131,-73.984196],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_5972d8995cdc478a825c119298a040d5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6a5f5aae67264ebfb70bc3ea833fc114.setIcon(icon_5972d8995cdc478a825c119298a040d5);
+            
+        
+            
+            var popup_d3072d1868cf4600b0849b65ad75eee5 = L.popup({maxWidth: '300'});
+
+            
+                var html_0544df4a07f644e2b71866e7f13fc2ea = $('         <div id="html_0544df4a07f644e2b71866e7f13fc2ea"                 style="width: 100.0%; height: 100.0%;">                 Name: FOO LEE RESTAURANT Score: 21.0 Grade: B</div>                 ')[0];
+                popup_d3072d1868cf4600b0849b65ad75eee5.setContent(html_0544df4a07f644e2b71866e7f13fc2ea);
+            
+
+            marker_6a5f5aae67264ebfb70bc3ea833fc114.bindPopup(popup_d3072d1868cf4600b0849b65ad75eee5);
+
+            
+        
+        
+            
+
+            var marker_96bc28118a5a4c7da3535215069538b0 = L.marker(
+                [40.752474,-73.973943],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_5927a56bf2604834899fd02cf251a80c = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_96bc28118a5a4c7da3535215069538b0.setIcon(icon_5927a56bf2604834899fd02cf251a80c);
+            
+        
+            
+            var popup_b47b71b8ae2c48fba634b0f4bb1cf101 = L.popup({maxWidth: '300'});
+
+            
+                var html_3a1bb32fbfd64ce7a224fb55d12733b0 = $('         <div id="html_3a1bb32fbfd64ce7a224fb55d12733b0"                 style="width: 100.0%; height: 100.0%;">                 Name: ARATA JAPANESE RESTAURANT Score: 12.0 Grade: A</div>                 ')[0];
+                popup_b47b71b8ae2c48fba634b0f4bb1cf101.setContent(html_3a1bb32fbfd64ce7a224fb55d12733b0);
+            
+
+            marker_96bc28118a5a4c7da3535215069538b0.bindPopup(popup_b47b71b8ae2c48fba634b0f4bb1cf101);
+
+            
+        
+        
+            
+
+            var marker_bc53ed4e98dc4727aa37f0bd813c2d84 = L.marker(
+                [40.777284,-73.948751],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_d061212c38c64da1a25a5f6180419a2a = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bc53ed4e98dc4727aa37f0bd813c2d84.setIcon(icon_d061212c38c64da1a25a5f6180419a2a);
+            
+        
+            
+            var popup_07dd592ba17e422caf11821078ba2cb7 = L.popup({maxWidth: '300'});
+
+            
+                var html_38d407be2c57433fbb1fc2a43f1d67ba = $('         <div id="html_38d407be2c57433fbb1fc2a43f1d67ba"                 style="width: 100.0%; height: 100.0%;">                 Name: KUNG FU LITTLE STEAMED BUNS RAMEN Score: 13.0 Grade: A</div>                 ')[0];
+                popup_07dd592ba17e422caf11821078ba2cb7.setContent(html_38d407be2c57433fbb1fc2a43f1d67ba);
+            
+
+            marker_bc53ed4e98dc4727aa37f0bd813c2d84.bindPopup(popup_07dd592ba17e422caf11821078ba2cb7);
+
+            
+        
+        
+            
+
+            var marker_e9c066b7d87b4c25970c9df5f66c8b72 = L.marker(
+                [40.75946,-73.992291],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_830f087ed52643c1ad4e7634d11fc1c4 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_e9c066b7d87b4c25970c9df5f66c8b72.setIcon(icon_830f087ed52643c1ad4e7634d11fc1c4);
+            
+        
+            
+            var popup_e885acefb60146888e5789c6c6ae3e23 = L.popup({maxWidth: '300'});
+
+            
+                var html_6e9da88e13c44a8eab2ea87b320b3234 = $('         <div id="html_6e9da88e13c44a8eab2ea87b320b3234"                 style="width: 100.0%; height: 100.0%;">                 Name: ALIBABA GRILL Score: 13.0 Grade: A</div>                 ')[0];
+                popup_e885acefb60146888e5789c6c6ae3e23.setContent(html_6e9da88e13c44a8eab2ea87b320b3234);
+            
+
+            marker_e9c066b7d87b4c25970c9df5f66c8b72.bindPopup(popup_e885acefb60146888e5789c6c6ae3e23);
+
+            
+        
+        
+            
+
+            var marker_ee66230511f941d28f5e591a2f6bf612 = L.marker(
+                [40.723727,-73.998822],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_d71a2692aba34ca6a9309b88b9e6fc2d = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ee66230511f941d28f5e591a2f6bf612.setIcon(icon_d71a2692aba34ca6a9309b88b9e6fc2d);
+            
+        
+            
+            var popup_b28de09fa3ae47c59dd738de86af4c2e = L.popup({maxWidth: '300'});
+
+            
+                var html_bec5d4938ef544a293c397198f298232 = $('         <div id="html_bec5d4938ef544a293c397198f298232"                 style="width: 100.0%; height: 100.0%;">                 Name: MARIE&#39;S GOURMET Score: 13.0 Grade: A</div>                 ')[0];
+                popup_b28de09fa3ae47c59dd738de86af4c2e.setContent(html_bec5d4938ef544a293c397198f298232);
+            
+
+            marker_ee66230511f941d28f5e591a2f6bf612.bindPopup(popup_b28de09fa3ae47c59dd738de86af4c2e);
+
+            
+        
+        
+            
+
+            var marker_7dc99c393c4145108685a811a0537837 = L.marker(
+                [40.75802,-73.974978],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_6f87933f62b041ed9825c3f6bc186730 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7dc99c393c4145108685a811a0537837.setIcon(icon_6f87933f62b041ed9825c3f6bc186730);
+            
+        
+            
+            var popup_c15c483053cc4feea777c26a3995c8c5 = L.popup({maxWidth: '300'});
+
+            
+                var html_4a0cd7bb380a41fe8366d6713d728ae7 = $('         <div id="html_4a0cd7bb380a41fe8366d6713d728ae7"                 style="width: 100.0%; height: 100.0%;">                 Name: MELANY RESTAURANT Score: 33.0 Grade: C</div>                 ')[0];
+                popup_c15c483053cc4feea777c26a3995c8c5.setContent(html_4a0cd7bb380a41fe8366d6713d728ae7);
+            
+
+            marker_7dc99c393c4145108685a811a0537837.bindPopup(popup_c15c483053cc4feea777c26a3995c8c5);
+
+            
+        
+        
+            
+
+            var marker_8369c192c8964b059115d8c4d7181828 = L.marker(
+                [40.759509,-73.96941],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_d7defbc3ebbc40b0819fba9b594279c5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8369c192c8964b059115d8c4d7181828.setIcon(icon_d7defbc3ebbc40b0819fba9b594279c5);
+            
+        
+            
+            var popup_d287d71eb444459196bde714c52da3e9 = L.popup({maxWidth: '300'});
+
+            
+                var html_2ddae05e8daf4b5982f58c1cdc197768 = $('         <div id="html_2ddae05e8daf4b5982f58c1cdc197768"                 style="width: 100.0%; height: 100.0%;">                 Name: RICHI RICH PALACE Score: 23.0 Grade: B</div>                 ')[0];
+                popup_d287d71eb444459196bde714c52da3e9.setContent(html_2ddae05e8daf4b5982f58c1cdc197768);
+            
+
+            marker_8369c192c8964b059115d8c4d7181828.bindPopup(popup_d287d71eb444459196bde714c52da3e9);
+
+            
+        
+        
+            
+
+            var marker_8c54f2faa6e64c9790213e3ef0fb8bae = L.marker(
+                [40.731799,-74.004468],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_78438dddb678402c840521aca6af8cd5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8c54f2faa6e64c9790213e3ef0fb8bae.setIcon(icon_78438dddb678402c840521aca6af8cd5);
+            
+        
+            
+            var popup_5e15147ef17d43bb84102b8898beefd9 = L.popup({maxWidth: '300'});
+
+            
+                var html_dc35019953694fbfb14a326d2e170342 = $('         <div id="html_dc35019953694fbfb14a326d2e170342"                 style="width: 100.0%; height: 100.0%;">                 Name: FRESH Score: 2.0 Grade: A</div>                 ')[0];
+                popup_5e15147ef17d43bb84102b8898beefd9.setContent(html_dc35019953694fbfb14a326d2e170342);
+            
+
+            marker_8c54f2faa6e64c9790213e3ef0fb8bae.bindPopup(popup_5e15147ef17d43bb84102b8898beefd9);
+
+            
+        
+        
+            
+
+            var marker_487655125b48484db2204e66bb1b74c2 = L.marker(
+                [40.802764,-73.968217],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_500ee20d11594c52978c29b116deb093 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_487655125b48484db2204e66bb1b74c2.setIcon(icon_500ee20d11594c52978c29b116deb093);
+            
+        
+            
+            var popup_438f4edd14224ddaad9bd46e18358274 = L.popup({maxWidth: '300'});
+
+            
+                var html_46a8eb5e92314070b362d2ab4b49dd47 = $('         <div id="html_46a8eb5e92314070b362d2ab4b49dd47"                 style="width: 100.0%; height: 100.0%;">                 Name: THE HEIGHTS BAR &amp; GRILL Score: 25.0 Grade: B</div>                 ')[0];
+                popup_438f4edd14224ddaad9bd46e18358274.setContent(html_46a8eb5e92314070b362d2ab4b49dd47);
+            
+
+            marker_487655125b48484db2204e66bb1b74c2.bindPopup(popup_438f4edd14224ddaad9bd46e18358274);
+
+            
+        
+        
+            
+
+            var marker_d6360df7234b4e00abe5f72be5f58847 = L.marker(
+                [40.768903,-73.955597],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_289a2eeb392f40b088213a8df725250e = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d6360df7234b4e00abe5f72be5f58847.setIcon(icon_289a2eeb392f40b088213a8df725250e);
+            
+        
+            
+            var popup_4faa0fa0cb724831a744ac37930af8cf = L.popup({maxWidth: '300'});
+
+            
+                var html_5e992af94f744d2eab85dfd55c18a4c6 = $('         <div id="html_5e992af94f744d2eab85dfd55c18a4c6"                 style="width: 100.0%; height: 100.0%;">                 Name: 2ND AVE BLUE 9 BURGER Score: 9.0 Grade: A</div>                 ')[0];
+                popup_4faa0fa0cb724831a744ac37930af8cf.setContent(html_5e992af94f744d2eab85dfd55c18a4c6);
+            
+
+            marker_d6360df7234b4e00abe5f72be5f58847.bindPopup(popup_4faa0fa0cb724831a744ac37930af8cf);
+
+            
+        
+        
+            
+
+            var marker_5eaf6f5f35174978a4cfaa387849eb14 = L.marker(
+                [40.706038,-74.011777],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_4d9df2b4d5cb431aa871b1021dc9a8d8 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5eaf6f5f35174978a4cfaa387849eb14.setIcon(icon_4d9df2b4d5cb431aa871b1021dc9a8d8);
+            
+        
+            
+            var popup_fc143980d1314f31988930421955877c = L.popup({maxWidth: '300'});
+
+            
+                var html_3c70d765249a4cc4ab29f158e3065fc9 = $('         <div id="html_3c70d765249a4cc4ab29f158e3065fc9"                 style="width: 100.0%; height: 100.0%;">                 Name: UNITED MINERS SOCCER CLUB Score: 27.0 Grade: B</div>                 ')[0];
+                popup_fc143980d1314f31988930421955877c.setContent(html_3c70d765249a4cc4ab29f158e3065fc9);
+            
+
+            marker_5eaf6f5f35174978a4cfaa387849eb14.bindPopup(popup_fc143980d1314f31988930421955877c);
+
+            
+        
+        
+            
+
+            var marker_3271af8ab3074a09b30cb0a50fbddecd = L.marker(
+                [40.747056,-73.985959],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_903b8334f38444f8a2af849e76db367b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3271af8ab3074a09b30cb0a50fbddecd.setIcon(icon_903b8334f38444f8a2af849e76db367b);
+            
+        
+            
+            var popup_6e5abbe1d673426f9cdc1498f5b1ded8 = L.popup({maxWidth: '300'});
+
+            
+                var html_000101e345574e448293e9cc60563cd3 = $('         <div id="html_000101e345574e448293e9cc60563cd3"                 style="width: 100.0%; height: 100.0%;">                 Name: Yomi Station Score: 12.0 Grade: A</div>                 ')[0];
+                popup_6e5abbe1d673426f9cdc1498f5b1ded8.setContent(html_000101e345574e448293e9cc60563cd3);
+            
+
+            marker_3271af8ab3074a09b30cb0a50fbddecd.bindPopup(popup_6e5abbe1d673426f9cdc1498f5b1ded8);
+
+            
+        
+        
+            
+
+            var marker_5fdc8f5dc1ec454e95d81932bfe725ee = L.marker(
+                [40.822114,-73.949633],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_ee8b5bd517214f3494db56a474391923 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5fdc8f5dc1ec454e95d81932bfe725ee.setIcon(icon_ee8b5bd517214f3494db56a474391923);
+            
+        
+            
+            var popup_406a273a798e4829ae09eafb9b1ae83f = L.popup({maxWidth: '300'});
+
+            
+                var html_afe4f69ac7ab4827b9fa99a690b9c946 = $('         <div id="html_afe4f69ac7ab4827b9fa99a690b9c946"                 style="width: 100.0%; height: 100.0%;">                 Name: READY PENNY INN Score: 8.0 Grade: A</div>                 ')[0];
+                popup_406a273a798e4829ae09eafb9b1ae83f.setContent(html_afe4f69ac7ab4827b9fa99a690b9c946);
+            
+
+            marker_5fdc8f5dc1ec454e95d81932bfe725ee.bindPopup(popup_406a273a798e4829ae09eafb9b1ae83f);
+
+            
+        
+        
+            
+
+            var marker_85fac803da3d4b1e93b73a31696b3dd8 = L.marker(
+                [40.714806,-73.998033],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_9ae590796e6042c7887e77dea336ed25 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_85fac803da3d4b1e93b73a31696b3dd8.setIcon(icon_9ae590796e6042c7887e77dea336ed25);
+            
+        
+            
+            var popup_d1b435f2bcf5476c98231e129dd4eadf = L.popup({maxWidth: '300'});
+
+            
+                var html_61939809466a42f99a6c999d1f0f49f9 = $('         <div id="html_61939809466a42f99a6c999d1f0f49f9"                 style="width: 100.0%; height: 100.0%;">                 Name: L&#39; VIOLET RESTAURANT &amp; LOUNGE Score: 10.0 Grade: A</div>                 ')[0];
+                popup_d1b435f2bcf5476c98231e129dd4eadf.setContent(html_61939809466a42f99a6c999d1f0f49f9);
+            
+
+            marker_85fac803da3d4b1e93b73a31696b3dd8.bindPopup(popup_d1b435f2bcf5476c98231e129dd4eadf);
+
+            
+        
+        
+            
+
+            var marker_7e6ffb292337491089fd0edd15e86514 = L.marker(
+                [40.704045,-74.010485],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_32b7b0066c1c49d485386c601b1f8b67 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7e6ffb292337491089fd0edd15e86514.setIcon(icon_32b7b0066c1c49d485386c601b1f8b67);
+            
+        
+            
+            var popup_00e00e488b6a4d88b0dbddef834e20de = L.popup({maxWidth: '300'});
+
+            
+                var html_87b26146f6df4a1789b4395d9b737df7 = $('         <div id="html_87b26146f6df4a1789b4395d9b737df7"                 style="width: 100.0%; height: 100.0%;">                 Name: PORTO PRINCE STAR RESTAURANT Score: 13.0 Grade: A</div>                 ')[0];
+                popup_00e00e488b6a4d88b0dbddef834e20de.setContent(html_87b26146f6df4a1789b4395d9b737df7);
+            
+
+            marker_7e6ffb292337491089fd0edd15e86514.bindPopup(popup_00e00e488b6a4d88b0dbddef834e20de);
+
+            
+        
+        
+            
+
+            var marker_3cb92d09f0bf4ac097b5d5deada17138 = L.marker(
+                [40.758823,-73.979398],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_df41007c5cf147b0a45a855beeab61a5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3cb92d09f0bf4ac097b5d5deada17138.setIcon(icon_df41007c5cf147b0a45a855beeab61a5);
+            
+        
+            
+            var popup_3ed96653958b450eac13871a23d17af8 = L.popup({maxWidth: '300'});
+
+            
+                var html_51153afa78074cf981b19229df45dbd0 = $('         <div id="html_51153afa78074cf981b19229df45dbd0"                 style="width: 100.0%; height: 100.0%;">                 Name: #1 SABOR LATINO RESTAURANT Score: 27.0 Grade: B</div>                 ')[0];
+                popup_3ed96653958b450eac13871a23d17af8.setContent(html_51153afa78074cf981b19229df45dbd0);
+            
+
+            marker_3cb92d09f0bf4ac097b5d5deada17138.bindPopup(popup_3ed96653958b450eac13871a23d17af8);
+
+            
+        
+        
+            
+
+            var marker_2384420015bf43848477921fd43ae629 = L.marker(
+                [40.780496,-73.981091],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_5c649a2a977e4b4290b3dedfea78e9ff = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2384420015bf43848477921fd43ae629.setIcon(icon_5c649a2a977e4b4290b3dedfea78e9ff);
+            
+        
+            
+            var popup_6e8f3476fc754ea2a2d9f925721732ed = L.popup({maxWidth: '300'});
+
+            
+                var html_3fc27678aa2e4c968239bb0e8fb7d33a = $('         <div id="html_3fc27678aa2e4c968239bb0e8fb7d33a"                 style="width: 100.0%; height: 100.0%;">                 Name: IHOP Score: 19.0 Grade: B</div>                 ')[0];
+                popup_6e8f3476fc754ea2a2d9f925721732ed.setContent(html_3fc27678aa2e4c968239bb0e8fb7d33a);
+            
+
+            marker_2384420015bf43848477921fd43ae629.bindPopup(popup_6e8f3476fc754ea2a2d9f925721732ed);
+
+            
+        
+        
+            
+
+            var marker_b3b040e32831474487f219ee65b7f4e2 = L.marker(
+                [40.719522,-73.987181],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8dd7b706c25044078fa44282744030b4 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_b3b040e32831474487f219ee65b7f4e2.setIcon(icon_8dd7b706c25044078fa44282744030b4);
+            
+        
+            
+            var popup_42bf38ab826d4419b4972365738d3115 = L.popup({maxWidth: '300'});
+
+            
+                var html_a35f24ecb1894cc08c297e18645b99bf = $('         <div id="html_a35f24ecb1894cc08c297e18645b99bf"                 style="width: 100.0%; height: 100.0%;">                 Name: CATANIA&#39;S PIZZA CAFE Score: 12.0 Grade: A</div>                 ')[0];
+                popup_42bf38ab826d4419b4972365738d3115.setContent(html_a35f24ecb1894cc08c297e18645b99bf);
+            
+
+            marker_b3b040e32831474487f219ee65b7f4e2.bindPopup(popup_42bf38ab826d4419b4972365738d3115);
+
+            
+        
+        
+            
+
+            var marker_595bd7dd683b44fe950ba1a0b6984451 = L.marker(
+                [40.73091,-73.983211],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_b63b819e322c4232b5f0d6a54186e2ee = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_595bd7dd683b44fe950ba1a0b6984451.setIcon(icon_b63b819e322c4232b5f0d6a54186e2ee);
+            
+        
+            
+            var popup_0161afa4b36d472cb676b5d1fbd5b275 = L.popup({maxWidth: '300'});
+
+            
+                var html_57ee9734b6d04fcb801335a4783cbaf8 = $('         <div id="html_57ee9734b6d04fcb801335a4783cbaf8"                 style="width: 100.0%; height: 100.0%;">                 Name: Chen Mommy Kitchen Score: 12.0 Grade: A</div>                 ')[0];
+                popup_0161afa4b36d472cb676b5d1fbd5b275.setContent(html_57ee9734b6d04fcb801335a4783cbaf8);
+            
+
+            marker_595bd7dd683b44fe950ba1a0b6984451.bindPopup(popup_0161afa4b36d472cb676b5d1fbd5b275);
+
+            
+        
+        
+            
+
+            var marker_a30ddb621a0e4e5baf8648b7937b5ac9 = L.marker(
+                [40.729139,-73.989928],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_595b1afa70c4423fb8278e998ae4052b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a30ddb621a0e4e5baf8648b7937b5ac9.setIcon(icon_595b1afa70c4423fb8278e998ae4052b);
+            
+        
+            
+            var popup_4a6ca43200994304ae05dc7d6c3180b9 = L.popup({maxWidth: '300'});
+
+            
+                var html_fe4da799a7264c98a4e8e14b480f0268 = $('         <div id="html_fe4da799a7264c98a4e8e14b480f0268"                 style="width: 100.0%; height: 100.0%;">                 Name: 510 11ST BAR Score: 5.0 Grade: A</div>                 ')[0];
+                popup_4a6ca43200994304ae05dc7d6c3180b9.setContent(html_fe4da799a7264c98a4e8e14b480f0268);
+            
+
+            marker_a30ddb621a0e4e5baf8648b7937b5ac9.bindPopup(popup_4a6ca43200994304ae05dc7d6c3180b9);
+
+            
+        
+        
+            
+
+            var marker_fc1887d1f89f4d2e93b6f13d7d1e1e52 = L.marker(
+                [40.7213,-73.995013],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_697f3bf0108746cfabd9aa9582a5c72b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_fc1887d1f89f4d2e93b6f13d7d1e1e52.setIcon(icon_697f3bf0108746cfabd9aa9582a5c72b);
+            
+        
+            
+            var popup_780564420f764b31bbfd2249d30fca7b = L.popup({maxWidth: '300'});
+
+            
+                var html_7d7c9df8b1694e739bc7655153a598a2 = $('         <div id="html_7d7c9df8b1694e739bc7655153a598a2"                 style="width: 100.0%; height: 100.0%;">                 Name: PAZZA NOTTE Score: 9.0 Grade: A</div>                 ')[0];
+                popup_780564420f764b31bbfd2249d30fca7b.setContent(html_7d7c9df8b1694e739bc7655153a598a2);
+            
+
+            marker_fc1887d1f89f4d2e93b6f13d7d1e1e52.bindPopup(popup_780564420f764b31bbfd2249d30fca7b);
+
+            
+        
+        
+            
+
+            var marker_f4d52a75b4de43a78ec2730c3400a2df = L.marker(
+                [40.728593,-74.002001],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_49ef02e121e14673954d4f509e54c8cc = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f4d52a75b4de43a78ec2730c3400a2df.setIcon(icon_49ef02e121e14673954d4f509e54c8cc);
+            
+        
+            
+            var popup_e797a91cc0ec4e9989e39cc8967642d8 = L.popup({maxWidth: '300'});
+
+            
+                var html_a42362f6f63d45c393cbaa0e503ded6f = $('         <div id="html_a42362f6f63d45c393cbaa0e503ded6f"                 style="width: 100.0%; height: 100.0%;">                 Name: JIMMY&#39;S CORNER Score: 6.0 Grade: A</div>                 ')[0];
+                popup_e797a91cc0ec4e9989e39cc8967642d8.setContent(html_a42362f6f63d45c393cbaa0e503ded6f);
+            
+
+            marker_f4d52a75b4de43a78ec2730c3400a2df.bindPopup(popup_e797a91cc0ec4e9989e39cc8967642d8);
+
+            
+        
+        
+            
+
+            var marker_561c4f13158844ddb58ac86a96382693 = L.marker(
+                [40.757444,-73.983831],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_9949146a798e430e9919d35a3fe9acce = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_561c4f13158844ddb58ac86a96382693.setIcon(icon_9949146a798e430e9919d35a3fe9acce);
+            
+        
+            
+            var popup_3eb2d00a656b4ae7bf1c4c91ac912deb = L.popup({maxWidth: '300'});
+
+            
+                var html_869e30fcfcc54a6198f71745e69da1c5 = $('         <div id="html_869e30fcfcc54a6198f71745e69da1c5"                 style="width: 100.0%; height: 100.0%;">                 Name: 168 TEA LLC Score: 6.0 Grade: A</div>                 ')[0];
+                popup_3eb2d00a656b4ae7bf1c4c91ac912deb.setContent(html_869e30fcfcc54a6198f71745e69da1c5);
+            
+
+            marker_561c4f13158844ddb58ac86a96382693.bindPopup(popup_3eb2d00a656b4ae7bf1c4c91ac912deb);
+
+            
+        
+        
+            
+
+            var marker_13c738e277444ab8958dd3bca708a936 = L.marker(
+                [40.738575,-73.987153],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_fd3e463495f24cec9c49cc8c32d8a942 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_13c738e277444ab8958dd3bca708a936.setIcon(icon_fd3e463495f24cec9c49cc8c32d8a942);
+            
+        
+            
+            var popup_4257a9b227a3425586df0d397cb91657 = L.popup({maxWidth: '300'});
+
+            
+                var html_482afacd34a8482495e7fe89a5d84d52 = $('         <div id="html_482afacd34a8482495e7fe89a5d84d52"                 style="width: 100.0%; height: 100.0%;">                 Name: CROSBY PIZZA STOP Score: 11.0 Grade: A</div>                 ')[0];
+                popup_4257a9b227a3425586df0d397cb91657.setContent(html_482afacd34a8482495e7fe89a5d84d52);
+            
+
+            marker_13c738e277444ab8958dd3bca708a936.bindPopup(popup_4257a9b227a3425586df0d397cb91657);
+
+            
+        
+        
+            
+
+            var marker_54ff45e2ccc24e9999fea3f49802682a = L.marker(
+                [40.744213,-73.975746],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_574c7d78980743bca1556c711eb502aa = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_54ff45e2ccc24e9999fea3f49802682a.setIcon(icon_574c7d78980743bca1556c711eb502aa);
+            
+        
+            
+            var popup_8cf43018c9f042b8b463392caf30bd6a = L.popup({maxWidth: '300'});
+
+            
+                var html_3384433beba54ec2ab810e5c94787a14 = $('         <div id="html_3384433beba54ec2ab810e5c94787a14"                 style="width: 100.0%; height: 100.0%;">                 Name: PERKINS RESTAURANT &amp; BAKERY Score: 9.0 Grade: A</div>                 ')[0];
+                popup_8cf43018c9f042b8b463392caf30bd6a.setContent(html_3384433beba54ec2ab810e5c94787a14);
+            
+
+            marker_54ff45e2ccc24e9999fea3f49802682a.bindPopup(popup_8cf43018c9f042b8b463392caf30bd6a);
+
+            
+        
+        
+            
+
+            var marker_da8bee60f2a7435fb2edc8598073fd3b = L.marker(
+                [40.739487,-74.001259],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_b39c7e0bd3ef49e48d1dc4848357c222 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_da8bee60f2a7435fb2edc8598073fd3b.setIcon(icon_b39c7e0bd3ef49e48d1dc4848357c222);
+            
+        
+            
+            var popup_92886b2cf19c4415879ce0716e348e61 = L.popup({maxWidth: '300'});
+
+            
+                var html_07191de111b045dcb629ccf01852322c = $('         <div id="html_07191de111b045dcb629ccf01852322c"                 style="width: 100.0%; height: 100.0%;">                 Name: LOS POLLOS RESTAURANT Score: 22.0 Grade: B</div>                 ')[0];
+                popup_92886b2cf19c4415879ce0716e348e61.setContent(html_07191de111b045dcb629ccf01852322c);
+            
+
+            marker_da8bee60f2a7435fb2edc8598073fd3b.bindPopup(popup_92886b2cf19c4415879ce0716e348e61);
+
+            
+        
+        
+            
+
+            var marker_aba69cf4b4d6412fa5b522ab871dc4ae = L.marker(
+                [40.747716,-73.98781],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_7c74d17ce84d4598acc1bbaba0b9a3a4 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_aba69cf4b4d6412fa5b522ab871dc4ae.setIcon(icon_7c74d17ce84d4598acc1bbaba0b9a3a4);
+            
+        
+            
+            var popup_de831ef2690b4d98981e9cd4a9a51fc6 = L.popup({maxWidth: '300'});
+
+            
+                var html_772ecc973eb4427aa22d5f546a8a78d6 = $('         <div id="html_772ecc973eb4427aa22d5f546a8a78d6"                 style="width: 100.0%; height: 100.0%;">                 Name: AJISAI Score: 11.0 Grade: A</div>                 ')[0];
+                popup_de831ef2690b4d98981e9cd4a9a51fc6.setContent(html_772ecc973eb4427aa22d5f546a8a78d6);
+            
+
+            marker_aba69cf4b4d6412fa5b522ab871dc4ae.bindPopup(popup_de831ef2690b4d98981e9cd4a9a51fc6);
+
+            
+        
+        
+            
+
+            var marker_75d897aea4d341ae8c5941c0b69c9247 = L.marker(
+                [40.735373,-73.992683],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_98453a5f6068455588ec5d573f041bf7 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_75d897aea4d341ae8c5941c0b69c9247.setIcon(icon_98453a5f6068455588ec5d573f041bf7);
+            
+        
+            
+            var popup_22902e79e1bb418cbc963d4412ec2ecb = L.popup({maxWidth: '300'});
+
+            
+                var html_d847430876a946e1b72accb0d19aa763 = $('         <div id="html_d847430876a946e1b72accb0d19aa763"                 style="width: 100.0%; height: 100.0%;">                 Name: FAMILY GARDEN RESTAURANT Score: 18.0 Grade: B</div>                 ')[0];
+                popup_22902e79e1bb418cbc963d4412ec2ecb.setContent(html_d847430876a946e1b72accb0d19aa763);
+            
+
+            marker_75d897aea4d341ae8c5941c0b69c9247.bindPopup(popup_22902e79e1bb418cbc963d4412ec2ecb);
+
+            
+        
+        
+            
+
+            var marker_69716d0ff57c49a395ad35c3748c0989 = L.marker(
+                [40.777483,-73.951289],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0a0dc12ae25a4069a294cf060781b09e = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_69716d0ff57c49a395ad35c3748c0989.setIcon(icon_0a0dc12ae25a4069a294cf060781b09e);
+            
+        
+            
+            var popup_07c707d2ebe94ac28496b7d012ec94e3 = L.popup({maxWidth: '300'});
+
+            
+                var html_99e1781ed3ac42fa8cc11262f80aaa83 = $('         <div id="html_99e1781ed3ac42fa8cc11262f80aaa83"                 style="width: 100.0%; height: 100.0%;">                 Name: FAMOUS ANTHONY&#39;S PIZZA Score: 10.0 Grade: A</div>                 ')[0];
+                popup_07c707d2ebe94ac28496b7d012ec94e3.setContent(html_99e1781ed3ac42fa8cc11262f80aaa83);
+            
+
+            marker_69716d0ff57c49a395ad35c3748c0989.bindPopup(popup_07c707d2ebe94ac28496b7d012ec94e3);
+
+            
+        
+        
+            
+
+            var marker_35592767d44e48b6a0edf29fe0300024 = L.marker(
+                [40.755241,-73.989548],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8146a65827614d378d1ba286c0b5c079 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_35592767d44e48b6a0edf29fe0300024.setIcon(icon_8146a65827614d378d1ba286c0b5c079);
+            
+        
+            
+            var popup_c270447452584deab24ab4d40da7fe80 = L.popup({maxWidth: '300'});
+
+            
+                var html_323708a3b62b4751833ff81a404f9a31 = $('         <div id="html_323708a3b62b4751833ff81a404f9a31"                 style="width: 100.0%; height: 100.0%;">                 Name: NEIL SIMON THEATRE Score: 11.0 Grade: A</div>                 ')[0];
+                popup_c270447452584deab24ab4d40da7fe80.setContent(html_323708a3b62b4751833ff81a404f9a31);
+            
+
+            marker_35592767d44e48b6a0edf29fe0300024.bindPopup(popup_c270447452584deab24ab4d40da7fe80);
+
+            
+        
+        
+            
+
+            var marker_8c8b53fa30764ecfbbf56392ccc2f184 = L.marker(
+                [40.762827,-73.984969],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_fa23bcb49a9440d684e240f331a1966d = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8c8b53fa30764ecfbbf56392ccc2f184.setIcon(icon_fa23bcb49a9440d684e240f331a1966d);
+            
+        
+            
+            var popup_35bed0c7ea714380a8af58b67cd4eaf2 = L.popup({maxWidth: '300'});
+
+            
+                var html_23fd1f8421e44f989aba598cc58a995c = $('         <div id="html_23fd1f8421e44f989aba598cc58a995c"                 style="width: 100.0%; height: 100.0%;">                 Name: KAY MANMANM RESTAURANT Score: 53.0 Grade: Z</div>                 ')[0];
+                popup_35bed0c7ea714380a8af58b67cd4eaf2.setContent(html_23fd1f8421e44f989aba598cc58a995c);
+            
+
+            marker_8c8b53fa30764ecfbbf56392ccc2f184.bindPopup(popup_35bed0c7ea714380a8af58b67cd4eaf2);
+
+            
+        
+        
+            
+
+            var marker_75e8d2e2323f4b779bffe8f6dd472758 = L.marker(
+                [40.758098,-73.980635],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_1bca81efb9ae4e7db9326f852c6636fb = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_75e8d2e2323f4b779bffe8f6dd472758.setIcon(icon_1bca81efb9ae4e7db9326f852c6636fb);
+            
+        
+            
+            var popup_934d17fbd180431ea7f2acdf1994c5ae = L.popup({maxWidth: '300'});
+
+            
+                var html_c77e958cd52843918c805b6fea326285 = $('         <div id="html_c77e958cd52843918c805b6fea326285"                 style="width: 100.0%; height: 100.0%;">                 Name: ETHOS GREEK CUISINE Score: 11.0 Grade: A</div>                 ')[0];
+                popup_934d17fbd180431ea7f2acdf1994c5ae.setContent(html_c77e958cd52843918c805b6fea326285);
+            
+
+            marker_75e8d2e2323f4b779bffe8f6dd472758.bindPopup(popup_934d17fbd180431ea7f2acdf1994c5ae);
+
+            
+        
+        
+            
+
+            var marker_0939bd8a54f14ddd8270e2c938d87047 = L.marker(
+                [40.747515,-73.984769],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_a957183e0bd64514870dc8bf57ed8571 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0939bd8a54f14ddd8270e2c938d87047.setIcon(icon_a957183e0bd64514870dc8bf57ed8571);
+            
+        
+            
+            var popup_3507178d87c640ac8819a1683ad7ff6f = L.popup({maxWidth: '300'});
+
+            
+                var html_12f7536b83c94ef0bc70cb7e48238b90 = $('         <div id="html_12f7536b83c94ef0bc70cb7e48238b90"                 style="width: 100.0%; height: 100.0%;">                 Name: NEW HONG KONG KITCHEN Score: 10.0 Grade: A</div>                 ')[0];
+                popup_3507178d87c640ac8819a1683ad7ff6f.setContent(html_12f7536b83c94ef0bc70cb7e48238b90);
+            
+
+            marker_0939bd8a54f14ddd8270e2c938d87047.bindPopup(popup_3507178d87c640ac8819a1683ad7ff6f);
+
+            
+        
+        
+            
+
+            var marker_ab2a97a6023441c386e204eca41fd42b = L.marker(
+                [40.752215,-73.994485],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_85ca21d1916d48f6b64f816a5b63b87b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ab2a97a6023441c386e204eca41fd42b.setIcon(icon_85ca21d1916d48f6b64f816a5b63b87b);
+            
+        
+            
+            var popup_852ead2d1c3c4bdfab2cbf9c8221aa23 = L.popup({maxWidth: '300'});
+
+            
+                var html_811247ac655745a2b8039dfe9ece09e4 = $('         <div id="html_811247ac655745a2b8039dfe9ece09e4"                 style="width: 100.0%; height: 100.0%;">                 Name: QUE SABOR BAKERY CAFE Score: 13.0 Grade: A</div>                 ')[0];
+                popup_852ead2d1c3c4bdfab2cbf9c8221aa23.setContent(html_811247ac655745a2b8039dfe9ece09e4);
+            
+
+            marker_ab2a97a6023441c386e204eca41fd42b.bindPopup(popup_852ead2d1c3c4bdfab2cbf9c8221aa23);
+
+            
+        
+        
+            
+
+            var marker_259c0cca30a744259caa44277fa86161 = L.marker(
+                [40.71839,-73.989891],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_55fcb6e5a8764b1083bc55575af086eb = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'red',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_259c0cca30a744259caa44277fa86161.setIcon(icon_55fcb6e5a8764b1083bc55575af086eb);
+            
+        
+            
+            var popup_7b6a8572f3134c1b8267d8b7f0361ff8 = L.popup({maxWidth: '300'});
+
+            
+                var html_bb8e48dfa8894cd3ba7cc1d7aa63ee05 = $('         <div id="html_bb8e48dfa8894cd3ba7cc1d7aa63ee05"                 style="width: 100.0%; height: 100.0%;">                 Name: CASIMIR &amp; CO Score: 29.0 Grade: C</div>                 ')[0];
+                popup_7b6a8572f3134c1b8267d8b7f0361ff8.setContent(html_bb8e48dfa8894cd3ba7cc1d7aa63ee05);
+            
+
+            marker_259c0cca30a744259caa44277fa86161.bindPopup(popup_7b6a8572f3134c1b8267d8b7f0361ff8);
+
+            
+        
+        
+            
+
+            var marker_0285fd0e3d974772ba394621d856a2b9 = L.marker(
+                [40.741047,-73.992917],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_e23d6c5fe370417085d08129267b8578 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0285fd0e3d974772ba394621d856a2b9.setIcon(icon_e23d6c5fe370417085d08129267b8578);
+            
+        
+            
+            var popup_234742d11728458b81224963bbfa91aa = L.popup({maxWidth: '300'});
+
+            
+                var html_537cfcd7530d4349be941cb48f28cb0a = $('         <div id="html_537cfcd7530d4349be941cb48f28cb0a"                 style="width: 100.0%; height: 100.0%;">                 Name: THE COFFEE BEAN &amp; TEA LEAF Score: 12.0 Grade: A</div>                 ')[0];
+                popup_234742d11728458b81224963bbfa91aa.setContent(html_537cfcd7530d4349be941cb48f28cb0a);
+            
+
+            marker_0285fd0e3d974772ba394621d856a2b9.bindPopup(popup_234742d11728458b81224963bbfa91aa);
+
+            
+        
+        
+            
+
+            var marker_379c1003ccf140888135c68d8ec34444 = L.marker(
+                [40.760932,-73.974542],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_e67acb8625f74b25a643b37f92414644 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_379c1003ccf140888135c68d8ec34444.setIcon(icon_e67acb8625f74b25a643b37f92414644);
+            
+        
+            
+            var popup_e8f9b1e4115844ca844ae802459b7908 = L.popup({maxWidth: '300'});
+
+            
+                var html_52fefb5261534dd997a6f0cf783a8848 = $('         <div id="html_52fefb5261534dd997a6f0cf783a8848"                 style="width: 100.0%; height: 100.0%;">                 Name: LITTLE CAESARS Score: 9.0 Grade: A</div>                 ')[0];
+                popup_e8f9b1e4115844ca844ae802459b7908.setContent(html_52fefb5261534dd997a6f0cf783a8848);
+            
+
+            marker_379c1003ccf140888135c68d8ec34444.bindPopup(popup_e8f9b1e4115844ca844ae802459b7908);
+
+            
+        
+        
+            
+
+            var marker_c8dd8ff875a44a4091f04c995e72a4f2 = L.marker(
+                [40.764221,-73.988046],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0109545b207549279c8d9b46bcc084b9 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c8dd8ff875a44a4091f04c995e72a4f2.setIcon(icon_0109545b207549279c8d9b46bcc084b9);
+            
+        
+            
+            var popup_94cdf8d254144ec38c5e8b68d478a41f = L.popup({maxWidth: '300'});
+
+            
+                var html_565130a9d50543869d89e0c82e31eaa1 = $('         <div id="html_565130a9d50543869d89e0c82e31eaa1"                 style="width: 100.0%; height: 100.0%;">                 Name: MAISON KAYSER Score: 12.0 Grade: A</div>                 ')[0];
+                popup_94cdf8d254144ec38c5e8b68d478a41f.setContent(html_565130a9d50543869d89e0c82e31eaa1);
+            
+
+            marker_c8dd8ff875a44a4091f04c995e72a4f2.bindPopup(popup_94cdf8d254144ec38c5e8b68d478a41f);
+
+            
+        
+        
+            
+
+            var marker_db6132b843d745d7b145bfe0c5cd5376 = L.marker(
+                [40.743057,-73.98617],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_08ce2c66e7c947e18c3084e4b6e49b7c = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_db6132b843d745d7b145bfe0c5cd5376.setIcon(icon_08ce2c66e7c947e18c3084e4b6e49b7c);
+            
+        
+            
+            var popup_0efe4b7ffb484fe882b360a422e37d73 = L.popup({maxWidth: '300'});
+
+            
+                var html_532a1a819fe744e8a153cf1a132915d0 = $('         <div id="html_532a1a819fe744e8a153cf1a132915d0"                 style="width: 100.0%; height: 100.0%;">                 Name: JOE&#39;S PIZZA Score: 16.0 Grade: B</div>                 ')[0];
+                popup_0efe4b7ffb484fe882b360a422e37d73.setContent(html_532a1a819fe744e8a153cf1a132915d0);
+            
+
+            marker_db6132b843d745d7b145bfe0c5cd5376.bindPopup(popup_0efe4b7ffb484fe882b360a422e37d73);
+
+            
+        
+        
+            
+
+            var marker_a396b52c09344d01b18eaa85a85a59b9 = L.marker(
+                [40.736617,-73.991809],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_1740e5031e76485d9bf135ace5ce001c = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a396b52c09344d01b18eaa85a85a59b9.setIcon(icon_1740e5031e76485d9bf135ace5ce001c);
+            
+        
+            
+            var popup_393f50fec96f4270889022bafb2f218e = L.popup({maxWidth: '300'});
+
+            
+                var html_a7d3cd07fc88452e9c5052d50d4cfc32 = $('         <div id="html_a7d3cd07fc88452e9c5052d50d4cfc32"                 style="width: 100.0%; height: 100.0%;">                 Name: DIVINE KOSHER BAKERY Score: 8.0 Grade: A</div>                 ')[0];
+                popup_393f50fec96f4270889022bafb2f218e.setContent(html_a7d3cd07fc88452e9c5052d50d4cfc32);
+            
+
+            marker_a396b52c09344d01b18eaa85a85a59b9.bindPopup(popup_393f50fec96f4270889022bafb2f218e);
+
+            
+        
+        
+            
+
+            var marker_2f875d35e7b84e29b2ecc6b8118f3984 = L.marker(
+                [40.755659,-73.978738],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_cf691185d1774b06bbe5b6eb71aa27a3 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2f875d35e7b84e29b2ecc6b8118f3984.setIcon(icon_cf691185d1774b06bbe5b6eb71aa27a3);
+            
+        
+            
+            var popup_446277f3f5af40159e2e63eb45193f1a = L.popup({maxWidth: '300'});
+
+            
+                var html_6ab4772d50234c94a1fd588e01f83ce6 = $('         <div id="html_6ab4772d50234c94a1fd588e01f83ce6"                 style="width: 100.0%; height: 100.0%;">                 Name: KISS MY SLICE Score: 10.0 Grade: A</div>                 ')[0];
+                popup_446277f3f5af40159e2e63eb45193f1a.setContent(html_6ab4772d50234c94a1fd588e01f83ce6);
+            
+
+            marker_2f875d35e7b84e29b2ecc6b8118f3984.bindPopup(popup_446277f3f5af40159e2e63eb45193f1a);
+
+            
+        
+        
+            
+
+            var marker_ce92f614c9294c4684c6112659ec6607 = L.marker(
+                [40.780052,-73.953399],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_6f9cba7323ab4ef8b65e3b3ec8022960 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ce92f614c9294c4684c6112659ec6607.setIcon(icon_6f9cba7323ab4ef8b65e3b3ec8022960);
+            
+        
+            
+            var popup_dfe6f0b4a5d741398fec582afed169fb = L.popup({maxWidth: '300'});
+
+            
+                var html_12aee109612c4675a467b49fff4a546f = $('         <div id="html_12aee109612c4675a467b49fff4a546f"                 style="width: 100.0%; height: 100.0%;">                 Name: THE BEST ITALIAN PIZZA Score: 12.0 Grade: A</div>                 ')[0];
+                popup_dfe6f0b4a5d741398fec582afed169fb.setContent(html_12aee109612c4675a467b49fff4a546f);
+            
+
+            marker_ce92f614c9294c4684c6112659ec6607.bindPopup(popup_dfe6f0b4a5d741398fec582afed169fb);
+
+            
+        
+        
+            
+
+            var marker_01cbbc1dc33b4b5f97ae026f772f9496 = L.marker(
+                [40.760246,-73.991661],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_50f7493190334b2196c54d01c61c139e = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_01cbbc1dc33b4b5f97ae026f772f9496.setIcon(icon_50f7493190334b2196c54d01c61c139e);
+            
+        
+            
+            var popup_c5f2c1a019b24a0bb4ee279ce5f59afc = L.popup({maxWidth: '300'});
+
+            
+                var html_ab25a5a59d7540478e017fdff9017b4f = $('         <div id="html_ab25a5a59d7540478e017fdff9017b4f"                 style="width: 100.0%; height: 100.0%;">                 Name: SAVOY BAKERY Score: 9.0 Grade: A</div>                 ')[0];
+                popup_c5f2c1a019b24a0bb4ee279ce5f59afc.setContent(html_ab25a5a59d7540478e017fdff9017b4f);
+            
+
+            marker_01cbbc1dc33b4b5f97ae026f772f9496.bindPopup(popup_c5f2c1a019b24a0bb4ee279ce5f59afc);
+
+            
+        
+        
+            
+
+            var marker_91719b4ed10646e29cacdc3a1ffa2905 = L.marker(
+                [40.815472,-73.958788],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_9257412b0e914a1180ba5800a00ec6c2 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_91719b4ed10646e29cacdc3a1ffa2905.setIcon(icon_9257412b0e914a1180ba5800a00ec6c2);
+            
+        
+            
+            var popup_c2ddfe1f5f8e41269636b17b0e7f7d78 = L.popup({maxWidth: '300'});
+
+            
+                var html_e13568a1048041b9b55bb04341ce1b3a = $('         <div id="html_e13568a1048041b9b55bb04341ce1b3a"                 style="width: 100.0%; height: 100.0%;">                 Name: MOON &amp; FLOWER HOUSE Score: 11.0 Grade: A</div>                 ')[0];
+                popup_c2ddfe1f5f8e41269636b17b0e7f7d78.setContent(html_e13568a1048041b9b55bb04341ce1b3a);
+            
+
+            marker_91719b4ed10646e29cacdc3a1ffa2905.bindPopup(popup_c2ddfe1f5f8e41269636b17b0e7f7d78);
+
+            
+        
+        
+            
+
+            var marker_a2501a9cf241405fa23cc23f54d734ff = L.marker(
+                [40.790866,-73.974219],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0b42be4905634ecca03080dc6c2dcc7b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a2501a9cf241405fa23cc23f54d734ff.setIcon(icon_0b42be4905634ecca03080dc6c2dcc7b);
+            
+        
+            
+            var popup_a70e7e1d979f4c6794551d851613e332 = L.popup({maxWidth: '300'});
+
+            
+                var html_6504d82d1482456fb684725831084a62 = $('         <div id="html_6504d82d1482456fb684725831084a62"                 style="width: 100.0%; height: 100.0%;">                 Name: FLATBUSH LATIN GRILL Score: 12.0 Grade: A</div>                 ')[0];
+                popup_a70e7e1d979f4c6794551d851613e332.setContent(html_6504d82d1482456fb684725831084a62);
+            
+
+            marker_a2501a9cf241405fa23cc23f54d734ff.bindPopup(popup_a70e7e1d979f4c6794551d851613e332);
+
+            
+        
+        
+            
+
+            var marker_18af54e223884589a5e5b358f6ad9b79 = L.marker(
+                [40.784298,-73.973347],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_6cfe43e54e844a539a44484a68e385fe = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_18af54e223884589a5e5b358f6ad9b79.setIcon(icon_6cfe43e54e844a539a44484a68e385fe);
+            
+        
+            
+            var popup_9015e61cab034b1693d0b7d5a4baa919 = L.popup({maxWidth: '300'});
+
+            
+                var html_4292c442365d4a8da23b3262bb20ca48 = $('         <div id="html_4292c442365d4a8da23b3262bb20ca48"                 style="width: 100.0%; height: 100.0%;">                 Name: LUKE&#39;S LOBSTER Score: 5.0 Grade: A</div>                 ')[0];
+                popup_9015e61cab034b1693d0b7d5a4baa919.setContent(html_4292c442365d4a8da23b3262bb20ca48);
+            
+
+            marker_18af54e223884589a5e5b358f6ad9b79.bindPopup(popup_9015e61cab034b1693d0b7d5a4baa919);
+
+            
+        
+        
+            
+
+            var marker_3cb6bee55c534d7e800a3d9b1489c324 = L.marker(
+                [40.737608,-73.986652],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_dfd99a75e9f44b4a89d89e9cdb1b56a5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3cb6bee55c534d7e800a3d9b1489c324.setIcon(icon_dfd99a75e9f44b4a89d89e9cdb1b56a5);
+            
+        
+            
+            var popup_d80ccc3af36249f09839f8d7aea354bf = L.popup({maxWidth: '300'});
+
+            
+                var html_bc239f6a5bd748afb4528ed8ce0833f5 = $('         <div id="html_bc239f6a5bd748afb4528ed8ce0833f5"                 style="width: 100.0%; height: 100.0%;">                 Name: NAN BEI HO Score: 27.0 Grade: B</div>                 ')[0];
+                popup_d80ccc3af36249f09839f8d7aea354bf.setContent(html_bc239f6a5bd748afb4528ed8ce0833f5);
+            
+
+            marker_3cb6bee55c534d7e800a3d9b1489c324.bindPopup(popup_d80ccc3af36249f09839f8d7aea354bf);
+
+            
+        
+        
+            
+
+            var marker_63f17abc35aa48e783ecfc27a98f2501 = L.marker(
+                [40.732327,-74.000832],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_e22abeae293c4741bffa8593d2473626 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_63f17abc35aa48e783ecfc27a98f2501.setIcon(icon_e22abeae293c4741bffa8593d2473626);
+            
+        
+            
+            var popup_5f91e9b8e8224d5fb3850c6c2eff0834 = L.popup({maxWidth: '300'});
+
+            
+                var html_748c7aaf87e94d02aa34c9348929ab34 = $('         <div id="html_748c7aaf87e94d02aa34c9348929ab34"                 style="width: 100.0%; height: 100.0%;">                 Name: SANTO DOMINGO BAKERY Score: 7.0 Grade: A</div>                 ')[0];
+                popup_5f91e9b8e8224d5fb3850c6c2eff0834.setContent(html_748c7aaf87e94d02aa34c9348929ab34);
+            
+
+            marker_63f17abc35aa48e783ecfc27a98f2501.bindPopup(popup_5f91e9b8e8224d5fb3850c6c2eff0834);
+
+            
+        
+        
+            
+
+            var marker_f12e9485515147c3a2caa257d2c3389a = L.marker(
+                [40.733308,-73.988199],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_6e42780cf80c4ebbb2b03910466e2f70 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_f12e9485515147c3a2caa257d2c3389a.setIcon(icon_6e42780cf80c4ebbb2b03910466e2f70);
+            
+        
+            
+            var popup_fc7e52118e064416b79f2cf4e28be63d = L.popup({maxWidth: '300'});
+
+            
+                var html_aba64beff502494cb1f4c5b536eafecb = $('         <div id="html_aba64beff502494cb1f4c5b536eafecb"                 style="width: 100.0%; height: 100.0%;">                 Name: NEW STAR CHINESE RESTAURANT Score: 12.0 Grade: A</div>                 ')[0];
+                popup_fc7e52118e064416b79f2cf4e28be63d.setContent(html_aba64beff502494cb1f4c5b536eafecb);
+            
+
+            marker_f12e9485515147c3a2caa257d2c3389a.bindPopup(popup_fc7e52118e064416b79f2cf4e28be63d);
+
+            
+        
+        
+            
+
+            var marker_c63f9990140c44eaacc5b7f02bd45572 = L.marker(
+                [40.762809,-73.982872],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_6c9e755fb1454f4fb28cdd9ca82c239f = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c63f9990140c44eaacc5b7f02bd45572.setIcon(icon_6c9e755fb1454f4fb28cdd9ca82c239f);
+            
+        
+            
+            var popup_6a4860931d53418d8cad8dfcc06c768d = L.popup({maxWidth: '300'});
+
+            
+                var html_844c21ff2f854834a7b079df762be208 = $('         <div id="html_844c21ff2f854834a7b079df762be208"                 style="width: 100.0%; height: 100.0%;">                 Name: CASEY&#39;S PUBLIC HOUSE Score: 10.0 Grade: A</div>                 ')[0];
+                popup_6a4860931d53418d8cad8dfcc06c768d.setContent(html_844c21ff2f854834a7b079df762be208);
+            
+
+            marker_c63f9990140c44eaacc5b7f02bd45572.bindPopup(popup_6a4860931d53418d8cad8dfcc06c768d);
+
+            
+        
+        
+            
+
+            var marker_d748313555b34863a77eb5065598f5cb = L.marker(
+                [13.735402,100.618147],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_ec7648b929df4cab807284ce49c438ea = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d748313555b34863a77eb5065598f5cb.setIcon(icon_ec7648b929df4cab807284ce49c438ea);
+            
+        
+            
+            var popup_89966c33b1544aaea7c9687bbfefc6b9 = L.popup({maxWidth: '300'});
+
+            
+                var html_01fd98ff30bb47b486f0b0e4385fb930 = $('         <div id="html_01fd98ff30bb47b486f0b0e4385fb930"                 style="width: 100.0%; height: 100.0%;">                 Name: KINGDOM CAFE &amp; RISTORANTE Score: 13.0 Grade: A</div>                 ')[0];
+                popup_89966c33b1544aaea7c9687bbfefc6b9.setContent(html_01fd98ff30bb47b486f0b0e4385fb930);
+            
+
+            marker_d748313555b34863a77eb5065598f5cb.bindPopup(popup_89966c33b1544aaea7c9687bbfefc6b9);
+
+            
+        
+        
+            
+
+            var marker_5c148e1bbe79463e8d1d5733025d5079 = L.marker(
+                [40.761696,-73.976398],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_21bf89ea84bd4352b88ff57ea04ba872 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5c148e1bbe79463e8d1d5733025d5079.setIcon(icon_21bf89ea84bd4352b88ff57ea04ba872);
+            
+        
+            
+            var popup_a3a5db895a70492f97ea8b53005099f1 = L.popup({maxWidth: '300'});
+
+            
+                var html_089a692d95bb46139b49fcb1340c84fe = $('         <div id="html_089a692d95bb46139b49fcb1340c84fe"                 style="width: 100.0%; height: 100.0%;">                 Name: LA PARRANDA MEXICANA BAR &amp; RESTAURANT Score: 13.0 Grade: A</div>                 ')[0];
+                popup_a3a5db895a70492f97ea8b53005099f1.setContent(html_089a692d95bb46139b49fcb1340c84fe);
+            
+
+            marker_5c148e1bbe79463e8d1d5733025d5079.bindPopup(popup_a3a5db895a70492f97ea8b53005099f1);
+
+            
+        
+        
+            
+
+            var marker_bd9244911608433198738408b041fa30 = L.marker(
+                [40.779565,-73.98442],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0fa3a960582b4a4781ab7267121c0c24 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_bd9244911608433198738408b041fa30.setIcon(icon_0fa3a960582b4a4781ab7267121c0c24);
+            
+        
+            
+            var popup_fd2c82ba4a834ca6b7fb287149cf1da9 = L.popup({maxWidth: '300'});
+
+            
+                var html_61cf7ce0e33f4fcfa929858074fe162f = $('         <div id="html_61cf7ce0e33f4fcfa929858074fe162f"                 style="width: 100.0%; height: 100.0%;">                 Name: BIEN CUIT Score: 19.0 Grade: B</div>                 ')[0];
+                popup_fd2c82ba4a834ca6b7fb287149cf1da9.setContent(html_61cf7ce0e33f4fcfa929858074fe162f);
+            
+
+            marker_bd9244911608433198738408b041fa30.bindPopup(popup_fd2c82ba4a834ca6b7fb287149cf1da9);
+
+            
+        
+        
+            
+
+            var marker_8dfe8d870fd64a5388180c77c0192e9e = L.marker(
+                [40.747675,-73.987307],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_7f5d5d1dd94544809c42232ae2d45375 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8dfe8d870fd64a5388180c77c0192e9e.setIcon(icon_7f5d5d1dd94544809c42232ae2d45375);
+            
+        
+            
+            var popup_ea52cceca42f4cf69d5a96fddf23a4f9 = L.popup({maxWidth: '300'});
+
+            
+                var html_4a9f123f008a46e2bc68b1b110f3e1c1 = $('         <div id="html_4a9f123f008a46e2bc68b1b110f3e1c1"                 style="width: 100.0%; height: 100.0%;">                 Name: GUASTAVINO&#39;S Score: 9.0 Grade: A</div>                 ')[0];
+                popup_ea52cceca42f4cf69d5a96fddf23a4f9.setContent(html_4a9f123f008a46e2bc68b1b110f3e1c1);
+            
+
+            marker_8dfe8d870fd64a5388180c77c0192e9e.bindPopup(popup_ea52cceca42f4cf69d5a96fddf23a4f9);
+
+            
+        
+        
+            
+
+            var marker_442c9a55f2e14ed98f390025350e5a98 = L.marker(
+                [40.720613,-73.984519],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_57de46c3bcdd41ccb1236c2b0842f529 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_442c9a55f2e14ed98f390025350e5a98.setIcon(icon_57de46c3bcdd41ccb1236c2b0842f529);
+            
+        
+            
+            var popup_7f745b86592b4782be970492c5304540 = L.popup({maxWidth: '300'});
+
+            
+                var html_227a0641644e4e3ea0d069350f61dbed = $('         <div id="html_227a0641644e4e3ea0d069350f61dbed"                 style="width: 100.0%; height: 100.0%;">                 Name: FRENCH DINER Score: 11.0 Grade: A</div>                 ')[0];
+                popup_7f745b86592b4782be970492c5304540.setContent(html_227a0641644e4e3ea0d069350f61dbed);
+            
+
+            marker_442c9a55f2e14ed98f390025350e5a98.bindPopup(popup_7f745b86592b4782be970492c5304540);
+
+            
+        
+        
+            
+
+            var marker_69430090c7814e0c8b2de7fa5542cc7f = L.marker(
+                [40.746327,-74.006089],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_77b66152e6d4491d816ed653b9577bdf = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_69430090c7814e0c8b2de7fa5542cc7f.setIcon(icon_77b66152e6d4491d816ed653b9577bdf);
+            
+        
+            
+            var popup_132e0982ff844646978fce9c642d16d4 = L.popup({maxWidth: '300'});
+
+            
+                var html_1b055526695349478221ddb81489764b = $('         <div id="html_1b055526695349478221ddb81489764b"                 style="width: 100.0%; height: 100.0%;">                 Name: RED MANGO Score: 26.0 Grade: B</div>                 ')[0];
+                popup_132e0982ff844646978fce9c642d16d4.setContent(html_1b055526695349478221ddb81489764b);
+            
+
+            marker_69430090c7814e0c8b2de7fa5542cc7f.bindPopup(popup_132e0982ff844646978fce9c642d16d4);
+
+            
+        
+        
+            
+
+            var marker_12e2c2fbcf994f298cee2d5dd6042a7c = L.marker(
+                [40.733894,-74.004153],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_e9b3c4ef16c04a9f88659e629f1ed338 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_12e2c2fbcf994f298cee2d5dd6042a7c.setIcon(icon_e9b3c4ef16c04a9f88659e629f1ed338);
+            
+        
+            
+            var popup_7c934da12e174232aba4bafb7272e6a6 = L.popup({maxWidth: '300'});
+
+            
+                var html_c199d86135c34e0da452d037f414c3b8 = $('         <div id="html_c199d86135c34e0da452d037f414c3b8"                 style="width: 100.0%; height: 100.0%;">                 Name: KOPI KOPI Score: 12.0 Grade: A</div>                 ')[0];
+                popup_7c934da12e174232aba4bafb7272e6a6.setContent(html_c199d86135c34e0da452d037f414c3b8);
+            
+
+            marker_12e2c2fbcf994f298cee2d5dd6042a7c.bindPopup(popup_7c934da12e174232aba4bafb7272e6a6);
+
+            
+        
+        
+            
+
+            var marker_a0d7da17969943aaa9db203ee3859824 = L.marker(
+                [40.77099,-73.96211],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_483d027677ed4b86a2c1ee52f34e3b7f = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a0d7da17969943aaa9db203ee3859824.setIcon(icon_483d027677ed4b86a2c1ee52f34e3b7f);
+            
+        
+            
+            var popup_4d41b54a9cef4818bdaabd4f4da7bd71 = L.popup({maxWidth: '300'});
+
+            
+                var html_b811695f6df646b084cceb3ff3e032f4 = $('         <div id="html_b811695f6df646b084cceb3ff3e032f4"                 style="width: 100.0%; height: 100.0%;">                 Name: BEACON THEATRE Score: 12.0 Grade: A</div>                 ')[0];
+                popup_4d41b54a9cef4818bdaabd4f4da7bd71.setContent(html_b811695f6df646b084cceb3ff3e032f4);
+            
+
+            marker_a0d7da17969943aaa9db203ee3859824.bindPopup(popup_4d41b54a9cef4818bdaabd4f4da7bd71);
+
+            
+        
+        
+            
+
+            var marker_a92e02f88c1041dc85d62fb1de5b2534 = L.marker(
+                [40.810826,-73.943366],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_37d143c1e8e64548a3fc6fa189f5cdeb = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_a92e02f88c1041dc85d62fb1de5b2534.setIcon(icon_37d143c1e8e64548a3fc6fa189f5cdeb);
+            
+        
+            
+            var popup_5e60b4d0002c4420a92ff47aa8aeea7a = L.popup({maxWidth: '300'});
+
+            
+                var html_30f8fd67c0d44076b555ff4f2f30b86a = $('         <div id="html_30f8fd67c0d44076b555ff4f2f30b86a"                 style="width: 100.0%; height: 100.0%;">                 Name: PLAN B Score: 10.0 Grade: A</div>                 ')[0];
+                popup_5e60b4d0002c4420a92ff47aa8aeea7a.setContent(html_30f8fd67c0d44076b555ff4f2f30b86a);
+            
+
+            marker_a92e02f88c1041dc85d62fb1de5b2534.bindPopup(popup_5e60b4d0002c4420a92ff47aa8aeea7a);
+
+            
+        
+        
+            
+
+            var marker_94c30a650da0481899dcdcc1e5728e06 = L.marker(
+                [40.795959,-73.935753],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_3c0a6207246b455dbfd9806f5fb42ff1 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_94c30a650da0481899dcdcc1e5728e06.setIcon(icon_3c0a6207246b455dbfd9806f5fb42ff1);
+            
+        
+            
+            var popup_4377409ab6224e6b9d1df15395efcef4 = L.popup({maxWidth: '300'});
+
+            
+                var html_a6d224c007a241388467a31d9f40187d = $('         <div id="html_a6d224c007a241388467a31d9f40187d"                 style="width: 100.0%; height: 100.0%;">                 Name: SNACK TAVERNA Score: 7.0 Grade: A</div>                 ')[0];
+                popup_4377409ab6224e6b9d1df15395efcef4.setContent(html_a6d224c007a241388467a31d9f40187d);
+            
+
+            marker_94c30a650da0481899dcdcc1e5728e06.bindPopup(popup_4377409ab6224e6b9d1df15395efcef4);
+
+            
+        
+        
+            
+
+            var marker_d8c95af568d84719bdaad76087ee76a5 = L.marker(
+                [40.753864,-73.978788],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0051cc3cf0a1434f98248368d7dd1a11 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_d8c95af568d84719bdaad76087ee76a5.setIcon(icon_0051cc3cf0a1434f98248368d7dd1a11);
+            
+        
+            
+            var popup_843c0dad5ce741c2b8491080cabaf754 = L.popup({maxWidth: '300'});
+
+            
+                var html_5bd7c17026d64cdbbf9d8dec77db4c1a = $('         <div id="html_5bd7c17026d64cdbbf9d8dec77db4c1a"                 style="width: 100.0%; height: 100.0%;">                 Name: BUSHWICK PUBLIC HOUSE Score: 27.0 Grade: B</div>                 ')[0];
+                popup_843c0dad5ce741c2b8491080cabaf754.setContent(html_5bd7c17026d64cdbbf9d8dec77db4c1a);
+            
+
+            marker_d8c95af568d84719bdaad76087ee76a5.bindPopup(popup_843c0dad5ce741c2b8491080cabaf754);
+
+            
+        
+        
+            
+
+            var marker_7d9a7e88651841deb8e76fb62993c920 = L.marker(
+                [40.745481,-73.979017],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8bb8694e90214193872d9e493c6b2bef = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7d9a7e88651841deb8e76fb62993c920.setIcon(icon_8bb8694e90214193872d9e493c6b2bef);
+            
+        
+            
+            var popup_6c04853b2f3e4c21b2c077b3fdc530c1 = L.popup({maxWidth: '300'});
+
+            
+                var html_4fd2ea0190024a78bd441cad628fb32f = $('         <div id="html_4fd2ea0190024a78bd441cad628fb32f"                 style="width: 100.0%; height: 100.0%;">                 Name: REGIONAL Score: 11.0 Grade: A</div>                 ')[0];
+                popup_6c04853b2f3e4c21b2c077b3fdc530c1.setContent(html_4fd2ea0190024a78bd441cad628fb32f);
+            
+
+            marker_7d9a7e88651841deb8e76fb62993c920.bindPopup(popup_6c04853b2f3e4c21b2c077b3fdc530c1);
+
+            
+        
+        
+            
+
+            var marker_c70409243e7846339b7011f3458a3d93 = L.marker(
+                [40.755251,-73.97852],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_e7c8f5ef13914439a77101f0ea6a77ba = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c70409243e7846339b7011f3458a3d93.setIcon(icon_e7c8f5ef13914439a77101f0ea6a77ba);
+            
+        
+            
+            var popup_0d771e9a729544c4b523cb4e02ad678f = L.popup({maxWidth: '300'});
+
+            
+                var html_9446574e94bb458e99be7677525f46f7 = $('         <div id="html_9446574e94bb458e99be7677525f46f7"                 style="width: 100.0%; height: 100.0%;">                 Name: THE MEATBALL SHOP Score: 10.0 Grade: A</div>                 ')[0];
+                popup_0d771e9a729544c4b523cb4e02ad678f.setContent(html_9446574e94bb458e99be7677525f46f7);
+            
+
+            marker_c70409243e7846339b7011f3458a3d93.bindPopup(popup_0d771e9a729544c4b523cb4e02ad678f);
+
+            
+        
+        
+            
+
+            var marker_15af1fa4582a4a38b6b6b057459be5be = L.marker(
+                [40.753693,-73.967966],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8e10e61db2eb42e99d7d7fac7752e3b1 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_15af1fa4582a4a38b6b6b057459be5be.setIcon(icon_8e10e61db2eb42e99d7d7fac7752e3b1);
+            
+        
+            
+            var popup_3a73afb87ef34f1abfb3c2f861bbb698 = L.popup({maxWidth: '300'});
+
+            
+                var html_376ab02226f14864ba059b08834b5888 = $('         <div id="html_376ab02226f14864ba059b08834b5888"                 style="width: 100.0%; height: 100.0%;">                 Name: PARKETTE BROOKLYN Score: 20.0 Grade: B</div>                 ')[0];
+                popup_3a73afb87ef34f1abfb3c2f861bbb698.setContent(html_376ab02226f14864ba059b08834b5888);
+            
+
+            marker_15af1fa4582a4a38b6b6b057459be5be.bindPopup(popup_3a73afb87ef34f1abfb3c2f861bbb698);
+
+            
+        
+        
+            
+
+            var marker_3270283a9a0444d2ba366208d61c7952 = L.marker(
+                [40.751465,-73.970695],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_c89c0afd31c74139bd225ae25a2730c8 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3270283a9a0444d2ba366208d61c7952.setIcon(icon_c89c0afd31c74139bd225ae25a2730c8);
+            
+        
+            
+            var popup_59efff15a04c4399a29d499a6c69fa51 = L.popup({maxWidth: '300'});
+
+            
+                var html_e67c7fe27db448149c51d7e8b09e6b8e = $('         <div id="html_e67c7fe27db448149c51d7e8b09e6b8e"                 style="width: 100.0%; height: 100.0%;">                 Name: CHIPOTLE MEXICAN GRILL Score: 5.0 Grade: A</div>                 ')[0];
+                popup_59efff15a04c4399a29d499a6c69fa51.setContent(html_e67c7fe27db448149c51d7e8b09e6b8e);
+            
+
+            marker_3270283a9a0444d2ba366208d61c7952.bindPopup(popup_59efff15a04c4399a29d499a6c69fa51);
+
+            
+        
+        
+            
+
+            var marker_6e19a6e28b71418e93c395296b31a091 = L.marker(
+                [40.809734,-73.958646],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_0d0f0dd4faee4f448bfc7eb904baff8e = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6e19a6e28b71418e93c395296b31a091.setIcon(icon_0d0f0dd4faee4f448bfc7eb904baff8e);
+            
+        
+            
+            var popup_4e825ac1c6eb4dc1996a35515bea9ac0 = L.popup({maxWidth: '300'});
+
+            
+                var html_513a7068ce4b4e29a209d834e63d0d5b = $('         <div id="html_513a7068ce4b4e29a209d834e63d0d5b"                 style="width: 100.0%; height: 100.0%;">                 Name: MUZZARELLA PIZZA Score: 19.0 Grade: B</div>                 ')[0];
+                popup_4e825ac1c6eb4dc1996a35515bea9ac0.setContent(html_513a7068ce4b4e29a209d834e63d0d5b);
+            
+
+            marker_6e19a6e28b71418e93c395296b31a091.bindPopup(popup_4e825ac1c6eb4dc1996a35515bea9ac0);
+
+            
+        
+        
+            
+
+            var marker_6b5203bed6584277bd3b34d4084e50f4 = L.marker(
+                [40.765644,-73.957301],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_95c42f0173bb41b9ad9ef8ea8616ed2b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_6b5203bed6584277bd3b34d4084e50f4.setIcon(icon_95c42f0173bb41b9ad9ef8ea8616ed2b);
+            
+        
+            
+            var popup_9cb475b4caf34cacbe08c4777be87d04 = L.popup({maxWidth: '300'});
+
+            
+                var html_a814363887614e3cbc3c28b521768d28 = $('         <div id="html_a814363887614e3cbc3c28b521768d28"                 style="width: 100.0%; height: 100.0%;">                 Name: SOFITEL NEW YORK Score: 13.0 Grade: A</div>                 ')[0];
+                popup_9cb475b4caf34cacbe08c4777be87d04.setContent(html_a814363887614e3cbc3c28b521768d28);
+            
+
+            marker_6b5203bed6584277bd3b34d4084e50f4.bindPopup(popup_9cb475b4caf34cacbe08c4777be87d04);
+
+            
+        
+        
+            
+
+            var marker_2deaf699b08240ffabc437367f44812d = L.marker(
+                [40.739516,-74.003],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_310d0bf83937421d9f96ebd338c7c8ba = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2deaf699b08240ffabc437367f44812d.setIcon(icon_310d0bf83937421d9f96ebd338c7c8ba);
+            
+        
+            
+            var popup_93d4add20755415492051e00c6d04ce3 = L.popup({maxWidth: '300'});
+
+            
+                var html_6a39e089a98049e9bb1590a7d9b2181c = $('         <div id="html_6a39e089a98049e9bb1590a7d9b2181c"                 style="width: 100.0%; height: 100.0%;">                 Name: SUNSET LOUNGE Score: 9.0 Grade: A</div>                 ')[0];
+                popup_93d4add20755415492051e00c6d04ce3.setContent(html_6a39e089a98049e9bb1590a7d9b2181c);
+            
+
+            marker_2deaf699b08240ffabc437367f44812d.bindPopup(popup_93d4add20755415492051e00c6d04ce3);
+
+            
+        
+        
+            
+
+            var marker_efa22f480e54433cb8078ca11cee4036 = L.marker(
+                [40.76539,-73.985703],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_c609f4e926f84c7d9ee254888ad70552 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_efa22f480e54433cb8078ca11cee4036.setIcon(icon_c609f4e926f84c7d9ee254888ad70552);
+            
+        
+            
+            var popup_2c7b1815b7694fdb8372c75094fde0b7 = L.popup({maxWidth: '300'});
+
+            
+                var html_71393f1d9c8e4fdc825943a84de72677 = $('         <div id="html_71393f1d9c8e4fdc825943a84de72677"                 style="width: 100.0%; height: 100.0%;">                 Name: STATION Score: 13.0 Grade: A</div>                 ')[0];
+                popup_2c7b1815b7694fdb8372c75094fde0b7.setContent(html_71393f1d9c8e4fdc825943a84de72677);
+            
+
+            marker_efa22f480e54433cb8078ca11cee4036.bindPopup(popup_2c7b1815b7694fdb8372c75094fde0b7);
+
+            
+        
+        
+            
+
+            var marker_9c7a2def3d2a44cfb67d501929f46e6d = L.marker(
+                [40.748312,-73.986624],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_9f72caa1a771465d9d61d720cf75b09f = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_9c7a2def3d2a44cfb67d501929f46e6d.setIcon(icon_9f72caa1a771465d9d61d720cf75b09f);
+            
+        
+            
+            var popup_1459c1235db44e24ad224a955093045f = L.popup({maxWidth: '300'});
+
+            
+                var html_0845e870e3f54eef9186720eaccacd5e = $('         <div id="html_0845e870e3f54eef9186720eaccacd5e"                 style="width: 100.0%; height: 100.0%;">                 Name: COSI Score: 7.0 Grade: A</div>                 ')[0];
+                popup_1459c1235db44e24ad224a955093045f.setContent(html_0845e870e3f54eef9186720eaccacd5e);
+            
+
+            marker_9c7a2def3d2a44cfb67d501929f46e6d.bindPopup(popup_1459c1235db44e24ad224a955093045f);
+
+            
+        
+        
+            
+
+            var marker_3e55006d074f4accb255e65e94af49b7 = L.marker(
+                [40.704161,-74.010134],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_906e3a30675f40b6aca06146555265f3 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_3e55006d074f4accb255e65e94af49b7.setIcon(icon_906e3a30675f40b6aca06146555265f3);
+            
+        
+            
+            var popup_be653076c970462486e916c5b6496cb7 = L.popup({maxWidth: '300'});
+
+            
+                var html_39bb8163ae524da29b9e09b3fe5bc884 = $('         <div id="html_39bb8163ae524da29b9e09b3fe5bc884"                 style="width: 100.0%; height: 100.0%;">                 Name: MIRACALI III Score: 10.0 Grade: A</div>                 ')[0];
+                popup_be653076c970462486e916c5b6496cb7.setContent(html_39bb8163ae524da29b9e09b3fe5bc884);
+            
+
+            marker_3e55006d074f4accb255e65e94af49b7.bindPopup(popup_be653076c970462486e916c5b6496cb7);
+
+            
+        
+        
+            
+
+            var marker_c0aad37bda814239a0c41eed507a95aa = L.marker(
+                [40.75439,-73.992273],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_784732d1a1e04069a541b68b8b21c324 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c0aad37bda814239a0c41eed507a95aa.setIcon(icon_784732d1a1e04069a541b68b8b21c324);
+            
+        
+            
+            var popup_3b285f5f6b584e1ca5880b8dcc38605c = L.popup({maxWidth: '300'});
+
+            
+                var html_62e01877ac0f48329eed2cb466ebfb93 = $('         <div id="html_62e01877ac0f48329eed2cb466ebfb93"                 style="width: 100.0%; height: 100.0%;">                 Name: DAYS INN/THE ZONE BAR &amp; RESTAURANT Score: 7.0 Grade: A</div>                 ')[0];
+                popup_3b285f5f6b584e1ca5880b8dcc38605c.setContent(html_62e01877ac0f48329eed2cb466ebfb93);
+            
+
+            marker_c0aad37bda814239a0c41eed507a95aa.bindPopup(popup_3b285f5f6b584e1ca5880b8dcc38605c);
+
+            
+        
+        
+            
+
+            var marker_c3badc8f4bd249128fa88e84301deb3e = L.marker(
+                [40.756218,-73.981946],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_1a5b3f2cb1fd478e9b8aa14154854b31 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c3badc8f4bd249128fa88e84301deb3e.setIcon(icon_1a5b3f2cb1fd478e9b8aa14154854b31);
+            
+        
+            
+            var popup_6b92cfd8e25f43229b05980ede85b5ca = L.popup({maxWidth: '300'});
+
+            
+                var html_13d8cfbafff64ef5b0860629d26c493f = $('         <div id="html_13d8cfbafff64ef5b0860629d26c493f"                 style="width: 100.0%; height: 100.0%;">                 Name: ABC KITCHEN Score: 12.0 Grade: A</div>                 ')[0];
+                popup_6b92cfd8e25f43229b05980ede85b5ca.setContent(html_13d8cfbafff64ef5b0860629d26c493f);
+            
+
+            marker_c3badc8f4bd249128fa88e84301deb3e.bindPopup(popup_6b92cfd8e25f43229b05980ede85b5ca);
+
+            
+        
+        
+            
+
+            var marker_aa8102655eec437b9862ec2b17f37644 = L.marker(
+                [40.738749,-73.992779],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_50ce7d3934894af5a1f52125fcdb5442 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_aa8102655eec437b9862ec2b17f37644.setIcon(icon_50ce7d3934894af5a1f52125fcdb5442);
+            
+        
+            
+            var popup_02691c61b4f8485ea9b9a1c64ae3a6e0 = L.popup({maxWidth: '300'});
+
+            
+                var html_dbea325b18464b8aba978fa1d3ed684c = $('         <div id="html_dbea325b18464b8aba978fa1d3ed684c"                 style="width: 100.0%; height: 100.0%;">                 Name: PEGUSUS COFFEE SHOP Score: 13.0 Grade: A</div>                 ')[0];
+                popup_02691c61b4f8485ea9b9a1c64ae3a6e0.setContent(html_dbea325b18464b8aba978fa1d3ed684c);
+            
+
+            marker_aa8102655eec437b9862ec2b17f37644.bindPopup(popup_02691c61b4f8485ea9b9a1c64ae3a6e0);
+
+            
+        
+        
+            
+
+            var marker_12ca4ba649484423afb22c9bb4cb02e6 = L.marker(
+                [40.737608,-73.986652],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_aa5686f119df41c689271990a30f25fe = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_12ca4ba649484423afb22c9bb4cb02e6.setIcon(icon_aa5686f119df41c689271990a30f25fe);
+            
+        
+            
+            var popup_1c9d2c46f82e4412b10fc58a5573c273 = L.popup({maxWidth: '300'});
+
+            
+                var html_b11f0870f0de47bc9e81603c23b0d325 = $('         <div id="html_b11f0870f0de47bc9e81603c23b0d325"                 style="width: 100.0%; height: 100.0%;">                 Name: THAI KITCHEN BY THE SEA Score: 11.0 Grade: A</div>                 ')[0];
+                popup_1c9d2c46f82e4412b10fc58a5573c273.setContent(html_b11f0870f0de47bc9e81603c23b0d325);
+            
+
+            marker_12ca4ba649484423afb22c9bb4cb02e6.bindPopup(popup_1c9d2c46f82e4412b10fc58a5573c273);
+
+            
+        
+        
+            
+
+            var marker_0ab842d086b643b2af78c58ffddfa684 = L.marker(
+                [41.891585,-87.634651],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_f6261cc31df2466d8139c97d3901d3b5 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0ab842d086b643b2af78c58ffddfa684.setIcon(icon_f6261cc31df2466d8139c97d3901d3b5);
+            
+        
+            
+            var popup_3ffeede416294c2aa9851c52f86b9eb7 = L.popup({maxWidth: '300'});
+
+            
+                var html_61044c5b59b74359a166f5ffbaac9c1a = $('         <div id="html_61044c5b59b74359a166f5ffbaac9c1a"                 style="width: 100.0%; height: 100.0%;">                 Name: ET HALAL INTERNATIONAL RESTAURANT Score: 17.0 Grade: B</div>                 ')[0];
+                popup_3ffeede416294c2aa9851c52f86b9eb7.setContent(html_61044c5b59b74359a166f5ffbaac9c1a);
+            
+
+            marker_0ab842d086b643b2af78c58ffddfa684.bindPopup(popup_3ffeede416294c2aa9851c52f86b9eb7);
+
+            
+        
+        
+            
+
+            var marker_7a7e941cd19a464780e882caf4cfb24b = L.marker(
+                [40.707871,-74.00194],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_cd1546610a0240c6a8345caf25260474 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7a7e941cd19a464780e882caf4cfb24b.setIcon(icon_cd1546610a0240c6a8345caf25260474);
+            
+        
+            
+            var popup_467dbbeaf34c4bfc8c8489c8f57c0190 = L.popup({maxWidth: '300'});
+
+            
+                var html_5a7c77b0a196447dbf8af65f060f259a = $('         <div id="html_5a7c77b0a196447dbf8af65f060f259a"                 style="width: 100.0%; height: 100.0%;">                 Name: TAJ DONUT SHOP Score: 9.0 Grade: A</div>                 ')[0];
+                popup_467dbbeaf34c4bfc8c8489c8f57c0190.setContent(html_5a7c77b0a196447dbf8af65f060f259a);
+            
+
+            marker_7a7e941cd19a464780e882caf4cfb24b.bindPopup(popup_467dbbeaf34c4bfc8c8489c8f57c0190);
+
+            
+        
+        
+            
+
+            var marker_13a6c03f53804440b3b79efe92d1ac38 = L.marker(
+                [40.721024,-73.987738],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_1d1060ba3fde4bd29570a92ff173917b = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_13a6c03f53804440b3b79efe92d1ac38.setIcon(icon_1d1060ba3fde4bd29570a92ff173917b);
+            
+        
+            
+            var popup_42bdaecc0ef44d5a856b1c90c3e0139b = L.popup({maxWidth: '300'});
+
+            
+                var html_bc92c7726131476b99641d4cb2a7821f = $('         <div id="html_bc92c7726131476b99641d4cb2a7821f"                 style="width: 100.0%; height: 100.0%;">                 Name: BEDFORD HALL Score: 12.0 Grade: A</div>                 ')[0];
+                popup_42bdaecc0ef44d5a856b1c90c3e0139b.setContent(html_bc92c7726131476b99641d4cb2a7821f);
+            
+
+            marker_13a6c03f53804440b3b79efe92d1ac38.bindPopup(popup_42bdaecc0ef44d5a856b1c90c3e0139b);
+
+            
+        
+        
+            
+
+            var marker_7948e7d438f64b688b847a18e46946e6 = L.marker(
+                [40.713716,-73.991532],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_b5348fe2b8d540c397c04080e27f6a78 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_7948e7d438f64b688b847a18e46946e6.setIcon(icon_b5348fe2b8d540c397c04080e27f6a78);
+            
+        
+            
+            var popup_3080713c86d841808021a319919883d1 = L.popup({maxWidth: '300'});
+
+            
+                var html_96250d123acf461b9eb06102a0079f9c = $('         <div id="html_96250d123acf461b9eb06102a0079f9c"                 style="width: 100.0%; height: 100.0%;">                 Name: KING&#39;S WOK Score: 18.0 Grade: B</div>                 ')[0];
+                popup_3080713c86d841808021a319919883d1.setContent(html_96250d123acf461b9eb06102a0079f9c);
+            
+
+            marker_7948e7d438f64b688b847a18e46946e6.bindPopup(popup_3080713c86d841808021a319919883d1);
+
+            
+        
+        
+            
+
+            var marker_0fee11f55f374ca9a87473f8cc0b4e29 = L.marker(
+                [40.736675,-73.981528],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_ef08544a0c954e3a9eb8be9e178cdba4 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_0fee11f55f374ca9a87473f8cc0b4e29.setIcon(icon_ef08544a0c954e3a9eb8be9e178cdba4);
+            
+        
+            
+            var popup_553bd5173d55428b937b507811887817 = L.popup({maxWidth: '300'});
+
+            
+                var html_f47f31653da54c6b9c25a103f8d983c8 = $('         <div id="html_f47f31653da54c6b9c25a103f8d983c8"                 style="width: 100.0%; height: 100.0%;">                 Name: KELLY&#39;S PUB Score: 11.0 Grade: A</div>                 ')[0];
+                popup_553bd5173d55428b937b507811887817.setContent(html_f47f31653da54c6b9c25a103f8d983c8);
+            
+
+            marker_0fee11f55f374ca9a87473f8cc0b4e29.bindPopup(popup_553bd5173d55428b937b507811887817);
+
+            
+        
+        
+            
+
+            var marker_c10b12e6d64e4ccd984aeed97e0f65b1 = L.marker(
+                [40.721323,-73.99428],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_897204e5e1f54f5dbbf6a52164c13e02 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_c10b12e6d64e4ccd984aeed97e0f65b1.setIcon(icon_897204e5e1f54f5dbbf6a52164c13e02);
+            
+        
+            
+            var popup_85854b7a0a1d416cb7e59b4e38e7b6f1 = L.popup({maxWidth: '300'});
+
+            
+                var html_c259ade3e5fe4c8492c93f20c94ca76f = $('         <div id="html_c259ade3e5fe4c8492c93f20c94ca76f"                 style="width: 100.0%; height: 100.0%;">                 Name: PROSPECT COFFEE SHOP Score: 10.0 Grade: A</div>                 ')[0];
+                popup_85854b7a0a1d416cb7e59b4e38e7b6f1.setContent(html_c259ade3e5fe4c8492c93f20c94ca76f);
+            
+
+            marker_c10b12e6d64e4ccd984aeed97e0f65b1.bindPopup(popup_85854b7a0a1d416cb7e59b4e38e7b6f1);
+
+            
+        
+        
+            
+
+            var marker_8e292fe122d54c45806c084f47e04d23 = L.marker(
+                [40.764571,-73.980719],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_8e0ddece3b624e0d898bc3622e83dfec = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_8e292fe122d54c45806c084f47e04d23.setIcon(icon_8e0ddece3b624e0d898bc3622e83dfec);
+            
+        
+            
+            var popup_4f37d640fb53439ca0d8d8ece5fc113c = L.popup({maxWidth: '300'});
+
+            
+                var html_275cb3f678784fe08bf6a2ebd767c6b8 = $('         <div id="html_275cb3f678784fe08bf6a2ebd767c6b8"                 style="width: 100.0%; height: 100.0%;">                 Name: TACO BELL PIZZA HUT EXPRESS Score: 8.0 Grade: A</div>                 ')[0];
+                popup_4f37d640fb53439ca0d8d8ece5fc113c.setContent(html_275cb3f678784fe08bf6a2ebd767c6b8);
+            
+
+            marker_8e292fe122d54c45806c084f47e04d23.bindPopup(popup_4f37d640fb53439ca0d8d8ece5fc113c);
+
+            
+        
+        
+            
+
+            var marker_2e9ec7f0b2d34858954b3117a1533752 = L.marker(
+                [40.732703,-74.009713],
+                {
+                    icon: new L.Icon.Default()
+                    }
+                )
+                .addTo(marker_cluster_58ebf5b973f64c989e9b950718214e44);
+            
+        
+            
+
+                var icon_d5117878c1eb474e936f0437111ec356 = L.AwesomeMarkers.icon({
+                    icon: 'no-sign',
+                    iconColor: 'white',
+                    markerColor: 'green',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_2e9ec7f0b2d34858954b3117a1533752.setIcon(icon_d5117878c1eb474e936f0437111ec356);
+            
+        
+            
+            var popup_0e9b57de376347a2b434f65e31b21b96 = L.popup({maxWidth: '300'});
+
+            
+                var html_d1805ca97b43473b9fa784dfe49ba33d = $('         <div id="html_d1805ca97b43473b9fa784dfe49ba33d"                 style="width: 100.0%; height: 100.0%;">                 Name: VILLA PARADISIO Score: 9.0 Grade: A</div>                 ')[0];
+                popup_0e9b57de376347a2b434f65e31b21b96.setContent(html_d1805ca97b43473b9fa784dfe49ba33d);
+            
+
+            marker_2e9ec7f0b2d34858954b3117a1533752.bindPopup(popup_0e9b57de376347a2b434f65e31b21b96);
+
+            
+        
+        
+        
+        </script>
+        
