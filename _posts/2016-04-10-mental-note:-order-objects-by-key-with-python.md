@@ -30,3 +30,13 @@ for key in sorted(result)[-6:]:
 	array.append((calendar.month_name[datetime.fromtimestamp(float(key)).month], result[key]))
 ```
 
+Please Jose, use list comprehensions:
+
+```python
+from datetime import datetime
+import calendar
+
+array = [(calendar.month_name[datetime.fromtimestamp(float(key)).month], result[key]) for key in sorted(result)[-6:]]
+```
+
+

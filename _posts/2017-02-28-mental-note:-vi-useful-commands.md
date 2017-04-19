@@ -73,3 +73,7 @@ Ctrl + v → jj...jj → I → // or # or % ... → ESC
 
 Use Ctrl + p if you want to get a list of suggestions while typing.
 
+### [NORMAL_MODE] SELECT WORD UNDER THE CURSOR
+
+bvw or byw
+

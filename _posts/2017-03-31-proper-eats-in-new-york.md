@@ -77,7 +77,7 @@ In order to build the map, we need to get the geocode from the previous addresse
 
 Now we can use [Folium](http://python-visualization.github.io/folium/) to create the final map from our code. If you have no knowledge of JavaScript nor leaflet, with Folium you can plot in an awesome interactive map your data just by writing a few lines of Python.
 
-For this example we are going to plot the restaurants with markers (green for *A-restaurants*, blue for *B-restaurants* and red for the rest). In addition the interactive map will popup a window with the name, score and grade of the restaurant when the user place the cursor on the marker.
+For this example we are going to plot the restaurants with markers (green for *A-restaurants*, blue for *B-restaurants* and red for the rest). In addition the interactive map will popup a window with the name, score and grade of the restaurant when the user clicks with the cursor on the marker.
 
 ```python
 import folium
@@ -89,10 +89,10 @@ for i in range(len(samp)):
         folium.Marker([mRests['lat'][i],mRests['long'][i]], popup= "Name: " + str(mRests['DBA'][i])+ '\n' + "Score: " + str(mRests["SCORE"][i]) + '\n'+'Grade: '+ str(mRests["GRADE"][i]),
                       icon=folium.Icon(color="green", icon='no-sign')).add_to(marker_cluster)
     elif mRests['GRADE'][i]=="B":
-         folium.Marker([mRests['lat'][i],mRests['long'][i]], popup= "Name: " + str(mRests['DBA'][i])+ '\n' + "Score: " + str(mRests["SCORE"][i]) + '\n'+'Grade: '+ str(mRests["GRADE"][i]),
+        folium.Marker([mRests['lat'][i],mRests['long'][i]], popup= "Name: " + str(mRests['DBA'][i])+ '\n' + "Score: " + str(mRests["SCORE"][i]) + '\n'+'Grade: '+ str(mRests["GRADE"][i]),
                       icon=folium.Icon(color='blue',icon='no-sign')).add_to(marker_cluster)
     else:
-         folium.Marker([mRests['lat'][i],mRests['long'][i]], popup= "Name: " + str(mRests['DBA'][i])+ '\n' + "Score: " + str(mRests["SCORE"][i]) + '\n'+'Grade: '+ str(mRests["GRADE"][i]),
+        folium.Marker([mRests['lat'][i],mRests['long'][i]], popup= "Name: " + str(mRests['DBA'][i])+ '\n' + "Score: " + str(mRests["SCORE"][i]) + '\n'+'Grade: '+ str(mRests["GRADE"][i]),
                       icon=folium.Icon(color='red',icon='no-sign')).add_to(marker_cluster)
 
 mCluster.save('restaurants.html')
