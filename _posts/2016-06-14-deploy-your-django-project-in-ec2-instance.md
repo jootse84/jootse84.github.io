@@ -1,16 +1,12 @@
-Deploying one (or multiple) Django project(s) in a EC2 instance at AWS it is a *relative easy task*.
+Deploying one (or multiple) Django project(s) in a EC2 instance at AWS should be a *relative easy task*.
 
-I have never been interested in becoming a Systems Administrator. I was this kind of developers that panic messing up with the server, although I always find the topic interesting.
+I have never been interested in becoming a Systems Administrator, I am a kind of developer that panics when messing up with servers and configuration files. But it looks like my actual job competences includes the deployment of some of the projects I have been working on.
 
-So here I am, my actual job competences includes the deployment of some of the projects I am working on. Maybe is it time to consider myself a full-stack developer?
+So here I am, struggling trying to make our Django app work in a EC2 instance... and I am going to be honest here, I am enjoying it! I never thought that I would start to like DevOps.
 
 ## Introduction
 
-First of all, I am going to introduce some definitions, that I assume you probably know if you are reading this post. You can skip this part, if you want to go straight to the point, and start directly with the deployment.
-
-Actually, I got some of the information by copy-paste of their official pages, so you can not blame me if it is not well explained or accurate.
-
-Here some brief definitions about Django, Amazon Web Services and EC2 instances:
+First of all, I am going to introduce some brief definitions, that I assume you probably know if you are reading this post. You can skip this part, if you want to go straight hands-on:
 
 [Django](https://www.djangoproject.com/) is a Python Web framework, for quick setup and easy development of Web applications.
 
@@ -20,23 +16,29 @@ In AWS, an [EC2 instance](https://aws.amazon.com/ec2/) is a Web service that mak
 
 ### Before starting
 
-Well, your Django project it is in your local machine, so first we need to compress and transfer it to our EC2 virtual server. I usually use scp command for ssh data transfer. Here an example:
+First of all, we need to compress and transfer our Django project from our local machine to our EC2 virtual server. I usually make use of the *scp* command to help me with file transfer with *SSH*:
 
 ```sh
 scp -i your_permission_PEM_file your_django_project_compressed user_name@IP_EC2_INSTANE:"/path/where/to/locate/at/ec2/"
 ```
 
-Once finished the transfer, it is time to access to our EC2 instance server with full administrative control, and start the deployment of the project.
-
-To be ready, we still need to uncompress our django project, and move the project to our desired work path location.
+Once the transfer is completed, we need to access to our EC2 instance server with full administrative control, uncompress the file we recieved, and finally move our Django project to the desired working location in the file system.
 
 ## Prepare nginx and uWSGI
 
-[nginx](https://www.nginx.com/resources/wiki/) will work as our HTTP server and reverse proxy for our Django project. If it is not installed yet in our server:
+[nginx](https://www.nginx.com/resources/wiki/) will work as our HTTP server and reverse [proxy](https://en.wikipedia.org/wiki/Proxy_server) for our Django project. Why? Because we need something like nginx to face the outside world and be responsible of serving the media files (images, CSS, etc) directly from the file system. If it is not installed yet in our server we can:
 
 ```sh
 sudo apt-get install nginx
 ```
+
+However, nginx can not talk directly to Django applications; so we need something that will be responsible of running our app, feed it when we recieve requests from the web and return the responses: that is [uWSGI](https://uwsgi-docs.readthedocs.io/en/latest/).
+
+A simple Django web application will be running in a server with three main processes - nginx, uWSGI and the database. The high-level overview of the lifecycle of an HTTP request to the server will look like:
+
+- The incoming HTTP requests will be intercepted by nginx which listens port 80. If it is a static resource (css/js/images) Nginx serves it without bothering uWSGI.
+- On the contrary, nginx will received all the TCP packets belonging to the HTTP request and forward the request to uWSGI which is listening on another port (usually 8000) for HTTP requests from nginx.
+- uWSGI translates the request to a [Web Server Gateway Interface](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) compatible request and calls the Django applications which implements the business logic (including access and modification of the database) and returns an HTTP response to nginx which in turn sends the response back to the client.
 
 ### Our server.ini file
 
@@ -47,11 +49,11 @@ If you are using multiple websites on uWSGI, you may use a different name for th
 ```python
 [uwsgi]
 
-chdir       = {{/path/to/django/project}}
+chdir       = /PATH_TO_DJANGO_PROJECT
 module      = webui.wsgi
-home        = {{/path/to/virtualenv}}
+home        = /PATH_TO_DJANGO_VIRTUALENV
 
-socket = {{/path/to/root/of/repository}}/server_settings/socket/webui.sock
+socket = /ABSOLUTE_PATH_TO_REPOSITORY/server_settings/socket/webui.sock
 chmod-socket = 666
 
 master = true
@@ -90,14 +92,14 @@ Now is time to copy and edit the webui_nginx.conf file located at the same path 
 
 # the upstream component nginx needs to connect to
 upstream django {
-    server unix://{{/abs_path/to/repository}}/server_settings/socket/webui.sock; # for a file socket
-    #server 127.0.0.1:8001; # for a web port socket (we'll use this first)
+    server unix://ABSOLUTE_PATH_TO_REPOSITORY/server_settings/socket/webui.sock; # for a file socket
+    #server 127.0.0.1:8000; # for a web port socket (we'll use this first)
 }
 
 # configuration of the server
 server {
     # the port your site will be served on
-    listen      {{port}};
+    listen      PORT_NUMBER;
     # the domain name it will serve for
     server_name .example.com; # substitute your machine's IP address or FQDN
     charset     utf-8;
@@ -115,17 +117,17 @@ server {
 
     # Django media
     location /media  {
-        alias {{/abs_path/torepository}}/webui/media;  # your Django project's media files - amend as required
+        alias ABSOLUTE_PATH_TO_REPOSITORY/webui/media;  # your Django project's media files - amend as required
     }
 
     location /static {
-        alias {{/abs_path/torepository}}/webui/static; # your Django project's static files - amend as required
+        alias ABSOLUTE_PATH_TO_REPOSITORY/webui/static; # your Django project's static files - amend as required
     }
 
     # Finally, send all non-media requests to the Django server.
     location / {
         uwsgi_pass  django;
-        include     {{/abs_path/torepository}}/server_settings/wsgi/uwsgi_params; # the uwsgi_params file you installed
+        include     ABSOLUTE_PATH_TO_REPOSITORY/server_settings/wsgi/uwsgi_params; # the uwsgi_params file you installed
     }
 }
 ```
