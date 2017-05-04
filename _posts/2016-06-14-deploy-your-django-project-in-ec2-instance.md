@@ -138,6 +138,8 @@ Also there is the need of modifying the port the site will be served from ('list
 
 It is very important, if we are going to run multiple websites with nginx, that the location of the 'uwsgi_pass' value should point to the proper upstream (better rename the upstreams, to avoid failures).
 
+![alt project structure]({{ site.url }}/assets/images/django_structure.png)
+
 ## Get ready with nginx
 
 Now is time to reestart nginx:
@@ -190,6 +192,6 @@ Let's create the symlink then:
 ln -s /path/to/django/project/nginx/server.ini /etc/uwsgi/vassals/
 ```
 
-With this step, we finished the deployment of our Django project in our EC2 instance. We now just need to test if it is working by openning the site in our browser.
+With this step, we finished the deployment of our Django project in our EC2 instance. We now just need to test if it is working by opening the site in our browser.
 
 Cheers!
