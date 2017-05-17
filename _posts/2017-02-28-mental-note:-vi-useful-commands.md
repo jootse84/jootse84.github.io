@@ -40,6 +40,14 @@ Delete from your current position until the end of the line.
 
 Use this sequence when you need to repeatly **write the same text at the beginning of multiple lines** in your code. Note that a magical thing happens with the dot command - it repeats a command that used a numbered register, it will use the next numbered register (see :help redo-register). 
 
+### [NORMAL_MODE] SELECT ALL LINES
+
+To select the whole text inside the document:
+
+```
+ggVG
+```
+
 ### [NORMAL_MODE] SELECT MULTIPLE LINES
 
 For example, if I'm on line 5 and I want to select to line 35, I might press *ma* to place mark *a* on line 5, then *:35* to move to line 35. Shift + v (or Crtl + v to select just columns) to enter linewise visual mode, and finally *`a* to select back to mark a.
@@ -75,5 +83,8 @@ Use Ctrl + p if you want to get a list of suggestions while typing.
 
 ### [NORMAL_MODE] SELECT WORD UNDER THE CURSOR
 
-bvw or byw
+To visually select inner word:
 
+```
+viw
+```
