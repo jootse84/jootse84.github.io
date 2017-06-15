@@ -2,7 +2,7 @@ Next months I will spend plenty of time developing a [Bitcoin](https://en.wikipe
 
 Recently after being involved in this new project some of my friends asked me many questions regarding Bitcoin and block chain. I am not an expert in the area and, to be honest, before jumping into this project I was not very interested in the topic. To be able to respond in the best possible way to all the questions, I've started to read parts of [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto)'s Bitcoin [reference implementation](https://bitcoin.org/en/bitcoin-paper) and I feel fascinated with it.
 
-On top of that, last week the Spanish "Banco Popular" was sold to Banco Santander for just [one euro](https://econews.pt/2017/06/07/santander-acquires-banco-popular-for-one-euro/); a process where some people lost all their savings due to *Banco Popular*'s stock market shares value dropped to zero after the acquisition. It breaks my heart when I see on the news elderly explaining how they have lost all their savings after trusting the bankers of *Popular*'s offices on investing all their money in shares.
+On top of that, last week the Spanish "Banco Popular" was ridiculously sold to Banco Santander for just [one euro](https://econews.pt/2017/06/07/santander-acquires-banco-popular-for-one-euro/); a process where some people lost all their savings due to *Banco Popular*'s stock market shares value dropped to zero after the acquisition. It breaks my heart when I see on the news elderly explaining how they have lost all their savings after trusting the bankers of *Popular*'s offices on investing all their money in shares.
 
 I consider this situation horrible even more when the main responsible for the *Popular*'s collapse and rescue, the ex-president Emilio Saracho, is leaving the bank with a payment of 1,5 million € just for his short four months of service in the entity. Concern about this situation and the term **bankster** (banker + gangster) is the order of the day in Spain.
 
@@ -11,9 +11,9 @@ So yes, I am in part a big supporter of the Bitcoin idea and I am also happy wit
 
 # Ok dude, but what is a Bitcoin?
 
-Well, a Bitcoin is a cryptocurrency that instead of having to be printed like normal money it needs to be mined - a process of adding transaction records to Bitcoin's shared public ledger of past transactions, also called **block chain**.
+Well, a Bitcoin is a cryptocurrency that instead of having to be printed like normal money it needs to be mined - a process of adding transaction records to Bitcoin's shared **public ledger** of past transactions, also called **block chain**.
 
-Bitcoin exists and works because the people who use it have faith that other people also trust the system. One goal of the Bitcoin is to avoid any centralized control as mentioned before, so every participant has access to the public ledger (block chain) and maintains their own copy of the ledger. Bitcoin network relies on block chain. All the confirmed transactions are included in block chain, the integrity and the chronological order of the block chain are enforced with cryptography.
+Bitcoin exists and works because the people who use it have faith that other people also trust the system. One goal of the Bitcoin is to avoid any centralized control, so every participant has access to the public ledger and maintains their own copy of the ledger. Bitcoin network relies on block chain. All the confirmed transactions are included in block chain, the integrity and the chronological order of the block chain are enforced with cryptography.
 
 One surprising consequence of this philosophy is that from the ledger everyone can see everyone else's balances (system uses account numbers instead of names). When there is a new transaction the user broadcasts the message, so everyone across the entire world updates their ledger. On the other hand, you can also use the system to send and receive money without the need of maintaining a ledger.
 
