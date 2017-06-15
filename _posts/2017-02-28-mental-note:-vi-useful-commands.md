@@ -58,6 +58,20 @@ The normal-mode command to move to the end of the line is with the $ symbol. You
 
 Check :h registers for more information.
 
+### [NORMAL_MODE] DELETE UNTIL THE START/END OF THE WORD
+
+To delete until the end of a word from the position of your cursor, you can:
+
+```
+dw
+```
+
+On the other hand, if you want to delete until the start of the word, you can:
+
+```
+db
+```
+
 ### [NORMAL_MODE] JUMP BETWEEN WINDOWS
 
 Ctrl + W. Check out :help window-moving for more information.
