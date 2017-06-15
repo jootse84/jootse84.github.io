@@ -1,4 +1,4 @@
-Next months I will spend plenty of my time developing a [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin) wallet - a web and a desktop application where users will be able to store their Bitcoins, make transfers and payments.
+Next months I will spend plenty of time developing a [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin) wallet - a web/desktop application where users will be able to store their Bitcoins, make transfers and payments.
 
 Especially after being involved in this new project, last weeks I've been asked so many questions from my friends regarding what is a Bitcoin and block chain. I am not an expert in the area and, to be honest, before jumping into this project I briefly read and knew about Bitcoin. To be able to respond in the best possible way to all the questions, I've started to read parts of [Satoshi Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto)'s Bitcoin [reference implementation](https://bitcoin.org/en/bitcoin-paper) and I felt fascinated with it.
 
