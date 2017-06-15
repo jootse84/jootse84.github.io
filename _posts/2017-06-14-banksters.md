@@ -6,7 +6,9 @@ On top of that, last week the Spanish "Banco Popular" was ridiculously sold to B
 
 I consider this situation horrible even more when the main responsible for the *Popular*'s collapse and rescue, the ex-president Emilio Saracho, is leaving the bank with a payment of 1,5 million € just for his short four months of service in the entity. Concern about this situation and the term **bankster** (banker + gangster) is the order of the day in Spain.
 
-So yes, I am in part a big supporter of the Bitcoin idea and I am also happy with this new project not because of the complexity of the project, but because of the meaning and philosophy behind Bitcoin. Banks are evil and trade on temptation, it is hard to know which kind of use banks do with the money you deposit - although it exists some alternatives, i.e. [this one](https://www.triodos.es/es/conozca-triodos-bank/que-hacemos/) in Spain.
+So yes, I am in part a big supporter of the Bitcoin idea and I am also happy with this new project not because of the complexity of it, but because of the meaning and philosophy behind Bitcoin. Banks are evil and trade on temptation, it is hard to know which kind of use banks do with the money you deposit - although it exists some alternatives, i.e. [this one](https://www.triodos.es/es/conozca-triodos-bank/que-hacemos/) in Spain.
+
+![alt bitcoin accepted here]({{ site.url }}/assets/images/bitcoin_post.jpg)
 
 
 # Ok dude, but what is a Bitcoin?
