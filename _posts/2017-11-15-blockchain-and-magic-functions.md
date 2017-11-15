@@ -99,7 +99,7 @@ print(bc)
 
 My friend [@eliasdorneles](https://twitter.com/eliasdorneles) introduced to me how cool and potential are the special methods or magic functions for the Python Data Model by reading the first chapter of the book [Fluent Python](http://shop.oreilly.com/product/0636920032519.do) - which I strongly recommend to read if you are a Python newbie.
 
-To summarize the chapter in just one sentence, we use magic functions to redefine those operations that were generic for a group of types and which were intended to work even for objects that didn’t have methods at all.
+To summarize the chapter in just one sentence, we use magic functions to redefine those operations in Python that were generic for a group of types and which were intended to work even for objects that didn’t have methods at all.
 
 For example, we want that our Blockchain class acts like a dictionary, but we don't want to *delete* and *set* from created blocks, we just want to access to the blocks by index, and be able to retrieve the length of the chain by calling the built-in function len(). In this case, by just defining the function *__len__()* and *__getitem__(key)* we can achieve our purpose -  no need in this case to define *__setitem__(key, value)* or *__delitem__(key)*.
 
