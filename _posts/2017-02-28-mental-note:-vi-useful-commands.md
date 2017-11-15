@@ -102,3 +102,9 @@ To visually select inner word:
 ```
 viw
 ```
+
+### [NORMAL_MODE] REPLACE 2 OR MORE SPACES
+
+```
+:%s: \{2,}:WHATEVER_TO_REPLACE:g
+```
