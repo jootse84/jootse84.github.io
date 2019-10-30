@@ -24,9 +24,9 @@ After executing the following in vi, we can run pytest anytime from vi by pressi
 
 Please don't use more [*:NERDTree* vundle](https://github.com/scrooloose/nerdtree) and find your files by name with *crtl + p*.
 
-### [NORMAL_MODE] d + s + BRACKET/SURROUND_TYPE
+### [NORMAL_MODE] (d/c/y) + s + BRACKET/SURROUND_TYPE
 
-You can remove sorroundings really fast. From NORMAL mode, just type d + s + the sorround type. For instance, if we want to remove a surrounding brackets:
+You can remove/change/yank sorroundings really fast. From NORMAL mode, just type d + s + the sorround type, i.e. '"{[(. For instance, if we want to remove a surrounding brackets:
 
 ```
 d s (
@@ -40,7 +40,7 @@ Delete from your current position until the end of the line.
 
 Use this sequence when you need to repeatly **write the same text at the beginning of multiple lines** in your code. Note that a magical thing happens with the dot command - it repeats a command that used a numbered register, it will use the next numbered register (see :help redo-register). 
 
-### [NORMAL_MODE] SELECT ALL LINES
+### [NORMAL_MODE] SELECT ALL LINES (Place cursor to top + Select MODE + Place cursor to bottom)
 
 To select the whole text inside the document:
 
@@ -95,12 +95,15 @@ Ctrl + v → jj...jj → I → // or # or % ... → ESC
 
 Use Ctrl + p if you want to get a list of suggestions while typing.
 
-### [NORMAL_MODE] SELECT WORD UNDER THE CURSOR
+### [NORMAL_MODE] SELECT/CHANGE/DELETE/YANK INNER CURSOR WORD
 
 To visually select inner word:
 
 ```
 viw
+ciw
+diw
+yaiw
 ```
 
 ### [NORMAL_MODE] REPLACE 2 OR MORE SPACES
@@ -108,3 +111,18 @@ viw
 ```
 :%s: \{2,}:WHATEVER_TO_REPLACE:g
 ```
+
+### [NORMAL_MODE] REPLACE 2 OR MORE SPACES
+
+```
+:%s: \{2,}:WHATEVER_TO_REPLACE:g
+```
+
+### [NORMAL MODE] Cursor on word, find next (*) or previous (#)
+
+When the cursor is on a word, you can find the next occurence (with asterisk - *) or previous occurence (with hash - #)
+
+### [NORMAL MODE] Jump to previous positions of the cursor
+
+Ctrl + o - previous position of the cursor
+Ctrl + i - present position of the cursor
