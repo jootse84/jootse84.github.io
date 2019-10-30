@@ -112,17 +112,11 @@ yaiw
 :%s: \{2,}:WHATEVER_TO_REPLACE:g
 ```
 
-### [NORMAL_MODE] REPLACE 2 OR MORE SPACES
-
-```
-:%s: \{2,}:WHATEVER_TO_REPLACE:g
-```
-
 ### [NORMAL MODE] Cursor on word, find next (*) or previous (#)
 
 When the cursor is on a word, you can find the next occurence (with asterisk - *) or previous occurence (with hash - #)
 
-### [NORMAL MODE] Jump to previous positions of the cursor
+### [NORMAL MODE] Jump to previous positions of the cursor
 
 Ctrl + o - previous position of the cursor
 Ctrl + i - present position of the cursor
